@@ -94,3 +94,123 @@ nav a:hover {
     color: #aaaaaa;
     font-size: 14px;
 }
+/* XIZMATLAR */
+.services {
+    padding: 80px 0;
+    background-color: #0d0d1a;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 50px;
+    color: #ffffff;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+.service-card {
+    background-color: #13132a;
+    border: 1px solid #1e1e3a;
+    border-radius: 12px;
+    padding: 32px 24px;
+    text-align: center;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-6px);
+    border-color: #4f6ef7;
+}
+
+.service-icon {
+    font-size: 48px;
+    margin-bottom: 16px;
+}
+
+.service-card h3 {
+    font-size: 18px;
+    margin-bottom: 12px;
+    color: #ffffff;
+}
+
+.service-card p {
+    color: #aaaaaa;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* KOMPANIYA HAQIDA */
+.about {
+    padding: 80px 0;
+    background-color: #0a0a0f;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.label {
+    color: #4f6ef7;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.about-text h2 {
+    font-size: 36px;
+    margin: 16px 0 20px;
+    color: #ffffff;
+}
+
+.about-text p {
+    color: #aaaaaa;
+    line-height: 1.8;
+    margin-bottom: 24px;
+}
+
+.about-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.about-list li {
+    color: #cccccc;
+    font-size: 15px;
+}
+
+.about-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.stat-card {
+    background-color: #13132a;
+    border: 1px solid #1e1e3a;
+    border-radius: 12px;
+    padding: 32px;
+    text-align: center;
+}
+
+.stat-card h3 {
+    font-size: 42px;
+    font-weight: 700;
+    color: #4f6ef7;
+    margin-bottom: 8px;
+}
+
+.stat-card p {
+    color: #aaaaaa;
+    font-size: 14px;
+}
