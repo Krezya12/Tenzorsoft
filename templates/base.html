@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Tenzorsoft{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="container">
+            <a href="/" class="logo">Tenzor<span>soft</span></a>
+            <nav>
+                <a href="/">Bosh sahifa</a>
+                <a href="/about">Biz haqimizda</a>
+                <a href="/services">Xizmatlar</a>
+                <a href="/portfolio">Portfolio</a>
+                <a href="/contact">Aloqa</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HAR BIR SAHIFA O'Z CONTENTINI SHU YERGA YOZADI -->
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <p>© 2024 Tenzorsoft. Barcha huquqlar himoyalangan.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
