@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+
+{% block title %}Tenzorsoft — Portfolio{% endblock %}
+
+{% block content %}
+
+<!-- PAGE HEADER -->
+<section class="page-header">
+    <div class="container">
+        <h1>Portfolio</h1>
+        <p>Bizning muvaffaqiyatli loyihalarimiz</p>
+    </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section class="portfolio-page">
+    <div class="container">
+
+        <!-- FILTER -->
+        <div class="portfolio-filter">
+            <button class="filter-btn active" data-filter="all">Barchasi</button>
+            <button class="filter-btn" data-filter="web">Web</button>
+            <button class="filter-btn" data-filter="mobile">Mobil</button>
+            <button class="filter-btn" data-filter="fintech">Fintech</button>
+            <button class="filter-btn" data-filter="automation">Avtomatlashtirish</button>
+        </div>
+
+        <!-- LOYIHALAR -->
+        <div class="portfolio-grid">
+
+            <div class="portfolio-card" data-category="web">
+                <div class="portfolio-card-img">
+                    <i class="fas fa-globe"></i>
+                </div>
+                <div class="portfolio-card-content">
+                    <span class="portfolio-tag">Web</span>
+                    <h3>Korporativ veb-sayt</h3>
+                    <p>Yirik kompaniya uchun zamonaviy korporativ veb-sayt ishlab chiqildi.</p>
+                </div>
+            </div>
+
+            <div class="portfolio-card" data-category="mobile">
+                <div class="portfolio-card-img">
+                    <i class="fas fa-mobile-alt"></i>
+                </div>
+                <div class="portfolio-card-content">
+                    <span class="portfolio-tag">Mobil</span>
+                    <h3>Mobil ilova</h3>
+                    <p>Android va iOS uchun mijozlar uchun xizmat ko'rsatish ilovasi.</p>
+                </div>
+            </div>
+
+            <div class="portfolio-card" data-category="fintech">
+                <div class="portfolio-card-img">
+                    <i class="fas fa-credit-card"></i>
+                </div>
+                <div class="portfolio-card-content">
+                    <span class="portfolio-tag">Fintech</span>
+                    <h3>To'lov tizimi</h3>
+                    <p>Onlayn to'lovlar uchun xavfsiz va tez platforma.</p>
+                </div>
+            </div>
+
+            <div class="portfolio-card" data-category="automation">
+                <div class="portfolio-card-img">
+                    <i class="fas fa-cogs"></i>
+                </div>
+                <div class="portfolio-card-content">
+                    <span class="portfolio-tag">Avtomatlashtirish</span>
+                    <h3>ERP tizimi</h3>
+                    <p>Korxona resurslarini boshqarish tizimi joriy etildi.</p>
+                </div>
+            </div>
+
+            <div class="portfolio-card" data-category="web">
+                <div class="portfolio-card-img">
+                    <i class="fas fa-shopping-cart"></i>
+                </div>
+                <div class="portfolio-card-content">
+                    <span class="portfolio-tag">Web</span>
+                    <h3>Internet do'kon</h3>
+                    <p>To'liq funksional onlayn savdo platformasi.</p>
+                </div>
+            </div>
+
+            <div class="portfolio-card" data-category="automation">
+                <div class="portfolio-card-img">
+                    <i class="fas fa-chart-bar"></i>
+                </div>
+                <div class="portfolio-card-content">
+                    <span class="portfolio-tag">Avtomatlashtirish</span>
+                    <h3>CRM tizimi</h3>
+                    <p>Mijozlar bilan munosabatlarni boshqarish tizimi.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+{% endblock %}
