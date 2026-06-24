@@ -245,133 +245,166 @@
             });
         });
     });
-    document.querySelectorAll('.dropdown').forEach(dropdown => {
-        dropdown.addEventListener('mouseenter', () => {
-            dropdown.querySelector('.dropdown-menu').style.display = 'flex';
-        });
-        dropdown.addEventListener('mouseleave', () => {
-            dropdown.querySelector('.dropdown-menu').style.display = 'none';
-        });
-    });
+    // УПРАВЛЕНИЕ ВСЕМИ ВЫПАДАЮЩИМИ ОКНАМИ И ПЕРЕКЛЮЧАТЕЛЯМИ
+    document.addEventListener('DOMContentLoaded', () => {
 
-    // ПРАВИЛЬНЫЙ И НАДЕЖНЫЙ THEME SWITCHER
-    const ThemeSwitcher = {
-        STORAGE_KEY: 'site-theme',
+        // 2. НАСТРОЙКА ЯЗЫКОВОГО ДРОПДАУНА
+        const langDropdown = document.querySelector('.lang-dropdown');
+        const langToggle = document.querySelector('.lang-toggle');
+        const langMenu = document.querySelector('.lang-menu');
 
-        init() {
-            this.attachEventListeners();
-            const savedTheme = localStorage.getItem(this.STORAGE_KEY) || 'auto';
-            this.applyTheme(savedTheme);
-        },
+        if (langToggle && langMenu) {
+            langToggle.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation(); // Защита: клик изолирован, окно не закроется мгновенно!
 
-        applyTheme(theme) {
-            if (theme === 'auto') {
-                const isSystemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-                document.documentElement.setAttribute('data-theme', isSystemDark ? 'dark' : 'light');
-            } else {
-                document.documentElement.setAttribute('data-theme', theme);
-            }
+                const isOpen = langDropdown.classList.contains('open');
+                closeAllMenus(); // Закрываем обычные меню, если они открыты
 
-            localStorage.setItem(this.STORAGE_KEY, theme);
-            this.updateButtons(theme);
-        },
-
-        updateButtons(activeTheme) {
-            document.querySelectorAll('.theme-btn').forEach(btn => {
-                if (btn.dataset.theme === activeTheme) {
-                    btn.classList.add('active');
-                } else {
-                    btn.classList.remove('active');
+                if (!isOpen) {
+                    langDropdown.classList.add('open');
+                    langMenu.style.display = 'block'; // Или 'flex', в зависимости от твоих стилей
                 }
             });
-        },
+        }
 
-        attachEventListeners() {
-            document.querySelectorAll('.theme-btn').forEach(btn => {
+        // 3. ФУНКЦИЯ БЕЗОПАСНОГО ЗАКРЫТИЯ ВСЕХ ОКОН
+        function closeAllMenus() {
+            // Закрываем стандартные меню
+            document.querySelectorAll('.dropdown').forEach(dropdown => {
+                dropdown.classList.remove('open');
+                const menu = dropdown.querySelector('.dropdown-menu');
+                if (menu) menu.style.display = 'none';
+            });
+
+            // Закрываем языковое меню
+            if (langDropdown && langMenu) {
+                langDropdown.classList.remove('open');
+                langMenu.style.display = 'none';
+            }
+        }
+    });
+
+
+
+        // ПРАВИЛЬНЫЙ И НАДЕЖНЫЙ THEME SWITCHER
+        const ThemeSwitcher = {
+            STORAGE_KEY: 'site-theme',
+
+            init() {
+                this.attachEventListeners();
+                const savedTheme = localStorage.getItem(this.STORAGE_KEY) || 'auto';
+                this.applyTheme(savedTheme);
+            },
+
+            applyTheme(theme) {
+                if (theme === 'auto') {
+                    const isSystemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                    document.documentElement.setAttribute('data-theme', isSystemDark ? 'dark' : 'light');
+                } else {
+                    document.documentElement.setAttribute('data-theme', theme);
+                }
+
+                localStorage.setItem(this.STORAGE_KEY, theme);
+                this.updateButtons(theme);
+            },
+
+            updateButtons(activeTheme) {
+                document.querySelectorAll('.theme-btn').forEach(btn => {
+                    if (btn.dataset.theme === activeTheme) {
+                        btn.classList.add('active');
+                    } else {
+                        btn.classList.remove('active');
+                    }
+                });
+            },
+
+            attachEventListeners() {
+                document.querySelectorAll('.theme-btn').forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        this.applyTheme(btn.dataset.theme);
+                    });
+                });
+
+                window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+                    if (localStorage.getItem(this.STORAGE_KEY) === 'auto') {
+                        this.applyTheme('auto');
+                    }
+                });
+            }
+        };
+
+        document.addEventListener('DOMContentLoaded', () => {
+            ThemeSwitcher.init();
+        });
+        // Portfolio filter
+        document.addEventListener('DOMContentLoaded', () => {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const portfolioCards = document.querySelectorAll('.portfolio-card');
+
+            // 1. Функция фильтрации
+            function applyFilter(filterValue) {
+                if (!filterValue) filterValue = 'all';
+
+                // Обновляем активную кнопку
+                filterButtons.forEach(btn => {
+                    if (btn.dataset.filter === filterValue) {
+                        btn.classList.add('active');
+                    } else {
+                        btn.classList.remove('active');
+                    }
+                });
+
+                // Фильтруем карточки
+                portfolioCards.forEach(card => {
+                    if (filterValue === 'all' || card.dataset.category === filterValue) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            }
+
+            // 2. Обработчик кликов по кнопкам
+            filterButtons.forEach(btn => {
                 btn.addEventListener('click', () => {
-                    this.applyTheme(btn.dataset.theme);
+                    const filter = btn.dataset.filter;
+                    applyFilter(filter);
+
+                    // Опционально: обновляем URL при клике, чтобы пользователь мог скопировать ссылку
+                    window.location.hash = filter === 'all' ? '' : filter;
                 });
             });
 
-            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
-                if (localStorage.getItem(this.STORAGE_KEY) === 'auto') {
-                    this.applyTheme('auto');
+            // 3. Функция проверки URL (поддерживает хэш #mobile или чтение последнего сегмента пути)
+            function checkUrlAndFilter() {
+                // Вариант А: Ищем значение в хэше (например, /portfolio/#mobile)
+                let filterFromUrl = window.location.hash.replace('#', '');
+
+                // Вариант Б: Если хэша нет, проверяем путь (например, /portfolio/mobile или /profile/mobile)
+                if (!filterFromUrl) {
+                    const pathSegments = window.location.pathname.split('/').filter(Boolean);
+                    const lastSegment = pathSegments[pathSegments.length - 1];
+
+                    // Проверяем, существует ли вообще кнопка с таким фильтром, чтобы не отфильтровать лишнего
+                    const validFilters = Array.from(filterButtons).map(b => b.dataset.filter);
+                    if (validFilters.includes(lastSegment)) {
+                        filterFromUrl = lastSegment;
+                    }
                 }
-            });
-        }
-    };
 
-    document.addEventListener('DOMContentLoaded', () => {
-        ThemeSwitcher.init();
-    });
-    // Portfolio filter
-    document.addEventListener('DOMContentLoaded', () => {
-        const filterButtons = document.querySelectorAll('.filter-btn');
-        const portfolioCards = document.querySelectorAll('.portfolio-card');
-
-        // 1. Функция фильтрации
-        function applyFilter(filterValue) {
-            if (!filterValue) filterValue = 'all';
-
-            // Обновляем активную кнопку
-            filterButtons.forEach(btn => {
-                if (btn.dataset.filter === filterValue) {
-                    btn.classList.add('active');
-                } else {
-                    btn.classList.remove('active');
+                // Применяем найденный фильтр
+                if (filterFromUrl) {
+                    applyFilter(filterFromUrl);
                 }
-            });
+            }
 
-            // Фильтруем карточки
-            portfolioCards.forEach(card => {
-                if (filterValue === 'all' || card.dataset.category === filterValue) {
-                    card.style.display = 'block';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        }
+            // Запускаем проверку при загрузке страницы
+            checkUrlAndFilter();
 
-        // 2. Обработчик кликов по кнопкам
-        filterButtons.forEach(btn => {
-            btn.addEventListener('click', () => {
-                const filter = btn.dataset.filter;
-                applyFilter(filter);
-
-                // Опционально: обновляем URL при клике, чтобы пользователь мог скопировать ссылку
-                window.location.hash = filter === 'all' ? '' : filter;
-            });
+            // Опционально: реагируем на изменение хэша без перезагрузки страницы (кнопки "Назад" / "Вперед" в браузере)
+            window.addEventListener('hashchange', checkUrlAndFilter);
         });
-
-        // 3. Функция проверки URL (поддерживает хэш #mobile или чтение последнего сегмента пути)
-        function checkUrlAndFilter() {
-            // Вариант А: Ищем значение в хэше (например, /portfolio/#mobile)
-            let filterFromUrl = window.location.hash.replace('#', '');
-
-            // Вариант Б: Если хэша нет, проверяем путь (например, /portfolio/mobile или /profile/mobile)
-            if (!filterFromUrl) {
-                const pathSegments = window.location.pathname.split('/').filter(Boolean);
-                const lastSegment = pathSegments[pathSegments.length - 1];
-
-                // Проверяем, существует ли вообще кнопка с таким фильтром, чтобы не отфильтровать лишнего
-                const validFilters = Array.from(filterButtons).map(b => b.dataset.filter);
-                if (validFilters.includes(lastSegment)) {
-                    filterFromUrl = lastSegment;
-                }
-            }
-
-            // Применяем найденный фильтр
-            if (filterFromUrl) {
-                applyFilter(filterFromUrl);
-            }
-        }
-
-        // Запускаем проверку при загрузке страницы
-        checkUrlAndFilter();
-
-        // Опционально: реагируем на изменение хэша без перезагрузки страницы (кнопки "Назад" / "Вперед" в браузере)
-        window.addEventListener('hashchange', checkUrlAndFilter);
-    });
 </script>
 
 
