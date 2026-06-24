@@ -7,11 +7,56 @@
 {% block content %}
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
-    <!-- HERO -->
-    <section class="hero">
-        <h1>{% translate "Innovatsion IT yechimlar" %}</h1>
-        <p>{% translate "Biznesingiz uchun zamonaviy dasturiy ta'minot va texnologiyalar" %}</p>
-        <a href="/contact" class="btn">{% translate "Bog'lanish" %}</a>
+    <!-- HERO VIDEO SLIDER -->
+    <section class="hero-slider-section">
+        <div class="video-slider">
+
+            <!-- Slide 1 -->
+            <div class="video-slide active">
+                <video autoplay muted loop playsinline class="slide-video">
+                    <source src="{% static 'videos/banner1.mp4' %}" type="video/mp4">
+                </video>
+                <div class="slide-overlay"></div>
+                <div class="container slide-content">
+                    <h1>{% translate "Innovatsion IT yechimlar" %}</h1>
+                    <p>{% translate "Biznesingiz uchun zamonaviy dasturiy ta'minot va texnologiyalar" %}</p>
+                    <a href="/contact" class="btn">{% translate "Bog'lanish" %}</a>
+                </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="video-slide">
+                <video autoplay muted loop playsinline class="slide-video">
+                    <source src="{% static 'videos/banner2.mp4' %}" type="video/mp4">
+                </video>
+                <div class="slide-overlay"></div>
+                <div class="container slide-content">
+                    <h1>{% translate "Avtomatlashtirish yechimlari" %}</h1>
+                    <p>{% translate "Biznes jarayonlarini optimallashtirish va samaradorlikni oshirish" %}</p>
+                    <a href="/contact" class="btn">{% translate "Bog'lanish" %}</a>
+                </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="video-slide">
+                <video autoplay muted loop playsinline class="slide-video">
+                    <source src="{% static 'videos/banner3.mp4' %}" type="video/mp4">
+                </video>
+                <div class="slide-overlay"></div>
+                <div class="container slide-content">
+                    <h1>{% translate "Kiberxavfsizlik va himoya" %}</h1>
+                    <p>{% translate "IT-infrastrukturangiz uchun ishonchli antivirus va xavfsizlik tizimlari" %}</p>
+                    <a href="/contact" class="btn">{% translate "Bog'lanish" %}</a>
+                </div>
+            </div>
+
+            <!-- Slider Dots -->
+            <div class="slider-dots">
+                <span class="dot active" data-index="0"></span>
+                <span class="dot" data-index="1"></span>
+                <span class="dot" data-index="2"></span>
+            </div>
+        </div>
     </section>
 
     <!-- XIZMATLAR -->
@@ -33,7 +78,7 @@
                         <i class="fas fa-mobile-alt"></i>
                     </div>
                     <h3>{% translate "Mobil ilovalar" %}</h3>
-                    <p>{% translate "Android va iOS uchun zamonaviy ilovalar" %}</p>
+                    <p>{% translate "Android va iOS Urban zamonaviy ilovalar" %}</p>
                 </div>
 
                 <div class="service-card">
@@ -94,14 +139,12 @@
         </div>
     </section>
 
-
-<!-- CTA BANNER -->
-<section class="cta">
-    <div class="container">
-        <h2>Loyihangizni boshlashga tayyormisiz?</h2>
-        <p>Biz bilan bog'laning va bepul konsultatsiya oling!</p>
-        <a href="/contact" class="btn">Bog'lanish</a>
-    </div>
-</section>
-
+    <!-- CTA BANNER -->
+    <section class="cta">
+        <div class="container">
+            <h2>{% translate "Loyihangizni boshlashga tayyormisiz?" %}</h2>
+            <p>{% translate "Biz bilan bog'laning va bepul konsultatsiya oling!" %}</p>
+            <a href="/contact" class="btn">{% translate "Bog'lanish" %}</a>
+        </div>
+    </section>
 {% endblock %}

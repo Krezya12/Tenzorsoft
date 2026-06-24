@@ -93,15 +93,12 @@ USE_TZ = True
 
 
 STATIC_URL = '/static/'
-<<<<<<< HEAD
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'apps', 'static')]
-=======
+
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'apps/static'),
 ]
->>>>>>> fb2c25e0bd2b10d09289de82a4bae597fb5731d2
 
 LANGUAGES = [
     ('ru', _('Ruscha')),

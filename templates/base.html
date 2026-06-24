@@ -127,7 +127,7 @@
             <div class="footer-about">
                 <a href="/" class="logo footer-logo"><img src="{% static 'media/logo/logo-4.png' %}" alt="Tenzorsoft"
                                                           style="height: 50px;"></a>
-                <p>{% translate 'OOO "Tenzor Soft" — O\'zbekistonda dasturiy ta\'minot ishlab chiqaruvchi yetakchi kompaniya. 2008 yildan beri IT xizmatlari bozorida.' %}</p>
+                <p>{% translate 'OOO "Tenzor Soft" — Ozbekistonda dasturiy taminot ishlab chiqaruvchi yetakchi kompaniya. 2008 yildan beri IT xizmatlari bozorida.' %}</p>
             </div>
 
             <div class="footer-col">
@@ -146,13 +146,13 @@
             <div class="footer-col">
                 <h4>{% translate "Xizmatlar" %}</h4>
                 <ul>
-                    <li><a href="#"><i class="fas fa-chevron-right"></i> {% translate "Dasturiy ta'minot" %}</a></li>
-                    <li><a href="#"><i class="fas fa-chevron-right"></i> {% translate "1C mahsulotlari" %}</a></li>
-                    <li><a href="#"><i class="fas fa-chevron-right"></i> {% translate "1C Bitrix" %}</a></li>
-                    <li><a href="#"><i class="fas fa-chevron-right"></i> {% translate "Antiviruslar" %}</a></li>
-                    <li><a href="#"><i class="fas fa-chevron-right"></i> {% translate "Avtomatlashtirish" %}</a></li>
-                    <li><a href="#"><i class="fas fa-chevron-right"></i> {% translate "Biometrik tizimlar" %}</a></li>
-                    <li><a href="#"><i class="fas fa-chevron-right"></i> {% translate "IT xizmatlari" %}</a></li>
+                    <li><a href=""><i class="fas fa-chevron-right"></i> {% translate "Dasturiy ta'minot" %}</a></li>
+                    <li><a href=""><i class="fas fa-chevron-right"></i> {% translate "1C mahsulotlari" %}</a></li>
+                    <li><a href=""><i class="fas fa-chevron-right"></i> {% translate "1C Bitrix" %}</a></li>
+                    <li><a href=""><i class="fas fa-chevron-right"></i> {% translate "Antiviruslar" %}</a></li>
+                    <li><a href=""><i class="fas fa-chevron-right"></i> {% translate "Avtomatlashtirish" %}</a></li>
+                    <li><a href=""><i class="fas fa-chevron-right"></i> {% translate "Biometrik tizimlar" %}</a></li>
+                    <li><a href=""><i class="fas fa-chevron-right"></i> {% translate "IT xizmatlari" %}</a></li>
                 </ul>
             </div>
 
@@ -166,6 +166,10 @@
                     <li>
                         <i class="fas fa-phone"></i>
                         <span>+998 95 460 10 10</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-phone"></i>
+                        <span>+998 00 000 00 00</span>
                     </li>
                     <li>
                         <i class="fas fa-envelope"></i>
@@ -195,6 +199,50 @@
 </footer>
 
 <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const slides = document.querySelectorAll(".video-slide");
+        const dots = document.querySelectorAll(".dot");
+        let currentSlide = 0;
+        const slideInterval = 7000; // 7 секунд на один баннер
+        let timer;
+
+        function showSlide(index) {
+            slides.forEach(slide => slide.classList.remove("active"));
+            dots.forEach(dot => dot.classList.remove("active"));
+
+            slides[index].classList.add("active");
+            if (dots[index]) dots[index].classList.add("active");
+
+            currentSlide = index;
+        }
+
+        function nextSlide() {
+            let next = (currentSlide + 1) % slides.length;
+            showSlide(next);
+        }
+
+        function startSlider() {
+            timer = setInterval(nextSlide, slideInterval);
+        }
+
+        function resetSlider() {
+            clearInterval(timer);
+            startSlider();
+        }
+
+        if (slides.length > 0) {
+            startSlider();
+        }
+
+        // Переключение по клику на точки
+        dots.forEach(dot => {
+            dot.addEventListener("click", function () {
+                const index = parseInt(this.getAttribute("data-index"));
+                showSlide(index);
+                resetSlider();
+            });
+        });
+    });
     document.querySelectorAll('.dropdown').forEach(dropdown => {
         dropdown.addEventListener('mouseenter', () => {
             dropdown.querySelector('.dropdown-menu').style.display = 'flex';
@@ -255,21 +303,21 @@
         ThemeSwitcher.init();
     });
     // Portfolio filter
-document.querySelectorAll('.filter-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
 
-        const filter = btn.dataset.filter;
-        document.querySelectorAll('.portfolio-card').forEach(card => {
-            if (filter === 'all' || card.dataset.category === filter) {
-                card.style.display = 'block';
-            } else {
-                card.style.display = 'none';
-            }
+            const filter = btn.dataset.filter;
+            document.querySelectorAll('.portfolio-card').forEach(card => {
+                if (filter === 'all' || card.dataset.category === filter) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
         });
     });
-});
 </script>
 
 

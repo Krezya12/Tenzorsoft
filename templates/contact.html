@@ -1,102 +1,100 @@
 {% extends 'base.html' %}
+{% load i18n %}
 
-{% block title %}Tenzorsoft — Kontaktlar{% endblock %}
+{% block title %}{% translate "Tenzorsoft — Kontaktlar" %}{% endblock %}
 
 {% block content %}
 
-<!-- PAGE HEADER -->
-<section class="page-header">
-    <div class="container">
-        <h1>Kontaktlar</h1>
-        <p>Biz bilan bog'laning</p>
-    </div>
-</section>
-
-<!-- CONTACT -->
-<section class="contact-page">
-    <div class="container">
-        <div class="contact-grid">
-
-            <!-- KONTAKT MA'LUMOTLARI -->
-            <div class="contact-info">
-                <h2>Bog'lanish ma'lumotlari</h2>
-                <p>Bizga istalgan vaqt murojaat qilishingiz mumkin. Mutaxassislarimiz sizga yordam berishga tayyor.</p>
-
-                <div class="contact-items">
-                    <div class="contact-item">
-                        <div class="contact-item-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div>
-                            <h4>Manzil</h4>
-                            <p>Toshkent shahar, Yashnobod tumani, Turtkul ko'chasi 17A</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-item-icon">
-                            <i class="fas fa-phone"></i>
-                        </div>
-                        <div>
-                            <h4>Telefon</h4>
-                            <p>+998 95 460 10 10</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-item-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div>
-                            <h4>Email</h4>
-                            <p>info@tenzorsoft.com</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-item-icon">
-                            <i class="fas fa-clock"></i>
-                        </div>
-                        <div>
-                            <h4>Ish vaqti</h4>
-                            <p>Dushanba — Juma: 9:00 — 18:00</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="contact-social">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-telegram-plane"></i></a>
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
-                </div>
-            </div>
-
-            <!-- FORMA -->
-            <div class="contact-form">
-                <h2>Xabar yuborish</h2>
-                <form method="POST">
-                    {% csrf_token %}
-                    <div class="form-group">
-                        <label>Ismingiz</label>
-                        <input type="text" name="name" placeholder="Ismingizni kiriting" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Telefon</label>
-                        <input type="tel" name="phone" placeholder="+998 XX XXX XX XX" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Email</label>
-                        <input type="email" name="email" placeholder="email@example.com">
-                    </div>
-                    <div class="form-group">
-                        <label>Xabar</label>
-                        <textarea name="message" rows="5" placeholder="Xabaringizni yozing..." required></textarea>
-                    </div>
-                    <button type="submit" class="btn">Yuborish</button>
-                </form>
-            </div>
-
+    <section class="page-header">
+        <div class="container">
+            <h1>{% translate "Kontaktlar" %}</h1>
+            <p>{% translate "Biz bilan bog'laning" %}</p>
         </div>
-    </div>
-</section>
+    </section>
+
+    <section class="contact-page">
+        <div class="container">
+            <div class="contact-grid">
+
+                <div class="contact-info">
+                    <h2>{% translate "Bog'lanish ma'lumotlari" %}</h2>
+                    <p>{% translate "Bizga istalgan vaqt murojaat qilishingiz mumkin. Mutaxassislarimiz sizga yordam berishga tayyor." %}</p>
+
+                    <div class="contact-items">
+                        <div class="contact-item">
+                            <div class="contact-item-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4>{% translate "Manzil" %}</h4>
+                                <p>{% translate "Toshkent shahar, Yashnobod tumani, Turtkul ko'chasi 17A" %}</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-item-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4>{% translate "Telefon" %}</h4>
+                                <p>+998 95 460 10 10</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-item-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4>{% translate "Email" %}</h4>
+                                <p>info@tenzorsoft.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-item-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div>
+                                <h4>{% translate "Ish vaqti" %}</h4>
+                                <p>{% translate "Dushanba — Juma: 9:00 — 18:00" %}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-telegram-plane"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <h2>{% translate "Xabar yuborish" %}</h2>
+                    <form method="POST">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label>{% translate "Ismingiz" %}</label>
+                            <input type="text" name="name" placeholder="{% translate 'Ismingizni kiriting' %}" required>
+                        </div>
+                        <div class="form-group">
+                            <label>{% translate "Telefon" %}</label>
+                            <input type="tel" name="phone" placeholder="+998 XX XXX XX XX" required>
+                        </div>
+                        <div class="form-group">
+                            <label>{% translate "Email" %}</label>
+                            <input type="email" name="email" placeholder="email@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label>{% translate "Xabar" %}</label>
+                            <textarea name="message" rows="5" placeholder="{% translate 'Xabaringizni yozing...' %}"
+                                      required></textarea>
+                        </div>
+                        <button type="submit" class="btn">{% translate "Yuborish" %}</button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
 
 {% endblock %}

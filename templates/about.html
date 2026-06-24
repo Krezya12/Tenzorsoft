@@ -1,14 +1,15 @@
 {% extends 'base.html' %}
+{% load i18n %}
 
-{% block title %}Tenzorsoft — Biz haqimizda{% endblock %}
+{% block title %}{% translate "Tenzorsoft — Biz haqimizda" %}{% endblock %}
 
 {% block content %}
 
 <!-- PAGE HEADER -->
 <section class="page-header">
     <div class="container">
-        <h1>Biz haqimizda</h1>
-        <p>Tenzorsoft kompaniyasi haqida batafsil ma'lumot</p>
+        <h1>{% translate "Biz haqimizda" %}</h1>
+        <p>{% translate "Tenzorsoft kompaniyasi haqida batafsil ma'lumot" %}</p>
     </div>
 </section>
 
@@ -17,33 +18,33 @@
     <div class="container">
         <div class="about-grid">
             <div class="about-text">
-                <span class="label">Kompaniya haqida</span>
-                <h2>Tenzorsoft — sifat va tajriba</h2>
-                <p>Tenzorsoft kompaniyasi 2008 yildan beri O'zbekistonda IT xizmatlari bozorida faoliyat yuritib kelmoqda. Biz biznesingizni rivojlantirish uchun zamonaviy yechimlar taklif etamiz.</p>
-                <p>Bizning jamoamiz tajribali mutaxassislardan iborat bo'lib, har bir loyihaga individual yondashuv bilan ishlaymiz. Mijozlarimizning muvaffaqiyati bizning asosiy maqsadimizdir.</p>
+                <span class="label">{% translate "Kompaniya haqida" %}</span>
+                <h2>{% translate "Tenzorsoft — sifat va tajriba" %}</h2>
+                <p>{% translate "Tenzorsoft kompaniyasi 2008 yildan beri O'zbekistonda IT xizmatlari bozorida faoliyat yuritib kelmoqda. Biz biznesingizni rivojlantirish uchun zamonaviy yechimlar taklif etamiz." %}</p>
+                <p>{% translate "Bizning jamoamiz tajribali mutaxassislardan iborat bo'lib, har bir loyihaga individual yondashuv bilan ishlaymiz. Mijozlarimizning muvaffaqiyati bizning asosiy maqsadimizdir." %}</p>
                 <ul class="about-list">
-                    <li><i class="fas fa-check"></i> Dasturiy mahsulotlar muhandisligi</li>
-                    <li><i class="fas fa-check"></i> Raqamli xizmatlar</li>
-                    <li><i class="fas fa-check"></i> IT konsalting</li>
-                    <li><i class="fas fa-check"></i> Dasturiy ta'minotni avtomatlashtirish</li>
+                    <li><i class="fas fa-check"></i> {% translate "Dasturiy mahsulotlar muhandisligi" %}</li>
+                    <li><i class="fas fa-check"></i> {% translate "Raqamli xizmatlar" %}</li>
+                    <li><i class="fas fa-check"></i> {% translate "IT konsalting" %}</li>
+                    <li><i class="fas fa-check"></i> {% translate "Dasturiy ta'minotni avtomatlashtirish" %}</li>
                 </ul>
             </div>
             <div class="about-stats">
                 <div class="stat-card">
                     <h3>15+</h3>
-                    <p>Yillik tajriba</p>
+                    <p>{% translate "Yillik tajriba" %}</p>
                 </div>
                 <div class="stat-card">
                     <h3>200+</h3>
-                    <p>Loyihalar</p>
+                    <p>{% translate "Loyihalar" %}</p>
                 </div>
                 <div class="stat-card">
                     <h3>50+</h3>
-                    <p>Mijozlar</p>
+                    <p>{% translate "Mijozlar" %}</p>
                 </div>
                 <div class="stat-card">
                     <h3>70+</h3>
-                    <p>Mutaxassislar</p>
+                    <p>{% translate "Mutaxassislar" %}</p>
                 </div>
             </div>
         </div>
@@ -53,28 +54,28 @@
 <!-- MISSIYA VA VIZION -->
 <section class="mission">
     <div class="container">
-        <h2 class="section-title">Missiya va Vizion</h2>
+        <h2 class="section-title">{% translate "Missiya va Vizion" %}</h2>
         <div class="mission-grid">
             <div class="mission-card">
                 <div class="mission-icon">
                     <i class="fas fa-bullseye"></i>
                 </div>
-                <h3>Missiyamiz</h3>
-                <p>Biznesingizni rivojlantirish uchun eng zamonaviy IT yechimlarini taqdim etish va mijozlarimizning muvaffaqiyatiga hissa qo'shish.</p>
+                <h3>{% translate "Missiyamiz" %}</h3>
+                <p>{% translate "Biznesingizni rivojlantirish uchun eng zamonaviy IT yechimlarini taqdim etish va mijozlarimizning muvaffaqiyatiga hissa qo'shish." %}</p>
             </div>
             <div class="mission-card">
                 <div class="mission-icon">
                     <i class="fas fa-eye"></i>
                 </div>
-                <h3>Vizionimiz</h3>
-                <p>O'zbekistonda eng ishonchli va innovatsion IT kompaniyasi bo'lish, raqamli transformatsiyani rag'batlantirish.</p>
+                <h3>{% translate "Vizionimiz" %}</h3>
+                <p>{% translate "O'zbekistonda eng ishonchli va innovatsion IT kompaniyasi bo'lish, raqamli transformatsiyani rag'batlantirish." %}</p>
             </div>
             <div class="mission-card">
                 <div class="mission-icon">
                     <i class="fas fa-star"></i>
                 </div>
-                <h3>Qadriyatlarimiz</h3>
-                <p>Sifat, ishonch, innovatsiya va mijoz mamnuniyati — bizning asosiy qadriyatlarimiz.</p>
+                <h3>{% translate "Qadriyatlarimiz" %}</h3>
+                <p>{% translate "Sifat, ishonch, innovatsiya va mijoz mamnuniyati — bizning asosiy qadriyatlarimiz." %}</p>
             </div>
         </div>
     </div>
