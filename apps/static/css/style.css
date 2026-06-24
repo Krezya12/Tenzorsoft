@@ -1,14 +1,55 @@
-/* ASOSIY SOZLAMALAR */
+/* ==========================================================================
+   ПЕРЕМЕННЫЕ И ТЕМЫ (Исправлено)
+   ========================================================================== */
+:root {
+    /* Темная тема по умолчанию (Мягкий темный, не полный черный) */
+    --bg-primary: #12131c;
+    --bg-secondary: #1a1c26;
+    --bg-tertiary: #232636;
+    --bg-topbar: #0d0e14;
+    --border-color: #2b2e42;
+
+    --text-primary: #f3f4f6;
+    --text-secondary: #9ca3af;
+    --text-tertiary: #6b7280;
+
+    --accent: #0066ff;
+    --accent-hover: #004ecc;
+    --card-shadow: rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="light"] {
+    /* Светлая тема */
+    --bg-primary: #f8f9fa;
+    --bg-secondary: #ffffff;
+    --bg-tertiary: #f1f3f5;
+    --bg-topbar: #e9ecef;
+    --border-color: #dee2e6;
+
+    --text-primary: #1a1d24;
+    --text-secondary: #495057;
+    --text-tertiary: #adb5bd;
+
+    --accent: #0066ff;
+    --accent-hover: #004ecc;
+    --card-shadow: rgba(0, 0, 0, 0.05);
+}
+
+/* ==========================================================================
+   ASOSIY SOZLAMALAR
+   ========================================================================== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
 }
 
 body {
-    font-family: 'Segoe UI', sans-serif;
-    background-color: #0a0a0f;
-    color: #ffffff;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.5;
 }
 
 .container {
@@ -17,12 +58,13 @@ body {
     padding: 0 20px;
 }
 
-/* NAVBAR */
-/* TOPBAR */
+/* ==========================================================================
+   TOPBAR
+   ========================================================================== */
 .topbar {
-    background-color: #050510;
+    background-color: var(--bg-topbar);
     padding: 10px 0;
-    border-bottom: 1px solid #1e1e3a;
+    border-bottom: 1px solid var(--border-color);
 }
 
 .topbar .container {
@@ -37,47 +79,48 @@ body {
 }
 
 .topbar-left a {
-    color: #aaaaaa;
+    color: var(--text-secondary);
     text-decoration: none;
     font-size: 13px;
     display: flex;
     align-items: center;
     gap: 6px;
-    transition: color 0.3s;
 }
 
 .topbar-left a:hover {
-    color: #4f6ef7;
+    color: var(--accent);
 }
 
 .topbar-left a i {
-    color: #4f6ef7;
+    color: var(--accent);
 }
 
 .topbar-right {
     display: flex;
-    gap: 14px;
+    gap: 16px;
 }
 
 .topbar-right a {
-    color: #aaaaaa;
-    font-size: 13px;
+    color: var(--text-secondary);
+    font-size: 14px;
     text-decoration: none;
-    transition: color 0.3s;
 }
 
 .topbar-right a:hover {
-    color: #4f6ef7;
+    color: var(--accent);
 }
 
-/* NAVBAR */
+/* ==========================================================================
+   NAVBAR & DROPDOWN
+   ========================================================================== */
 .navbar {
-    background-color: #0d0d1a;
-    padding: 18px 0;
-    border-bottom: 1px solid #1e1e3a;
+    background-color: var(--bg-secondary);
+    padding: 15px 0;
+    border-bottom: 1px solid var(--border-color);
     position: sticky;
     top: 0;
     z-index: 1000;
+    box-shadow: 0 4px 12px var(--card-shadow);
 }
 
 .navbar .container {
@@ -87,37 +130,31 @@ body {
 }
 
 .logo {
-    font-size: 24px;
-    font-weight: 700;
-    color: #ffffff;
-    text-decoration: none;
-}
-
-.logo span {
-    color: #4f6ef7;
+    display: flex;
+    align-items: center;
 }
 
 nav {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 4px;
 }
 
 nav > a, .dropdown > a {
-    color: #aaaaaa;
+    color: var(--text-secondary);
     text-decoration: none;
-    font-size: 15px;
-    padding: 8px 14px;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 8px 16px;
     border-radius: 6px;
-    transition: all 0.3s;
     display: flex;
     align-items: center;
     gap: 6px;
 }
 
-nav > a:hover, .dropdown > a:hover {
-    color: #ffffff;
-    background-color: #13132a;
+nav > a:hover, .dropdown:hover > a {
+    color: var(--text-primary);
+    background-color: var(--bg-tertiary);
 }
 
 /* DROPDOWN */
@@ -128,158 +165,180 @@ nav > a:hover, .dropdown > a:hover {
 .dropdown-menu {
     display: none;
     position: absolute;
-    top: calc(100% + 10px);
+    top: 100%;
     left: 0;
-    background-color: #0d0d1a;
-    border: 1px solid #1e1e3a;
-    border-radius: 10px;
-    padding: 8px;
-    min-width: 200px;
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 6px;
+    min-width: 220px;
+    box-shadow: 0 8px 24px var(--card-shadow);
     z-index: 999;
-}
-
-.dropdown:hover .dropdown-menu {
-    display: flex;
     flex-direction: column;
 }
 
+/* Скрипт управляет отображением, но добавим страховку на hover */
+.dropdown:hover .dropdown-menu {
+    display: flex;
+}
+
 .dropdown-menu a {
-    color: #aaaaaa;
+    color: var(--text-secondary);
     text-decoration: none;
     font-size: 14px;
     padding: 10px 14px;
     border-radius: 6px;
-    transition: all 0.3s;
     display: flex;
     align-items: center;
     gap: 8px;
 }
 
 .dropdown-menu a:hover {
-    color: #ffffff;
-    background-color: #13132a;
+    color: var(--text-primary);
+    background-color: var(--bg-tertiary);
 }
 
 .dropdown-toggle i {
     font-size: 11px;
-    transition: transform 0.3s;
 }
 
-.dropdown:hover .dropdown-toggle i {
-    transform: rotate(180deg);
+/* ==========================================================================
+   THEME SWITCHER
+   ========================================================================== */
+.theme-switcher {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    margin-left: 15px;
+    background: var(--bg-tertiary);
+    padding: 4px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
 }
 
-
-.logo {
-    font-size: 24px;
-    font-weight: 700;
-    color: #ffffff;
-    text-decoration: none;
+.theme-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
 }
 
-.logo span {
-    color: #4f6ef7;
+.theme-btn:hover {
+    color: var(--text-primary);
 }
 
-nav a {
-    color: #aaaaaa;
-    text-decoration: none;
-    margin-left: 30px;
-    font-size: 15px;
-    transition: color 0.3s;
+.theme-btn.active {
+    background-color: var(--accent);
+    color: #ffffff !important;
 }
 
-nav a:hover {
-    color: #4f6ef7;
-}
-
-/* HERO */
+/* ==========================================================================
+   HERO SECTION
+   ========================================================================== */
 .hero {
     text-align: center;
-    padding: 120px 20px;
+    padding: 140px 20px;
+    background: radial-gradient(circle at center, var(--bg-secondary) 0%, var(--bg-primary) 100%);
 }
 
 .hero h1 {
-    font-size: 52px;
+    font-size: 54px;
     font-weight: 700;
     margin-bottom: 20px;
+    letter-spacing: -1px;
 }
 
 .hero p {
     font-size: 18px;
-    color: #aaaaaa;
+    color: var(--text-secondary);
     margin-bottom: 40px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .btn {
-    background-color: #4f6ef7;
-    color: #ffffff;
+    background-color: var(--accent);
+    color: #ffffff !important;
     padding: 14px 36px;
     border-radius: 8px;
     text-decoration: none;
     font-size: 16px;
-    transition: background 0.3s;
+    font-weight: 600;
+    display: inline-block;
+    box-shadow: 0 4px 14px rgba(0, 102, 255, 0.3);
 }
 
 .btn:hover {
-    background-color: #3a56d4;
+    background-color: var(--accent-hover);
+    transform: translateY(-2px);
 }
 
-
-/* XIZMATLAR */
+/* ==========================================================================
+   SERVICES SECTION
+   ========================================================================== */
 .services {
-    padding: 80px 0;
-    background-color: #0d0d1a;
+    padding: 90px 0;
+    background-color: var(--bg-secondary);
 }
 
 .section-title {
     text-align: center;
     font-size: 36px;
     margin-bottom: 50px;
-    color: #ffffff;
+    font-weight: 700;
 }
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 24px;
 }
 
 .service-card {
-    background-color: #13132a;
-    border: 1px solid #1e1e3a;
+    background-color: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
     border-radius: 12px;
-    padding: 32px 24px;
+    padding: 40px 24px;
     text-align: center;
-    transition: transform 0.3s, border-color 0.3s;
+    box-shadow: 0 4px 6px var(--card-shadow);
 }
 
 .service-card:hover {
     transform: translateY(-6px);
-    border-color: #4f6ef7;
+    border-color: var(--accent);
 }
 
 .service-icon {
-    font-size: 48px;
-    margin-bottom: 16px;
+    font-size: 40px;
+    margin-bottom: 20px;
+    color: var(--accent);
 }
 
 .service-card h3 {
-    font-size: 18px;
+    font-size: 20px;
     margin-bottom: 12px;
-    color: #ffffff;
 }
 
 .service-card p {
-    color: #aaaaaa;
+    color: var(--text-secondary);
     font-size: 14px;
     line-height: 1.6;
 }
 
-/* KOMPANIYA HAQIDA */
+/* ==========================================================================
+   ABOUT SECTION
+   ========================================================================== */
 .about {
-    padding: 80px 0;
-    background-color: #0a0a0f;
+    padding: 90px 0;
+    background-color: var(--bg-primary);
 }
 
 .about-grid {
@@ -289,22 +348,31 @@ nav a:hover {
     align-items: center;
 }
 
+@media (max-width: 992px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}
+
 .label {
-    color: #4f6ef7;
-    font-size: 14px;
-    font-weight: 600;
+    color: var(--accent);
+    font-size: 13px;
+    font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 2px;
+    display: inline-block;
+    margin-bottom: 10px;
 }
 
 .about-text h2 {
-    font-size: 36px;
-    margin: 16px 0 20px;
-    color: #ffffff;
+    font-size: 38px;
+    margin-bottom: 20px;
+    font-weight: 700;
 }
 
 .about-text p {
-    color: #aaaaaa;
+    color: var(--text-secondary);
     line-height: 1.8;
     margin-bottom: 24px;
 }
@@ -313,12 +381,19 @@ nav a:hover {
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 14px;
 }
 
 .about-list li {
-    color: #cccccc;
+    color: var(--text-secondary);
     font-size: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.about-list li i {
+    color: var(--accent);
 }
 
 .about-stats {
@@ -328,30 +403,33 @@ nav a:hover {
 }
 
 .stat-card {
-    background-color: #13132a;
-    border: 1px solid #1e1e3a;
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
     border-radius: 12px;
     padding: 32px;
     text-align: center;
+    box-shadow: 0 4px 6px var(--card-shadow);
 }
 
 .stat-card h3 {
     font-size: 42px;
     font-weight: 700;
-    color: #4f6ef7;
+    color: var(--accent);
     margin-bottom: 8px;
 }
 
 .stat-card p {
-    color: #aaaaaa;
+    color: var(--text-secondary);
     font-size: 14px;
 }
 
-/* FOOTER */
+/* ==========================================================================
+   FOOTER (Заменен жесткий черный цвет)
+   ========================================================================== */
 .footer {
-    background-color: #080814;
-    padding: 70px 0 0;
-    border-top: 1px solid #1e1e3a;
+    background-color: var(--bg-secondary); /* Теперь зависит от темы, а не жесткий #080814 */
+    padding: 80px 0 0;
+    border-top: 1px solid var(--border-color);
 }
 
 .footer-grid {
@@ -359,17 +437,27 @@ nav a:hover {
     grid-template-columns: 2fr 1fr 1fr 1fr;
     gap: 40px;
     padding-bottom: 50px;
-    border-bottom: 1px solid #1e1e3a;
+    border-bottom: 1px solid var(--border-color);
+}
+
+@media (max-width: 768px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
 }
 
 .footer-logo {
-    font-size: 28px;
-    display: inline-block;
-    margin-bottom: 16px;
+    margin-bottom: 20px;
 }
 
 .footer-about p {
-    color: #888888;
+    color: var(--text-secondary);
     font-size: 14px;
     line-height: 1.8;
     margin-bottom: 24px;
@@ -384,25 +472,25 @@ nav a:hover {
     width: 38px;
     height: 38px;
     border-radius: 50%;
-    background-color: #13132a;
-    border: 1px solid #1e1e3a;
+    background-color: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #aaaaaa;
+    color: var(--text-secondary);
     font-size: 14px;
     text-decoration: none;
-    transition: all 0.3s;
 }
 
 .footer-social a:hover {
-    background-color: #4f6ef7;
-    border-color: #4f6ef7;
+    background-color: var(--accent);
+    border-color: var(--accent);
     color: #ffffff;
+    transform: translateY(-3px);
 }
 
 .footer-col h4 {
-    color: #ffffff;
+    color: var(--text-primary);
     font-size: 16px;
     font-weight: 600;
     margin-bottom: 24px;
@@ -417,7 +505,7 @@ nav a:hover {
     left: 0;
     width: 30px;
     height: 2px;
-    background-color: #4f6ef7;
+    background-color: var(--accent);
 }
 
 .footer-col ul {
@@ -428,35 +516,36 @@ nav a:hover {
 }
 
 .footer-col ul li a {
-    color: #888888;
+    color: var(--text-secondary);
     text-decoration: none;
     font-size: 14px;
-    transition: color 0.3s;
     display: flex;
     align-items: center;
     gap: 8px;
 }
 
 .footer-col ul li a i {
-    color: #4f6ef7;
+    color: var(--accent);
     font-size: 11px;
 }
 
 .footer-col ul li a:hover {
-    color: #4f6ef7;
+    color: var(--accent);
+    transform: translateX(4px);
 }
 
 .footer-contacts li {
     display: flex;
     align-items: flex-start;
     gap: 12px;
-    color: #888888;
+    color: var(--text-secondary);
     font-size: 14px;
+    margin-bottom: 12px;
 }
 
 .footer-contacts li i {
-    color: #4f6ef7;
-    margin-top: 3px;
+    color: var(--accent);
+    margin-top: 4px;
     min-width: 16px;
 }
 
@@ -472,7 +561,7 @@ nav a:hover {
 }
 
 .footer-bottom p {
-    color: #555555;
+    color: var(--text-tertiary);
     font-size: 13px;
 }
 
@@ -482,12 +571,103 @@ nav a:hover {
 }
 
 .footer-bottom-social a {
-    color: #555555;
+    color: var(--text-tertiary);
     font-size: 14px;
     text-decoration: none;
-    transition: color 0.3s;
 }
 
 .footer-bottom-social a:hover {
-    color: #4f6ef7;
+    color: var(--accent);
+}
+
+/* ==========================================================================
+   ЯЗЫКОВОЙ ДРОПДАУН (Мультиязычность)
+   ========================================================================== */
+.topbar-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.topbar-socials {
+    display: flex;
+    gap: 14px;
+}
+
+.topbar-divider {
+    width: 1px;
+    height: 16px;
+    background-color: var(--border-color);
+}
+
+.lang-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.lang-toggle {
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.lang-toggle:hover {
+    color: var(--text-primary);
+    background-color: var(--bg-tertiary);
+}
+
+.lang-toggle .i-arrow {
+    font-size: 10px;
+    transition: transform 0.2s;
+}
+
+.lang-dropdown:hover .lang-toggle .i-arrow {
+    transform: rotate(180deg);
+}
+
+.lang-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    box-shadow: 0 4px 12px var(--card-shadow);
+    z-index: 1001;
+    min-width: 120px;
+    padding: 4px 0;
+    margin-top: 4px;
+}
+
+.lang-dropdown:hover .lang-menu {
+    display: block;
+}
+
+.lang-menu form {
+    margin: 0;
+    padding: 0;
+}
+
+.lang-menu a {
+    display: block;
+    padding: 8px 14px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 13px;
+    text-align: left;
+    transition: all 0.2s;
+}
+
+.lang-menu a:hover {
+    background-color: var(--bg-tertiary);
+    color: var(--text-primary);
 }

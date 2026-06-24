@@ -1,6 +1,8 @@
 {% load static %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
 <!DOCTYPE html>
-<html lang="uz">
+<html lang="{{ LANGUAGE_CODE }}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,11 +20,51 @@
             <a href="mailto:info@tenzorsoft.com"><i class="fas fa-envelope"></i> info@tenzorsoft.com</a>
         </div>
         <div class="topbar-right">
-            <a target="_blank" href="#"><i class="fab fa-facebook-f"></i></a>
-            <a target="_blank" href="https://t.me/tenzor_soft"><i class="fab fa-telegram-plane"></i></a>
-            <a target="_blank" href="https://www.linkedin.com/in/tenzor-soft-396297329/"><i class="fab fa-linkedin-in"></i></a>
-            <a target="_blank" href="https://www.instagram.com/tenzor_soft/"><i class="fab fa-instagram"></i></a>
-            <a target="_blank" href="https://www.youtube.com/@tenzorsoft-itcompany"><i class="fab fa-youtube"></i></a>
+            <div class="topbar-socials">
+                <a target="_blank" href="#"><i class="fab fa-facebook-f"></i></a>
+                <a target="_blank" href="https://t.me/tenzor_soft"><i class="fab fa-telegram-plane"></i></a>
+                <a target="_blank" href="https://www.linkedin.com/in/tenzor-soft-396297329/"><i
+                        class="fab fa-linkedin-in"></i></a>
+            </div>
+
+            <span class="topbar-divider"></span>
+
+            <div class="lang-dropdown">
+                <button class="lang-toggle">
+                    <i class="fas fa-globe"></i>
+                    <span>
+                        {% if LANGUAGE_CODE == 'ru' %}RU
+                        {% elif LANGUAGE_CODE == 'uz' %}UZ
+                        {% else %}EN{% endif %}
+                    </span>
+                    <i class="fas fa-chevron-down i-arrow"></i>
+                </button>
+                <div class="lang-menu">
+                    <form action="{% url 'set_language' %}" method="post" id="lang-form-ru">
+                        {% csrf_token %}
+                        <input type="hidden" name="language" value="ru">
+                        <input type="hidden" name="next" value="{{ request.get_full_path }}">
+                        <a href="#"
+                           onclick="document.getElementById('lang-form-ru').submit(); return false;">Русский</a>
+                    </form>
+
+                    <form action="{% url 'set_language' %}" method="post" id="lang-form-uz">
+                        {% csrf_token %}
+                        <input type="hidden" name="language" value="uz">
+                        <input type="hidden" name="next" value="{{ request.get_full_path }}">
+                        <a href="#"
+                           onclick="document.getElementById('lang-form-uz').submit(); return false;">O'zbekcha</a>
+                    </form>
+
+                    <form action="{% url 'set_language' %}" method="post" id="lang-form-en">
+                        {% csrf_token %}
+                        <input type="hidden" name="language" value="en">
+                        <input type="hidden" name="next" value="{{ request.get_full_path }}">
+                        <a href="#"
+                           onclick="document.getElementById('lang-form-en').submit(); return false;">English</a>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -30,34 +72,44 @@
 <!-- NAVBAR -->
 <header class="navbar">
     <div class="container">
-        <a href="/" class="logo"><img src="../media/logo/logo-4.png" alt="Tenzorsoft" style="height: 50px;"></a>
+        <a href="/" class="logo"><img src="{% static 'media/logo/logo-4.png' %}" alt="Tenzorsoft" style="height: 50px;"></a>
         <nav>
-            <a href="/">Bosh sahifa</a>
-            <a href="/about">Biz haqimizda</a>
+            <a href="/">{% translate "Bosh sahifa" %}</a>
+            <a href="/about">{% translate "Biz haqimizda" %}</a>
             <div class="dropdown">
-                <a href="/services" class="dropdown-toggle">Xizmatlar <i class="fas fa-chevron-down"></i></a>
+                <a href="/services" class="dropdown-toggle">{% translate "Xizmatlar" %} <i
+                        class="fas fa-chevron-down"></i></a>
                 <div class="dropdown-menu">
-                    <a href="#">Dasturiy ta'minot</a>
-                    <a href="#">1C mahsulotlari</a>
-                    <a href="#">1C Bitrix</a>
-                    <a href="#">Antiviruslar</a>
-                    <a href="#">Avtomatlashtirish</a>
-                    <a href="#">Biometrik tizimlar</a>
-                    <a href="#">IT xizmatlari</a>
+                    <a href="#">{% translate "Dasturiy ta'minot" %}</a>
+                    <a href="#">{% translate "1C mahsulotlari" %}</a>
+                    <a href="#">{% translate "1C Bitrix" %}</a>
+                    <a href="#">{% translate "Antiviruslar" %}</a>
+                    <a href="#">{% translate "Avtomatlashtirish" %}</a>
+                    <a href="#">{% translate "Biometrik tizimlar" %}</a>
+                    <a href="#">{% translate "IT xizmatlari" %}</a>
                 </div>
             </div>
             <div class="dropdown">
-                <a href="/portfolio" class="dropdown-toggle">Portfolio <i class="fas fa-chevron-down"></i></a>
+                <a href="/portfolio" class="dropdown-toggle">{% translate "Portfolio" %} <i
+                        class="fas fa-chevron-down"></i></a>
                 <div class="dropdown-menu">
-                    <a href="#">Web</a>
-                    <a href="#">Mobil</a>
-                    <a href="#">Fintech</a>
-                    <a href="#">Avtomatlashtirish</a>
-                    <a href="#">Joriy etish</a>
+                    <a href="#">{% translate "Web" %}</a>
+                    <a href="#">{% translate "Mobil" %}</a>
+                    <a href="#">{% translate "Fintech" %}</a>
+                    <a href="#">{% translate "Avtomatlashtirish" %}</a>
+                    <a href="#">{% translate "Joriy etish" %}</a>
                 </div>
             </div>
-            <a href="/certificates">Sertifikatlar</a>
-            <a href="/contact">Kontaktlar</a>
+            <a href="/certificates">{% translate "Sertifikatlar" %}</a>
+            <a href="/contact">{% translate "Kontaktlar" %}</a>
+            <div class="theme-switcher">
+                <button class="theme-btn" data-theme="light" title="{% translate 'Yoriq mavzu' %}"><i
+                        class="fas fa-sun"></i></button>
+                <button class="theme-btn" data-theme="auto" title="{% translate 'Avto' %}"><i
+                        class="fas fa-circle-half-stroke"></i></button>
+                <button class="theme-btn" data-theme="dark" title="{% translate 'Qorongi mavzu' %}"><i
+                        class="fas fa-moon"></i></button>
+            </div>
         </nav>
     </div>
 </header>
@@ -72,51 +124,44 @@
 <footer class="footer">
     <div class="container">
         <div class="footer-grid">
-
             <div class="footer-about">
-                <a href="/" class="logo footer-logo"><img src="../media/logo/logo-4.png" alt="Tenzorsoft" style="height: 50px;"></a>
-                <p>OOO "Tenzor Soft" — O'zbekistonda dasturiy ta'minot ishlab chiqaruvchi yetakchi kompaniya. 2008
-                    yildan beri IT xizmatlari bozorida.</p>
-                <div class="footer-social">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-telegram-plane"></i></a>
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
-                </div>
+                <a href="/" class="logo footer-logo"><img src="{% static 'media/logo/logo-4.png' %}" alt="Tenzorsoft"
+                                                          style="height: 50px;"></a>
+                <p>{% translate 'OOO "Tenzor Soft" — O\'zbekistonda dasturiy ta\'minot ishlab chiqaruvchi yetakchi kompaniya. 2008 yildan beri IT xizmatlari bozorida.' %}</p>
             </div>
 
             <div class="footer-col">
-                <h4>Menyu</h4>
+                <h4>{% translate "Menyu" %}</h4>
                 <ul>
-                    <li><a href="/"><i class="fas fa-chevron-right"></i> Bosh sahifa</a></li>
-                    <li><a href="/about"><i class="fas fa-chevron-right"></i> Biz haqimizda</a></li>
-                    <li><a href="/services"><i class="fas fa-chevron-right"></i> Xizmatlar</a></li>
-                    <li><a href="/portfolio"><i class="fas fa-chevron-right"></i> Portfolio</a></li>
-                    <li><a href="/certificates"><i class="fas fa-chevron-right"></i> Sertifikatlar</a></li>
-                    <li><a href="/contact"><i class="fas fa-chevron-right"></i> Kontaktlar</a></li>
+                    <li><a href="/"><i class="fas fa-chevron-right"></i> {% translate "Bosh sahifa" %}</a></li>
+                    <li><a href="/about"><i class="fas fa-chevron-right"></i> {% translate "Biz haqimizda" %}</a></li>
+                    <li><a href="/services"><i class="fas fa-chevron-right"></i> {% translate "Xizmatlar" %}</a></li>
+                    <li><a href="/portfolio"><i class="fas fa-chevron-right"></i> {% translate "Portfolio" %}</a></li>
+                    <li><a href="/certificates"><i class="fas fa-chevron-right"></i> {% translate "Sertifikatlar" %}</a>
+                    </li>
+                    <li><a href="/contact"><i class="fas fa-chevron-right"></i> {% translate "Kontaktlar" %}</a></li>
                 </ul>
             </div>
 
             <div class="footer-col">
-                <h4>Xizmatlar</h4>
+                <h4>{% translate "Xizmatlar" %}</h4>
                 <ul>
-                    <li><a href="#"><i class="fas fa-chevron-right"></i> Dasturiy ta'minot</a></li>
-                    <li><a href="#"><i class="fas fa-chevron-right"></i> 1C mahsulotlari</a></li>
-                    <li><a href="#"><i class="fas fa-chevron-right"></i> 1C Bitrix</a></li>
-                    <li><a href="#"><i class="fas fa-chevron-right"></i> Antiviruslar</a></li>
-                    <li><a href="#"><i class="fas fa-chevron-right"></i> Avtomatlashtirish</a></li>
-                    <li><a href="#"><i class="fas fa-chevron-right"></i> Biometrik tizimlar</a></li>
-                    <li><a href="#"><i class="fas fa-chevron-right"></i> IT xizmatlari</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> {% translate "Dasturiy ta'minot" %}</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> {% translate "1C mahsulotlari" %}</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> {% translate "1C Bitrix" %}</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> {% translate "Antiviruslar" %}</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> {% translate "Avtomatlashtirish" %}</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> {% translate "Biometrik tizimlar" %}</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> {% translate "IT xizmatlari" %}</a></li>
                 </ul>
             </div>
 
             <div class="footer-col">
-                <h4>Kontaktlar</h4>
+                <h4>{% translate "Kontaktlar" %}</h4>
                 <ul class="footer-contacts">
                     <li>
                         <i class="fas fa-map-marker-alt"></i>
-                        <span>Toshkent shahar, Yashnobod tumani, Turtkul ko'chasi 17A</span>
+                        <span>{% translate "Toshkent shahar, Yashnobod tumani, Turtkul ko'chasi 17A" %}</span>
                     </li>
                     <li>
                         <i class="fas fa-phone"></i>
@@ -136,13 +181,13 @@
         </div>
 
         <div class="footer-bottom">
-            <p>Tenzor Soft LLC © 2024. Barcha huquqlar himoyalangan.</p>
+            <p>{% translate "Tenzor Soft LLC © 2024. Barcha huquqlar himoyalangan." %}</p>
             <div class="footer-bottom-social">
                 <a href="#"><i class="fab fa-facebook-f"></i></a>
                 <a href="#"><i class="fab fa-telegram-plane"></i></a>
                 <a href="#"><i class="fab fa-linkedin-in"></i></a>
                 <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.youtube.com/@tenzorsoft-itcompany"><i class="fab fa-youtube"></i></a>
             </div>
         </div>
 
@@ -157,6 +202,57 @@
         dropdown.addEventListener('mouseleave', () => {
             dropdown.querySelector('.dropdown-menu').style.display = 'none';
         });
+    });
+
+    // ПРАВИЛЬНЫЙ И НАДЕЖНЫЙ THEME SWITCHER
+    const ThemeSwitcher = {
+        STORAGE_KEY: 'site-theme',
+
+        init() {
+            this.attachEventListeners();
+            const savedTheme = localStorage.getItem(this.STORAGE_KEY) || 'auto';
+            this.applyTheme(savedTheme);
+        },
+
+        applyTheme(theme) {
+            if (theme === 'auto') {
+                const isSystemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                document.documentElement.setAttribute('data-theme', isSystemDark ? 'dark' : 'light');
+            } else {
+                document.documentElement.setAttribute('data-theme', theme);
+            }
+
+            localStorage.setItem(this.STORAGE_KEY, theme);
+            this.updateButtons(theme);
+        },
+
+        updateButtons(activeTheme) {
+            document.querySelectorAll('.theme-btn').forEach(btn => {
+                if (btn.dataset.theme === activeTheme) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+        },
+
+        attachEventListeners() {
+            document.querySelectorAll('.theme-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    this.applyTheme(btn.dataset.theme);
+                });
+            });
+
+            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+                if (localStorage.getItem(this.STORAGE_KEY) === 'auto') {
+                    this.applyTheme('auto');
+                }
+            });
+        }
+    };
+
+    document.addEventListener('DOMContentLoaded', () => {
+        ThemeSwitcher.init();
     });
 </script>
 
