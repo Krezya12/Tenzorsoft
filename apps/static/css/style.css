@@ -1,38 +1,40 @@
 /* ==========================================================================
-   ПЕРЕМЕННЫЕ И ТЕМЫ
+   ПЕРЕМЕННЫЕ И ТЕМЫ (Исправленная светлая тема)
    ========================================================================== */
 :root {
-    /* Темная тема по умолчанию (Мягкий темный, не полный черный) */
-    --bg-primary: #12131c;
-    --bg-secondary: #1a1c26;
-    --bg-tertiary: #232636;
-    --bg-topbar: #0d0e14;
-    --border-color: #2b2e42;
+    /* Темная тема (Глубокий сине-космический отлив) */
+    --bg-primary: #0a0b10;
+    --bg-secondary: #10121d;
+    --bg-tertiary: #171a29;
+    --bg-topbar: #06070a;
+    --border-color: #22263f;
 
     --text-primary: #f3f4f6;
-    --text-secondary: #9ca3af;
-    --text-tertiary: #6b7280;
+    --text-secondary: #a5b4fc;
+    --text-tertiary: #64748b;
 
     --accent: #0066ff;
-    --accent-hover: #004ecc;
-    --card-shadow: rgba(0, 0, 0, 0.3);
+    --accent-hover: #3b82f6;
+    --accent-glow: rgba(0, 102, 255, 0.15);
+    --card-shadow: rgba(0, 0, 0, 0.4);
 }
 
 [data-theme="light"] {
-    /* Светлая тема */
-    --bg-primary: #f8f9fa;
-    --bg-secondary: #ffffff;
-    --bg-tertiary: #f1f3f5;
-    --bg-topbar: #e9ecef;
-    --border-color: #dee2e6;
+    /* Светлая тема (Стильный ледяной IT-дизайн) */
+    --bg-primary: #f4f7fa; /* Мягкий ледяной фон вместо скучного белого */
+    --bg-secondary: #ffffff; /* Чистый белый для контрастных секций */
+    --bg-tertiary: #eef2f7; /* Светло-лазурный оттенок для карточек */
+    --bg-topbar: #e1e7f0; /* Более плотный оттенок для верхней панели */
+    --border-color: #d2daf2; /* Нежная синеватая граница элементов */
 
-    --text-primary: #1a1d24;
-    --text-secondary: #495057;
-    --text-tertiary: #adb5bd;
+    --text-primary: #0a0f1d; /* Глубокий темно-синий для отличной читаемости */
+    --text-secondary: #475569; /* Сбалансированный серый для описаний */
+    --text-tertiary: #94a3b8;
 
-    --accent: #0066ff;
-    --accent-hover: #004ecc;
-    --card-shadow: rgba(0, 0, 0, 0.05);
+    --accent: #0066ff; /* Наш фирменный ультрамарин */
+    --accent-hover: #0052cc;
+    --accent-glow: rgba(0, 102, 255, 0.12); /* Мягкое лазурное свечение при ховере */
+    --card-shadow: rgba(0, 102, 255, 0.06); /* Легкая синеватая тень для объема карточек */
 }
 
 /* ==========================================================================
@@ -42,7 +44,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 body {
@@ -68,7 +70,7 @@ body {
     font-size: 16px;
     font-weight: 600;
     display: inline-block;
-    box-shadow: 0 4px 14px rgba(0, 102, 255, 0.3);
+    box-shadow: 0 4px 20px rgba(0, 102, 255, 0.4);
     border: none;
     cursor: pointer;
     text-align: center;
@@ -77,6 +79,7 @@ body {
 .btn:hover {
     background-color: var(--accent-hover);
     transform: translateY(-2px);
+    box-shadow: 0 6px 24px rgba(0, 102, 255, 0.6);
 }
 
 /* Заголовки секций */
@@ -86,6 +89,18 @@ body {
     margin-bottom: 50px;
     font-weight: 700;
     color: var(--text-primary);
+    position: relative;
+}
+
+/* Тонкая синяя полоска под главным заголовком */
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: var(--accent);
+    margin: 12px auto 0;
+    border-radius: 2px;
 }
 
 .label {
@@ -172,7 +187,7 @@ body {
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 4px 12px var(--card-shadow);
+    box-shadow: 0 4px 20px var(--card-shadow);
 }
 
 .navbar .container {
@@ -192,6 +207,7 @@ body {
 
 .logo span {
     color: var(--accent);
+    text-shadow: 0 0 15px rgba(0, 102, 255, 0.4);
 }
 
 nav {
@@ -373,32 +389,110 @@ nav > a:hover, .dropdown:hover > a {
 }
 
 /* ==========================================================================
-   HERO SECTION
+   HERO / VIDEO SLIDER SECTION
    ========================================================================== */
-.hero {
-    text-align: center;
-    padding: 140px 20px;
-    background: radial-gradient(circle at center, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+.hero-slider-section {
     position: relative;
+    width: 100%;
+    height: 85vh;
     overflow: hidden;
+    background-color: var(--bg-primary);
 }
 
-.hero h1 {
-    font-size: 54px;
+.video-slider {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.video-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1.2s ease-in-out, visibility 1.2s ease-in-out;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+}
+
+.video-slide.active {
+    opacity: 1;
+    visibility: visible;
+    z-index: 2;
+}
+
+.slide-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Синеватое футуристическое затемнение поверх видео */
+.slide-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(10, 11, 16, 0.5) 0%, rgba(6, 7, 10, 0.85) 100%);
+    z-index: 2;
+}
+
+.slide-content {
+    position: relative;
+    z-index: 3;
+    color: #ffffff;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 900px;
+    padding: 0 20px;
+}
+
+.slide-content h1 {
+    font-size: 3.5rem;
     font-weight: 800;
     margin-bottom: 20px;
     letter-spacing: -1px;
-    line-height: 1.2;
-    color: var(--text-primary);
+    text-shadow: 0 4px 20px rgba(0, 102, 255, 0.5);
 }
 
-.hero p {
-    font-size: 18px;
-    color: var(--text-secondary);
-    margin-bottom: 40px;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
+.slide-content p {
+    font-size: 1.35rem;
+    margin-bottom: 35px;
+    color: #e2e8f0;
+}
+
+.slider-dots {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 4;
+    display: flex;
+    gap: 12px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    background-color: rgba(0, 102, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dot.active {
+    background-color: var(--accent);
+    box-shadow: 0 0 10px var(--accent);
+    transform: scale(1.3);
 }
 
 /* ==========================================================================
@@ -415,24 +509,27 @@ nav > a:hover, .dropdown:hover > a {
     gap: 24px;
 }
 
+/* Синеватый акцент на карточки */
 .service-card {
     background-color: var(--bg-tertiary);
     border: 1px solid var(--border-color);
     border-radius: 12px;
     padding: 40px 24px;
     text-align: center;
-    box-shadow: 0 4px 6px var(--card-shadow);
+    box-shadow: 0 4px 12px var(--card-shadow);
 }
 
 .service-card:hover {
     transform: translateY(-6px);
     border-color: var(--accent);
+    box-shadow: 0 10px 25px var(--accent-glow);
 }
 
 .service-icon {
     font-size: 44px;
     margin-bottom: 20px;
     color: var(--accent);
+    text-shadow: 0 0 15px rgba(0, 102, 255, 0.3);
 }
 
 .service-card h3 {
@@ -500,18 +597,20 @@ nav > a:hover, .dropdown:hover > a {
     gap: 20px;
 }
 
+/* Статистика с синеватым бэкграундом */
 .stat-card {
-    background-color: var(--bg-secondary);
+    background-color: var(--bg-tertiary);
     border: 1px solid var(--border-color);
     border-radius: 12px;
     padding: 32px;
     text-align: center;
-    box-shadow: 0 4px 6px var(--card-shadow);
+    box-shadow: 0 4px 12px var(--card-shadow);
 }
 
 .stat-card:hover {
     transform: translateY(-4px);
     border-color: var(--accent);
+    box-shadow: 0 8px 20px var(--accent-glow);
 }
 
 .stat-card h3 {
@@ -519,6 +618,7 @@ nav > a:hover, .dropdown:hover > a {
     font-weight: 700;
     color: var(--accent);
     margin-bottom: 8px;
+    text-shadow: 0 0 10px rgba(0, 102, 255, 0.2);
 }
 
 .stat-card p {
@@ -597,12 +697,13 @@ nav > a:hover, .dropdown:hover > a {
     border-radius: 12px;
     padding: 40px 32px;
     text-align: center;
-    box-shadow: 0 4px 6px var(--card-shadow);
+    box-shadow: 0 4px 12px var(--card-shadow);
 }
 
 .mission-card:hover {
     transform: translateY(-6px);
     border-color: var(--accent);
+    box-shadow: 0 10px 25px var(--accent-glow);
 }
 
 .mission-icon {
@@ -646,12 +747,13 @@ nav > a:hover, .dropdown:hover > a {
     display: flex;
     gap: 40px;
     align-items: flex-start;
-    box-shadow: 0 4px 6px var(--card-shadow);
+    box-shadow: 0 4px 12px var(--card-shadow);
 }
 
 .service-item:hover {
     border-color: var(--accent);
     transform: translateX(6px);
+    box-shadow: 0 8px 24px var(--accent-glow);
 }
 
 .service-item-icon {
@@ -795,15 +897,16 @@ nav > a:hover, .dropdown:hover > a {
     background-color: var(--accent);
     border-color: var(--accent);
     color: #ffffff;
+    box-shadow: 0 0 12px var(--accent);
 }
 
-/* Форма */
+/* Синеватая форма */
 .contact-form {
     background-color: var(--bg-secondary);
     border: 1px solid var(--border-color);
     border-radius: 16px;
     padding: 40px;
-    box-shadow: 0 4px 12px var(--card-shadow);
+    box-shadow: 0 4px 20px var(--card-shadow);
 }
 
 .form-group {
@@ -834,6 +937,7 @@ nav > a:hover, .dropdown:hover > a {
 .form-group input:focus,
 .form-group textarea:focus {
     border-color: var(--accent);
+    box-shadow: 0 0 8px var(--accent-glow);
 }
 
 .form-group input::placeholder,
@@ -879,6 +983,7 @@ nav > a:hover, .dropdown:hover > a {
     background-color: var(--accent);
     border-color: var(--accent);
     color: #ffffff;
+    box-shadow: 0 4px 12px var(--accent-glow);
 }
 
 .portfolio-grid {
@@ -892,12 +997,13 @@ nav > a:hover, .dropdown:hover > a {
     border: 1px solid var(--border-color);
     border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 4px 6px var(--card-shadow);
+    box-shadow: 0 4px 12px var(--card-shadow);
 }
 
 .portfolio-card:hover {
     transform: translateY(-6px);
     border-color: var(--accent);
+    box-shadow: 0 10px 25px var(--accent-glow);
 }
 
 .portfolio-card-img {
@@ -915,10 +1021,11 @@ nav > a:hover, .dropdown:hover > a {
     padding: 24px;
 }
 
+/* Яркий тег */
 .portfolio-tag {
-    background-color: var(--bg-tertiary);
-    border: 1px solid var(--border-color);
-    color: var(--accent);
+    background-color: var(--accent-glow);
+    border: 1px solid rgba(0, 102, 255, 0.3);
+    color: #3b82f6;
     font-size: 12px;
     font-weight: 600;
     padding: 4px 12px;
@@ -960,12 +1067,13 @@ nav > a:hover, .dropdown:hover > a {
     border-radius: 16px;
     padding: 40px 32px;
     text-align: center;
-    box-shadow: 0 4px 6px var(--card-shadow);
+    box-shadow: 0 4px 12px var(--card-shadow);
 }
 
 .certificate-card:hover {
     transform: translateY(-6px);
     border-color: var(--accent);
+    box-shadow: 0 10px 25px var(--accent-glow);
 }
 
 .certificate-icon {
@@ -1051,6 +1159,7 @@ nav > a:hover, .dropdown:hover > a {
     border-color: var(--accent);
     color: #ffffff;
     transform: translateY(-3px);
+    box-shadow: 0 4px 12px var(--accent-glow);
 }
 
 .footer-col h4 {
@@ -1171,7 +1280,7 @@ nav > a:hover, .dropdown:hover > a {
 
 @media (max-width: 768px) {
     .topbar {
-        display: none; /* Прячем топбар на мобильных для экономии места */
+        display: none;
     }
 
     .navbar .container {
@@ -1204,116 +1313,7 @@ nav > a:hover, .dropdown:hover > a {
     .service-item:hover {
         transform: translateY(-4px);
     }
-}
 
-/* Основной контейнер слайдера вместо старого Hero */
-.hero-slider-section {
-    position: relative;
-    width: 100%;
-    height: 85vh; /* Высота баннера (85% от экрана). Можно поставить 100vh для полного экрана */
-    overflow: hidden;
-    background-color: #000; /* Черный фон на случай задержки загрузки видео */
-}
-
-.video-slider {
-    position: relative;
-    width: 100%;
-    height: 100%;
-}
-
-/* Слайды */
-.video-slide {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 1.2s ease-in-out, visibility 1.2s ease-in-out;
-    z-index: 1;
-    display: flex;
-    align-items: center;
-}
-
-.video-slide.active {
-    opacity: 1;
-    visibility: visible;
-    z-index: 2;
-}
-
-/* Растягиваем видео */
-.slide-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* Затемнение поверх видео */
-.slide-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.6); /* 60% затемнения для контраста текста */
-    z-index: 2;
-}
-
-/* Контент (Текст) */
-.slide-content {
-    position: relative;
-    z-index: 3;
-    color: #ffffff;
-    text-align: center;
-    margin: 0 auto;
-    max-width: 900px;
-    padding: 0 20px;
-}
-
-.slide-content h1 {
-    font-size: 3.5rem;
-    font-weight: 700;
-    margin-bottom: 20px;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-}
-
-.slide-content p {
-    font-size: 1.35rem;
-    margin-bottom: 35px;
-    opacity: 0.9;
-}
-
-/* Индикаторы (точки) */
-.slider-dots {
-    position: absolute;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 4;
-    display: flex;
-    gap: 12px;
-}
-
-.dot {
-    width: 12px;
-    height: 12px;
-    background-color: rgba(255, 255, 255, 0.3);
-    border-radius: 50%;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.dot.active {
-    background-color: #fff;
-    transform: scale(1.2);
-}
-
-/* Адаптивность для мобильных */
-@media (max-width: 768px) {
     .hero-slider-section {
         height: 65vh;
     }

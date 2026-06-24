@@ -21,7 +21,9 @@
         </div>
         <div class="topbar-right">
             <div class="topbar-socials">
-                <a target="_blank" href="#"><i class="fab fa-facebook-f"></i></a>
+                <a target="_blank" href="https://www.youtube.com/@tenzorsoft-itcompany"><i
+                        class="fab fa-youtube"></i></a>
+                <a target="_blank" href="https://www.instagram.com/tenzor_soft"><i class="fab fa-instagram"></i></a>
                 <a target="_blank" href="https://t.me/tenzor_soft"><i class="fab fa-telegram-plane"></i></a>
                 <a target="_blank" href="https://www.linkedin.com/in/tenzor-soft-396297329/"><i
                         class="fab fa-linkedin-in"></i></a>
@@ -93,11 +95,11 @@
                 <a href="/portfolio" class="dropdown-toggle">{% translate "Portfolio" %} <i
                         class="fas fa-chevron-down"></i></a>
                 <div class="dropdown-menu">
-                    <a href="#">{% translate "Web" %}</a>
-                    <a href="#">{% translate "Mobil" %}</a>
-                    <a href="#">{% translate "Fintech" %}</a>
-                    <a href="#">{% translate "Avtomatlashtirish" %}</a>
-                    <a href="#">{% translate "Joriy etish" %}</a>
+                    <a href="/portfolio/#web">{% translate "Web" %}</a>
+                    <a href="/portfolio/#mobile">{% translate "Mobil" %}</a>
+                    <a href="/portfolio/#fintech">{% translate "Fintech" %}</a>
+                    <a href="/portfolio/#automation">{% translate "Avtomatlashtirish" %}</a>
+                    <a href="/portfolio/#consulting">{% translate "Joriy etish" %}</a>
                 </div>
             </div>
             <a href="/certificates">{% translate "Sertifikatlar" %}</a>
@@ -303,20 +305,72 @@
         ThemeSwitcher.init();
     });
     // Portfolio filter
-    document.querySelectorAll('.filter-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
+    document.addEventListener('DOMContentLoaded', () => {
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const portfolioCards = document.querySelectorAll('.portfolio-card');
 
-            const filter = btn.dataset.filter;
-            document.querySelectorAll('.portfolio-card').forEach(card => {
-                if (filter === 'all' || card.dataset.category === filter) {
+        // 1. Функция фильтрации
+        function applyFilter(filterValue) {
+            if (!filterValue) filterValue = 'all';
+
+            // Обновляем активную кнопку
+            filterButtons.forEach(btn => {
+                if (btn.dataset.filter === filterValue) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+
+            // Фильтруем карточки
+            portfolioCards.forEach(card => {
+                if (filterValue === 'all' || card.dataset.category === filterValue) {
                     card.style.display = 'block';
                 } else {
                     card.style.display = 'none';
                 }
             });
+        }
+
+        // 2. Обработчик кликов по кнопкам
+        filterButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const filter = btn.dataset.filter;
+                applyFilter(filter);
+
+                // Опционально: обновляем URL при клике, чтобы пользователь мог скопировать ссылку
+                window.location.hash = filter === 'all' ? '' : filter;
+            });
         });
+
+        // 3. Функция проверки URL (поддерживает хэш #mobile или чтение последнего сегмента пути)
+        function checkUrlAndFilter() {
+            // Вариант А: Ищем значение в хэше (например, /portfolio/#mobile)
+            let filterFromUrl = window.location.hash.replace('#', '');
+
+            // Вариант Б: Если хэша нет, проверяем путь (например, /portfolio/mobile или /profile/mobile)
+            if (!filterFromUrl) {
+                const pathSegments = window.location.pathname.split('/').filter(Boolean);
+                const lastSegment = pathSegments[pathSegments.length - 1];
+
+                // Проверяем, существует ли вообще кнопка с таким фильтром, чтобы не отфильтровать лишнего
+                const validFilters = Array.from(filterButtons).map(b => b.dataset.filter);
+                if (validFilters.includes(lastSegment)) {
+                    filterFromUrl = lastSegment;
+                }
+            }
+
+            // Применяем найденный фильтр
+            if (filterFromUrl) {
+                applyFilter(filterFromUrl);
+            }
+        }
+
+        // Запускаем проверку при загрузке страницы
+        checkUrlAndFilter();
+
+        // Опционально: реагируем на изменение хэша без перезагрузки страницы (кнопки "Назад" / "Вперед" в браузере)
+        window.addEventListener('hashchange', checkUrlAndFilter);
     });
 </script>
 
