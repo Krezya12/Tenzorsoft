@@ -1,88 +1,91 @@
-{% extends '../apps/static/base.html' %}
+{% extends 'base.html' %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
 
 {% block title %}Tenzorsoft — Bosh sahifa{% endblock %}
 
 {% block content %}
 
-<!-- HERO -->
-<section class="hero">
-    <h1>Innovatsion IT yechimlar</h1>
-    <p>Biznesingiz uchun zamonaviy dasturiy ta'minot va texnologiyalar</p>
-    <a href="/contact" class="btn">Bog'lanish</a>
-</section>
+    <!-- HERO -->
+    <section class="hero">
+        <h1>Innovatsion IT yechimlar</h1>
+        <p>Biznesingiz uchun zamonaviy dasturiy ta'minot va texnologiyalar</p>
+        <a href="/contact" class="btn">Bog'lanish</a>
+    </section>
 
-<!-- XIZMATLAR -->
-<section class="services">
-    <div class="container">
-        <h2 class="section-title">Xizmatlarimiz</h2>
-        <div class="services-grid">
-            <div class="service-card">
-                <div class="service-icon">
-                    <i class="fas fa-code"></i>
+    <!-- XIZMATLAR -->
+    <section class="services">
+        <div class="container">
+            <h2 class="section-title">Xizmatlarimiz</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Dasturiy ta'minot</h3>
+                    <p>Biznesingiz uchun maxsus dasturlar ishlab chiqamiz</p>
                 </div>
-                <h3>Dasturiy ta'minot</h3>
-                <p>Biznesingiz uchun maxsus dasturlar ishlab chiqamiz</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">
-                    <i class="fas fa-mobile-alt"></i>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Mobil ilovalar</h3>
+                    <p>Android va iOS uchun zamonaviy ilovalar</p>
                 </div>
-                <h3>Mobil ilovalar</h3>
-                <p>Android va iOS uchun zamonaviy ilovalar</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">
-                    <i class="fas fa-shield-alt"></i>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>IT xavfsizlik</h3>
+                    <p>Antiviruslar va kiberxavfsizlik yechimlari</p>
                 </div>
-                <h3>IT xavfsizlik</h3>
-                <p>Antiviruslar va kiberxavfsizlik yechimlari</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">
-                    <i class="fas fa-cogs"></i>
-                </div>
-                <h3>Avtomatlashtirish</h3>
-                <p>Biznes jarayonlarini avtomatlashtirish</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- KOMPANIYA HAQIDA -->
-<section class="about">
-    <div class="container">
-        <div class="about-grid">
-            <div class="about-text">
-                <span class="label">Biz haqimizda</span>
-                <h2>Tenzorsoft — sifat va tajriba</h2>
-                <p>Tenzorsoft kompaniyasi 2008 yildan beri O'zbekistonda IT xizmatlari bozorida faoliyat yuritib kelmoqda. Biz biznesingizni rivojlantirish uchun zamonaviy yechimlar taklif etamiz.</p>
-                <ul class="about-list">
-                    <li><i class="fas fa-check"></i> Dasturiy mahsulotlar muhandisligi</li>
-                    <li><i class="fas fa-check"></i> Raqamli xizmatlar</li>
-                    <li><i class="fas fa-check"></i> IT konsalting</li>
-                    <li><i class="fas fa-check"></i> Dasturiy ta'minotni avtomatlashtirish</li>
-                </ul>
-            </div>
-            <div class="about-stats">
-                <div class="stat-card">
-                    <h3>15+</h3>
-                    <p>Yillik tajriba</p>
-                </div>
-                <div class="stat-card">
-                    <h3>200+</h3>
-                    <p>Loyihalar</p>
-                </div>
-                <div class="stat-card">
-                    <h3>50+</h3>
-                    <p>Mijozlar</p>
-                </div>
-                <div class="stat-card">
-                    <h3>70+</h3>
-                    <p>Mutaxassislar</p>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>Avtomatlashtirish</h3>
+                    <p>Biznes jarayonlarini avtomatlashtirish</p>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+
+    <!-- KOMPANIYA HAQIDA -->
+    <section class="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-text">
+                    <span class="label">Biz haqimizda</span>
+                    <h2>Tenzorsoft — sifat va tajriba</h2>
+                    <p>Tenzorsoft kompaniyasi 2008 yildan beri O'zbekistonda IT xizmatlari bozorida faoliyat yuritib kelmoqda. Biz biznesingizni rivojlantirish uchun zamonaviy yechimlar taklif etamiz.</p>
+                    <ul class="about-list">
+                        <li><i class="fas fa-check"></i> Dasturiy mahsulotlar muhandisligi</li>
+                        <li><i class="fas fa-check"></i> Raqamli xizmatlar</li>
+                        <li><i class="fas fa-check"></i> IT konsalting</li>
+                        <li><i class="fas fa-check"></i> Dasturiy ta'minotni avtomatlashtirish</li>
+                    </ul>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-card">
+                        <h3>15+</h3>
+                        <p>Yillik tajriba</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>200+</h3>
+                        <p>Loyihalar</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>50+</h3>
+                        <p>Mijozlar</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>70+</h3>
+                        <p>Mutaxassislar</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
 
 {% endblock %}

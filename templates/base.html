@@ -10,133 +10,74 @@
 </head>
 <body>
 
-    <!-- TOP BAR -->
-    <div class="topbar">
-        <div class="container">
-            <div class="topbar-left">
-                <a href="tel:+998954601010"><i class="fas fa-phone"></i> +998 95 460 10 10</a>
-                <a href="mailto:info@tenzorsoft.com"><i class="fas fa-envelope"></i> info@tenzorsoft.com</a>
-            </div>
-            <div class="topbar-right">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-telegram-plane"></i></a>
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-youtube"></i></a>
-            </div>
+<!-- TOP BAR -->
+<div class="topbar">
+    <div class="container">
+        <div class="topbar-left">
+            <a href="tel:+998954601010"><i class="fas fa-phone"></i> +998 95 460 10 10</a>
+            <a href="mailto:info@tenzorsoft.com"><i class="fas fa-envelope"></i> info@tenzorsoft.com</a>
+        </div>
+        <div class="topbar-right">
+            <a target="_blank" href="#"><i class="fab fa-facebook-f"></i></a>
+            <a target="_blank" href="https://t.me/tenzor_soft"><i class="fab fa-telegram-plane"></i></a>
+            <a target="_blank" href="https://www.linkedin.com/in/tenzor-soft-396297329/"><i class="fab fa-linkedin-in"></i></a>
+            <a target="_blank" href="https://www.instagram.com/tenzor_soft/"><i class="fab fa-instagram"></i></a>
+            <a target="_blank" href="https://www.youtube.com/@tenzorsoft-itcompany"><i class="fab fa-youtube"></i></a>
         </div>
     </div>
+</div>
 
-    <!-- NAVBAR -->
-    <header class="navbar">
-        <div class="container">
-            <a href="/" class="logo">Tenzor<span>soft</span></a>
-            <nav>
-                <a href="/">Bosh sahifa</a>
-                <a href="/about">Biz haqimizda</a>
-                <div class="dropdown">
-                    <a href="/services" class="dropdown-toggle">Xizmatlar <i class="fas fa-chevron-down"></i></a>
-                    <div class="dropdown-menu">
-                        <a href="#">Dasturiy ta'minot</a>
-                        <a href="#">1C mahsulotlari</a>
-                        <a href="#">1C Bitrix</a>
-                        <a href="#">Antiviruslar</a>
-                        <a href="#">Avtomatlashtirish</a>
-                        <a href="#">Biometrik tizimlar</a>
-                        <a href="#">IT xizmatlari</a>
-                    </div>
+<!-- NAVBAR -->
+<header class="navbar">
+    <div class="container">
+        <a href="/" class="logo"><img src="../media/logo/logo-4.png" alt="Tenzorsoft" style="height: 50px;"></a>
+        <nav>
+            <a href="/">Bosh sahifa</a>
+            <a href="/about">Biz haqimizda</a>
+            <div class="dropdown">
+                <a href="/services" class="dropdown-toggle">Xizmatlar <i class="fas fa-chevron-down"></i></a>
+                <div class="dropdown-menu">
+                    <a href="#">Dasturiy ta'minot</a>
+                    <a href="#">1C mahsulotlari</a>
+                    <a href="#">1C Bitrix</a>
+                    <a href="#">Antiviruslar</a>
+                    <a href="#">Avtomatlashtirish</a>
+                    <a href="#">Biometrik tizimlar</a>
+                    <a href="#">IT xizmatlari</a>
                 </div>
-                <div class="dropdown">
-                    <a href="/portfolio" class="dropdown-toggle">Portfolio <i class="fas fa-chevron-down"></i></a>
-                    <div class="dropdown-menu">
-                        <a href="#">Web</a>
-                        <a href="#">Mobil</a>
-                        <a href="#">Fintech</a>
-                        <a href="#">Avtomatlashtirish</a>
-                        <a href="#">Joriy etish</a>
-                    </div>
-                </div>
-                <a href="/certificates">Sertifikatlar</a>
-                <a href="/contact">Kontaktlar</a>
-            </nav>
-        </div>
-    </header>
-
-    <!-- CONTENT -->
-    <main>
-        {% block content %}
-        {% endblock %}
-    </main>
-
-    <!-- FOOTER -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-
-                <div class="footer-about">
-                    <a href="/" class="logo footer-logo">Tenzor<span>soft</span></a>
-                    <p>OOO "Tenzor Soft" — O'zbekistonda dasturiy ta'minot ishlab chiqaruvchi yetakchi kompaniya. 2008 yildan beri IT xizmatlari bozorida.</p>
-                    <div class="footer-social">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-telegram-plane"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                    </div>
-                </div>
-
-                <div class="footer-col">
-                    <h4>Menyu</h4>
-                    <ul>
-                        <li><a href="/"><i class="fas fa-chevron-right"></i> Bosh sahifa</a></li>
-                        <li><a href="/about"><i class="fas fa-chevron-right"></i> Biz haqimizda</a></li>
-                        <li><a href="/services"><i class="fas fa-chevron-right"></i> Xizmatlar</a></li>
-                        <li><a href="/portfolio"><i class="fas fa-chevron-right"></i> Portfolio</a></li>
-                        <li><a href="/certificates"><i class="fas fa-chevron-right"></i> Sertifikatlar</a></li>
-                        <li><a href="/contact"><i class="fas fa-chevron-right"></i> Kontaktlar</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-col">
-                    <h4>Xizmatlar</h4>
-                    <ul>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Dasturiy ta'minot</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> 1C mahsulotlari</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> 1C Bitrix</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Antiviruslar</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Avtomatlashtirish</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Biometrik tizimlar</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> IT xizmatlari</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-col">
-                    <h4>Kontaktlar</h4>
-                    <ul class="footer-contacts">
-                        <li>
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Toshkent shahar, Yashnobod tumani, Turtkul ko'chasi 17A</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-phone"></i>
-                            <span>+998 95 460 10 10</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-envelope"></i>
-                            <span>info@tenzorsoft.com</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-globe"></i>
-                            <span>tenzorsoft.com</span>
-                        </li>
-                    </ul>
-                </div>
-
             </div>
+            <div class="dropdown">
+                <a href="/portfolio" class="dropdown-toggle">Portfolio <i class="fas fa-chevron-down"></i></a>
+                <div class="dropdown-menu">
+                    <a href="#">Web</a>
+                    <a href="#">Mobil</a>
+                    <a href="#">Fintech</a>
+                    <a href="#">Avtomatlashtirish</a>
+                    <a href="#">Joriy etish</a>
+                </div>
+            </div>
+            <a href="/certificates">Sertifikatlar</a>
+            <a href="/contact">Kontaktlar</a>
+        </nav>
+    </div>
+</header>
 
-            <div class="footer-bottom">
-                <p>Tenzor Soft LLC © 2024. Barcha huquqlar himoyalangan.</p>
-                <div class="footer-bottom-social">
+<!-- CONTENT -->
+<main>
+    {% block content %}
+    {% endblock %}
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+
+            <div class="footer-about">
+                <a href="/" class="logo footer-logo"><img src="../media/logo/logo-4.png" alt="Tenzorsoft" style="height: 50px;"></a>
+                <p>OOO "Tenzor Soft" — O'zbekistonda dasturiy ta'minot ishlab chiqaruvchi yetakchi kompaniya. 2008
+                    yildan beri IT xizmatlari bozorida.</p>
+                <div class="footer-social">
                     <a href="#"><i class="fab fa-facebook-f"></i></a>
                     <a href="#"><i class="fab fa-telegram-plane"></i></a>
                     <a href="#"><i class="fab fa-linkedin-in"></i></a>
@@ -145,8 +86,68 @@
                 </div>
             </div>
 
+            <div class="footer-col">
+                <h4>Menyu</h4>
+                <ul>
+                    <li><a href="/"><i class="fas fa-chevron-right"></i> Bosh sahifa</a></li>
+                    <li><a href="/about"><i class="fas fa-chevron-right"></i> Biz haqimizda</a></li>
+                    <li><a href="/services"><i class="fas fa-chevron-right"></i> Xizmatlar</a></li>
+                    <li><a href="/portfolio"><i class="fas fa-chevron-right"></i> Portfolio</a></li>
+                    <li><a href="/certificates"><i class="fas fa-chevron-right"></i> Sertifikatlar</a></li>
+                    <li><a href="/contact"><i class="fas fa-chevron-right"></i> Kontaktlar</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Xizmatlar</h4>
+                <ul>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Dasturiy ta'minot</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> 1C mahsulotlari</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> 1C Bitrix</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Antiviruslar</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Avtomatlashtirish</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Biometrik tizimlar</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> IT xizmatlari</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Kontaktlar</h4>
+                <ul class="footer-contacts">
+                    <li>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Toshkent shahar, Yashnobod tumani, Turtkul ko'chasi 17A</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-phone"></i>
+                        <span>+998 95 460 10 10</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-envelope"></i>
+                        <span>info@tenzorsoft.com</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-globe"></i>
+                        <span>tenzorsoft.com</span>
+                    </li>
+                </ul>
+            </div>
+
         </div>
-    </footer>
+
+        <div class="footer-bottom">
+            <p>Tenzor Soft LLC © 2024. Barcha huquqlar himoyalangan.</p>
+            <div class="footer-bottom-social">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-telegram-plane"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+
+    </div>
+</footer>
 
 <script>
     document.querySelectorAll('.dropdown').forEach(dropdown => {
