@@ -1,150 +1,164 @@
 {% extends 'base.html' %}
-{% load static %}
 {% load i18n %}
 
 {% block title %}{% translate "Tenzorsoft — Bosh sahifa" %}{% endblock %}
 
 {% block content %}
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-
-    <!-- HERO VIDEO SLIDER -->
-    <section class="hero-slider-section">
-        <div class="video-slider">
-
-            <!-- Slide 1 -->
-            <div class="video-slide active">
-                <video autoplay muted loop playsinline class="slide-video">
-                    <source src="{% static 'videos/banner1.mp4' %}" type="video/mp4">
-                </video>
-                <div class="slide-overlay"></div>
-                <div class="container slide-content">
-                    <h1>{% translate "Innovatsion IT yechimlar" %}</h1>
-                    <p>{% translate "Biznesingiz uchun zamonaviy dasturiy ta'minot va texnologiyalar" %}</p>
-                    <a href="/contact" class="btn">{% translate "Bog'lanish" %}</a>
-                </div>
+<section class="hero">
+    <div class="container hero-grid">
+        <div class="hero-content reveal">
+            <div class="hero-badge">
+                <span><i class="fas fa-bolt"></i></span>
+                {% translate "2008 yildan buyon ishonchli IT hamkor" %}
             </div>
-
-            <!-- Slide 2 -->
-            <div class="video-slide">
-                <video autoplay muted loop playsinline class="slide-video">
-                    <source src="{% static 'videos/banner2.mp4' %}" type="video/mp4">
-                </video>
-                <div class="slide-overlay"></div>
-                <div class="container slide-content">
-                    <h1>{% translate "Avtomatlashtirish yechimlari" %}</h1>
-                    <p>{% translate "Biznes jarayonlarini optimallashtirish va samaradorlikni oshirish" %}</p>
-                    <a href="/contact" class="btn">{% translate "Bog'lanish" %}</a>
-                </div>
+            <h1>{% translate "Biznesingizni" %} <span>{% translate "raqamli kelajak" %}</span> {% translate "bilan bog'laymiz" %}</h1>
+            <p>{% translate "Biznesingiz uchun zamonaviy dasturiy ta'minot, avtomatlashtirish va IT xavfsizlik yechimlari" %}</p>
+            <div class="hero-actions">
+                <a href="{% url 'contact' %}" class="button button-primary">
+                    {% translate "Loyihani boshlash" %} <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="{% url 'portfolio' %}" class="button button-ghost">
+                    <i class="fas fa-play"></i> {% translate "Ishlarimizni ko'ring" %}
+                </a>
             </div>
-
-            <!-- Slide 3 -->
-            <div class="video-slide">
-                <video autoplay muted loop playsinline class="slide-video">
-                    <source src="{% static 'videos/banner3.mp4' %}" type="video/mp4">
-                </video>
-                <div class="slide-overlay"></div>
-                <div class="container slide-content">
-                    <h1>{% translate "Kiberxavfsizlik va himoya" %}</h1>
-                    <p>{% translate "IT-infrastrukturangiz uchun ishonchli antivirus va xavfsizlik tizimlari" %}</p>
-                    <a href="/contact" class="btn">{% translate "Bog'lanish" %}</a>
+            <div class="hero-trust">
+                <div class="avatar-stack">
+                    <span>TS</span><span>1C</span><span>IT</span>
                 </div>
-            </div>
-
-            <!-- Slider Dots -->
-            <div class="slider-dots">
-                <span class="dot active" data-index="0"></span>
-                <span class="dot" data-index="1"></span>
-                <span class="dot" data-index="2"></span>
-            </div>
-        </div>
-    </section>
-
-    <!-- XIZMATLAR -->
-    <section class="services">
-        <div class="container">
-            <h2 class="section-title">{% translate "Xizmatlarimiz" %}</h2>
-            <div class="services-grid">
-
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-code"></i>
-                    </div>
-                    <h3>{% translate "Dasturiy ta'minot" %}</h3>
-                    <p>{% translate "Biznesingiz uchun maxsus dasturlar ishlab chiqamiz" %}</p>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-mobile-alt"></i>
-                    </div>
-                    <h3>{% translate "Mobil ilovalar" %}</h3>
-                    <p>{% translate "Android va iOS Urban zamonaviy ilovalar" %}</p>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3>{% translate "IT xavfsizlik" %}</h3>
-                    <p>{% translate "Antiviruslar va kiberxavfsizlik yechimlari" %}</p>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-cogs"></i>
-                    </div>
-                    <h3>{% translate "Avtomatlashtirish" %}</h3>
-                    <p>{% translate "Biznes jarayonlarini avtomatlashtirish" %}</p>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- KOMPANIYA HAQIDA -->
-    <section class="about">
-        <div class="container">
-            <div class="about-grid">
-                <div class="about-text">
-                    <span class="label">{% translate "Biz haqimizda" %}</span>
-                    <h2>{% translate "Tenzorsoft — sifat va tajriba" %}</h2>
-                    <p>{% translate "Tenzorsoft kompaniyasi 2008 yildan beri O'zbekistonda IT xizmatlari bozorida faoliyat yuritib kelmoqda. Biz biznesingizni rivojlantirish uchun zamonaviy yechimlar taklif etamiz." %}</p>
-                    <ul class="about-list">
-                        <li><i class="fas fa-check"></i> {% translate "Dasturiy mahsulotlar muhandisligi" %}</li>
-                        <li><i class="fas fa-check"></i> {% translate "Raqamli xizmatlar" %}</li>
-                        <li><i class="fas fa-check"></i> {% translate "IT konsalting" %}</li>
-                        <li><i class="fas fa-check"></i> {% translate "Dasturiy ta'minotni avtomatlashtirish" %}</li>
-                    </ul>
-                </div>
-
-                <div class="about-stats">
-                    <div class="stat-card">
-                        <h3>15+</h3>
-                        <p>{% translate "Yillik tajriba" %}</p>
-                    </div>
-                    <div class="stat-card">
-                        <h3>200+</h3>
-                        <p>{% translate "Loyihalar" %}</p>
-                    </div>
-                    <div class="stat-card">
-                        <h3>50+</h3>
-                        <p>{% translate "Mijozlar" %}</p>
-                    </div>
-                    <div class="stat-card">
-                        <h3>70+</h3>
-                        <p>{% translate "Mutaxassislar" %}</p>
-                    </div>
+                <div>
+                    <div class="stars">★★★★★</div>
+                    <small>{% translate "50 dan ortiq kompaniya bizga ishonadi" %}</small>
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- CTA BANNER -->
-    <section class="cta">
-        <div class="container">
-            <h2>{% translate "Loyihangizni boshlashga tayyormisiz?" %}</h2>
-            <p>{% translate "Biz bilan bog'laning va bepul konsultatsiya oling!" %}</p>
-            <a href="/contact" class="btn">{% translate "Bog'lanish" %}</a>
+        <div class="hero-visual reveal">
+            <div class="code-window">
+                <div class="window-bar">
+                    <div class="window-dots"><span></span><span></span><span></span></div>
+                    <span>digital_solution.py</span>
+                    <i class="fas fa-code"></i>
+                </div>
+                <div class="code-body">
+                    <div><em>01</em><code><b>class</b> <strong>DigitalBusiness</strong>:</code></div>
+                    <div><em>02</em><code>&nbsp;&nbsp;<b>def</b> <strong>transform</strong>(self):</code></div>
+                    <div><em>03</em><code>&nbsp;&nbsp;&nbsp;&nbsp;self.speed <span>=</span> <i>"fast"</i></code></div>
+                    <div><em>04</em><code>&nbsp;&nbsp;&nbsp;&nbsp;self.security <span>=</span> <i>"strong"</i></code></div>
+                    <div><em>05</em><code>&nbsp;&nbsp;&nbsp;&nbsp;<b>return</b> <i>"growth"</i></code></div>
+                </div>
+                <div class="code-result">
+                    <span><i class="fas fa-circle-check"></i> Deployment successful</span>
+                    <strong>99.9% uptime</strong>
+                </div>
+            </div>
+            <div class="floating-card floating-card-one">
+                <i class="fas fa-shield-halved"></i>
+                <div><strong>{% translate "Xavfsiz" %}</strong><small>Enterprise level</small></div>
+            </div>
+            <div class="floating-card floating-card-two">
+                <span class="growth-icon"><i class="fas fa-arrow-trend-up"></i></span>
+                <div><strong>+42%</strong><small>{% translate "Samaradorlik" %}</small></div>
+            </div>
         </div>
-    </section>
+    </div>
+
+    <div class="container stats-bar reveal">
+        <div><strong>15+</strong><span>{% translate "Yillik tajriba" %}</span></div>
+        <div><strong>200+</strong><span>{% translate "Loyihalar" %}</span></div>
+        <div><strong>50+</strong><span>{% translate "Mijozlar" %}</span></div>
+        <div><strong>70+</strong><span>{% translate "Mutaxassislar" %}</span></div>
+    </div>
+</section>
+
+<section class="section services">
+    <div class="container">
+        <div class="section-heading reveal">
+            <div>
+                <span class="eyebrow">{% translate "Nima qilamiz" %}</span>
+                <h2>{% translate "Texnologiya orqali" %}<br>{% translate "biznes qiymatini yaratamiz" %}</h2>
+            </div>
+            <p>{% translate "G'oyadan boshlab ishga tushirishgacha — kompaniyangiz uchun barqaror va qulay raqamli mahsulotlar yaratamiz." %}</p>
+        </div>
+
+        <div class="services-grid">
+            <a href="{% url 'services' %}#software" class="service-card reveal">
+                <span class="card-number">01</span>
+                <div class="service-icon"><i class="fas fa-code"></i></div>
+                <h3>{% translate "Dasturiy ta'minot" %}</h3>
+                <p>{% translate "Veb ilovalar, korporativ tizimlar, ERP va CRM yechimlari." %}</p>
+                <span class="card-link">{% translate "Batafsil" %} <i class="fas fa-arrow-right"></i></span>
+            </a>
+            <a href="{% url 'services' %}#automation" class="service-card featured reveal">
+                <span class="card-number">02</span>
+                <div class="service-icon"><i class="fas fa-gears"></i></div>
+                <h3>{% translate "Avtomatlashtirish" %}</h3>
+                <p>{% translate "Biznes jarayonlarini tezlashtiruvchi integratsiya va avtomatizatsiya." %}</p>
+                <span class="card-link">{% translate "Batafsil" %} <i class="fas fa-arrow-right"></i></span>
+            </a>
+            <a href="{% url 'services' %}#security" class="service-card reveal">
+                <span class="card-number">03</span>
+                <div class="service-icon"><i class="fas fa-shield-halved"></i></div>
+                <h3>{% translate "IT xavfsizlik" %}</h3>
+                <p>{% translate "Ma'lumotlar va infratuzilmani himoyalovchi ishonchli yechimlar." %}</p>
+                <span class="card-link">{% translate "Batafsil" %} <i class="fas fa-arrow-right"></i></span>
+            </a>
+            <a href="{% url 'services' %}#biometrics" class="service-card reveal">
+                <span class="card-number">04</span>
+                <div class="service-icon"><i class="fas fa-fingerprint"></i></div>
+                <h3>{% translate "Biometrik tizimlar" %}</h3>
+                <p>{% translate "Kirish nazorati, davomat va zamonaviy identifikatsiya tizimlari." %}</p>
+                <span class="card-link">{% translate "Batafsil" %} <i class="fas fa-arrow-right"></i></span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<section class="section why-us">
+    <div class="container why-grid">
+        <div class="why-visual reveal">
+            <div class="orbit orbit-one"></div>
+            <div class="orbit orbit-two"></div>
+            <div class="core-logo">TS</div>
+            <span class="orbit-item item-one"><i class="fas fa-cloud"></i></span>
+            <span class="orbit-item item-two"><i class="fas fa-database"></i></span>
+            <span class="orbit-item item-three"><i class="fas fa-mobile-screen"></i></span>
+            <span class="orbit-item item-four"><i class="fas fa-lock"></i></span>
+        </div>
+        <div class="why-content reveal">
+            <span class="eyebrow">{% translate "Nega Tenzorsoft" %}</span>
+            <h2>{% translate "Murakkab vazifalar uchun sodda yechimlar" %}</h2>
+            <p>{% translate "Biz faqat kod yozmaymiz. Biznesingizni tushunamiz, aniq natija beradigan texnologiyani tanlaymiz va loyihani qo'llab-quvvatlaymiz." %}</p>
+            <div class="feature-list">
+                <div>
+                    <span><i class="fas fa-check"></i></span>
+                    <div><h3>{% translate "Individual yondashuv" %}</h3><p>{% translate "Har bir loyiha uchun alohida strategiya." %}</p></div>
+                </div>
+                <div>
+                    <span><i class="fas fa-check"></i></span>
+                    <div><h3>{% translate "Shaffof jarayon" %}</h3><p>{% translate "Ish jarayoni va natijalar doim nazoratingizda." %}</p></div>
+                </div>
+                <div>
+                    <span><i class="fas fa-check"></i></span>
+                    <div><h3>{% translate "Doimiy yordam" %}</h3><p>{% translate "Ishga tushgandan keyin ham yoningizdamiz." %}</p></div>
+                </div>
+            </div>
+            <a href="{% url 'about' %}" class="text-link">{% translate "Kompaniya haqida" %} <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </div>
+</section>
+
+<section class="section process">
+    <div class="container">
+        <div class="section-heading centered reveal">
+            <span class="eyebrow">{% translate "Ish jarayoni" %}</span>
+            <h2>{% translate "G'oyadan tayyor mahsulotgacha" %}</h2>
+        </div>
+        <div class="process-grid">
+            <div class="process-item reveal"><span>01</span><i class="fas fa-magnifying-glass-chart"></i><h3>{% translate "Tahlil" %}</h3><p>{% translate "Maqsad va talablarni o'rganamiz." %}</p></div>
+            <div class="process-item reveal"><span>02</span><i class="fas fa-pen-ruler"></i><h3>{% translate "Dizayn" %}</h3><p>{% translate "Qulay interfeys va arxitektura yaratamiz." %}</p></div>
+            <div class="process-item reveal"><span>03</span><i class="fas fa-laptop-code"></i><h3>{% translate "Ishlab chiqish" %}</h3><p>{% translate "Sifatli kod va integratsiyalarni quramiz." %}</p></div>
+            <div class="process-item reveal"><span>04</span><i class="fas fa-rocket"></i><h3>{% translate "Natija" %}</h3><p>{% translate "Mahsulotni ishga tushirib, kuzatamiz." %}</p></div>
+        </div>
+    </div>
+</section>
 {% endblock %}

@@ -1,399 +1,244 @@
-{% load static %}
-{% load i18n %}
+{% load static i18n %}
 {% get_current_language as LANGUAGE_CODE %}
+{% get_available_languages as LANGUAGES %}
 <!DOCTYPE html>
-<html lang="{{ LANGUAGE_CODE }}">
+<html lang="{{ LANGUAGE_CODE }}" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{% translate 'Biznesingiz uchun keng qamrovli IT yechimlari' %}">
     <title>{% block title %}Tenzorsoft{% endblock %}</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script>
+        (function () {
+            const saved = localStorage.getItem('site-theme') || 'auto';
+            const dark = saved === 'dark' || (saved === 'auto' && matchMedia('(prefers-color-scheme: dark)').matches);
+            document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+        })();
+    </script>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
+<div class="site-glow site-glow-one" aria-hidden="true"></div>
+<div class="site-glow site-glow-two" aria-hidden="true"></div>
 
-<!-- TOP BAR -->
 <div class="topbar">
-    <div class="container">
-        <div class="topbar-left">
+    <div class="container topbar-inner">
+        <div class="topbar-links">
             <a href="tel:+998954601010"><i class="fas fa-phone"></i> +998 95 460 10 10</a>
             <a href="mailto:info@tenzorsoft.com"><i class="fas fa-envelope"></i> info@tenzorsoft.com</a>
         </div>
-        <div class="topbar-right">
-            <div class="topbar-socials">
-                <a target="_blank" href="https://www.youtube.com/@tenzorsoft-itcompany"><i
-                        class="fab fa-youtube"></i></a>
-                <a target="_blank" href="https://www.instagram.com/tenzor_soft"><i class="fab fa-instagram"></i></a>
-                <a target="_blank" href="https://t.me/tenzor_soft"><i class="fab fa-telegram-plane"></i></a>
-                <a target="_blank" href="https://www.linkedin.com/in/tenzor-soft-396297329/"><i
-                        class="fab fa-linkedin-in"></i></a>
-            </div>
-
-            <span class="topbar-divider"></span>
-
-            <div class="lang-dropdown">
-                <button class="lang-toggle">
-                    <i class="fas fa-globe"></i>
-                    <span>
-                        {% if LANGUAGE_CODE == 'ru' %}RU
-                        {% elif LANGUAGE_CODE == 'uz' %}UZ
-                        {% else %}EN{% endif %}
-                    </span>
-                    <i class="fas fa-chevron-down i-arrow"></i>
-                </button>
-                <div class="lang-menu">
-                    <form action="{% url 'set_language' %}" method="post" id="lang-form-ru">
-                        {% csrf_token %}
-                        <input type="hidden" name="language" value="ru">
-                        <input type="hidden" name="next" value="{{ request.get_full_path }}">
-                        <a href="#"
-                           onclick="document.getElementById('lang-form-ru').submit(); return false;">Русский</a>
-                    </form>
-
-                    <form action="{% url 'set_language' %}" method="post" id="lang-form-uz">
-                        {% csrf_token %}
-                        <input type="hidden" name="language" value="uz">
-                        <input type="hidden" name="next" value="{{ request.get_full_path }}">
-                        <a href="#"
-                           onclick="document.getElementById('lang-form-uz').submit(); return false;">O'zbekcha</a>
-                    </form>
-
-                    <form action="{% url 'set_language' %}" method="post" id="lang-form-en">
-                        {% csrf_token %}
-                        <input type="hidden" name="language" value="en">
-                        <input type="hidden" name="next" value="{{ request.get_full_path }}">
-                        <a href="#"
-                           onclick="document.getElementById('lang-form-en').submit(); return false;">English</a>
-                    </form>
-                </div>
-            </div>
+        <div class="topbar-note">
+            <span class="status-dot"></span>
+            {% translate "Dushanba — Juma: 9:00 — 18:00" %}
         </div>
     </div>
 </div>
 
-<!-- NAVBAR -->
-<header class="navbar">
-    <div class="container">
-        <a href="/" class="logo"><img src="{% static 'media/logo/logo-4.png' %}" alt="Tenzorsoft" style="height: 50px;"></a>
-        <nav>
-            <a href="/">{% translate "Bosh sahifa" %}</a>
-            <a href="/about">{% translate "Biz haqimizda" %}</a>
-            <div class="dropdown">
-                <a href="/services" class="dropdown-toggle">{% translate "Xizmatlar" %} <i
-                        class="fas fa-chevron-down"></i></a>
-                <div class="dropdown-menu">
-                    <a href="#">{% translate "Dasturiy ta'minot" %}</a>
-                    <a href="#">{% translate "1C mahsulotlari" %}</a>
-                    <a href="#">{% translate "1C Bitrix" %}</a>
-                    <a href="#">{% translate "Antiviruslar" %}</a>
-                    <a href="#">{% translate "Avtomatlashtirish" %}</a>
-                    <a href="#">{% translate "Biometrik tizimlar" %}</a>
-                    <a href="#">{% translate "IT xizmatlari" %}</a>
+<header class="navbar" id="site-header">
+    <div class="container navbar-inner">
+        <a href="{% url 'home' %}" class="brand" aria-label="Tenzorsoft">
+            <img src="{% static 'media/logo/logo-4.png' %}" alt="Tenzorsoft">
+        </a>
+
+        <button class="menu-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="main-nav">
+            <span></span><span></span><span></span>
+        </button>
+
+        <nav class="main-nav" id="main-nav">
+            <a href="{% url 'home' %}" class="{% if request.resolver_match.url_name == 'home' %}active{% endif %}">
+                {% translate "Bosh sahifa" %}
+            </a>
+            <a href="{% url 'about' %}" class="{% if request.resolver_match.url_name == 'about' %}active{% endif %}">
+                {% translate "Biz haqimizda" %}
+            </a>
+            <a href="{% url 'services' %}" class="{% if request.resolver_match.url_name == 'services' %}active{% endif %}">
+                {% translate "Xizmatlar" %}
+            </a>
+            <a href="{% url 'portfolio' %}" class="{% if request.resolver_match.url_name == 'portfolio' %}active{% endif %}">
+                {% translate "Portfolio" %}
+            </a>
+            <a href="{% url 'certificates' %}" class="{% if request.resolver_match.url_name == 'certificates' %}active{% endif %}">
+                {% translate "Sertifikatlar" %}
+            </a>
+            <a href="{% url 'contact' %}" class="nav-cta {% if request.resolver_match.url_name == 'contact' %}active{% endif %}">
+                {% translate "Bog'lanish" %} <i class="fas fa-arrow-up-right-from-square"></i>
+            </a>
+
+            <div class="nav-tools">
+                <div class="lang-dropdown">
+                    <button class="tool-button lang-toggle" type="button" aria-expanded="false">
+                        <i class="fas fa-globe"></i>
+                        {{ LANGUAGE_CODE|upper }}
+                        <i class="fas fa-chevron-down chevron"></i>
+                    </button>
+                    <div class="lang-menu">
+                        {% for code, language in LANGUAGES %}
+                        <form action="{% url 'set_language' %}" method="post">
+                            {% csrf_token %}
+                            <input type="hidden" name="language" value="{{ code }}">
+                            <input type="hidden" name="next" value="/{{ code }}{{ request.get_full_path|slice:'3:' }}">
+                            <button type="submit" class="{% if LANGUAGE_CODE == code %}active{% endif %}">
+                                {{ code|upper }}
+                                {% if LANGUAGE_CODE == code %}<i class="fas fa-check"></i>{% endif %}
+                            </button>
+                        </form>
+                        {% endfor %}
+                    </div>
                 </div>
-            </div>
-            <div class="dropdown">
-                <a href="/portfolio" class="dropdown-toggle">{% translate "Portfolio" %} <i
-                        class="fas fa-chevron-down"></i></a>
-                <div class="dropdown-menu">
-                    <a href="/portfolio/#web">{% translate "Web" %}</a>
-                    <a href="/portfolio/#mobile">{% translate "Mobil" %}</a>
-                    <a href="/portfolio/#fintech">{% translate "Fintech" %}</a>
-                    <a href="/portfolio/#automation">{% translate "Avtomatlashtirish" %}</a>
-                    <a href="/portfolio/#consulting">{% translate "Joriy etish" %}</a>
-                </div>
-            </div>
-            <a href="/certificates">{% translate "Sertifikatlar" %}</a>
-            <a href="/contact">{% translate "Kontaktlar" %}</a>
-            <div class="theme-switcher">
-                <button class="theme-btn" data-theme="light" title="{% translate 'Yoriq mavzu' %}"><i
-                        class="fas fa-sun"></i></button>
-                <button class="theme-btn" data-theme="auto" title="{% translate 'Avto' %}"><i
-                        class="fas fa-circle-half-stroke"></i></button>
-                <button class="theme-btn" data-theme="dark" title="{% translate 'Qorongi mavzu' %}"><i
-                        class="fas fa-moon"></i></button>
+
+                <button class="tool-button theme-toggle" type="button" aria-label="Rang mavzusini almashtirish">
+                    <i class="fas fa-moon theme-icon-dark"></i>
+                    <i class="fas fa-sun theme-icon-light"></i>
+                </button>
             </div>
         </nav>
     </div>
 </header>
 
-<!-- CONTENT -->
+{% if messages %}
+<div class="messages container" aria-live="polite">
+    {% for message in messages %}
+    <div class="message message-{{ message.tags }}">
+        <i class="fas {% if message.tags == 'success' %}fa-circle-check{% else %}fa-circle-exclamation{% endif %}"></i>
+        <span>{{ message }}</span>
+        <button type="button" aria-label="Yopish"><i class="fas fa-xmark"></i></button>
+    </div>
+    {% endfor %}
+</div>
+{% endif %}
+
 <main>
-    {% block content %}
-    {% endblock %}
+    {% block content %}{% endblock %}
 </main>
 
-<!-- FOOTER -->
 <footer class="footer">
     <div class="container">
+        <div class="footer-cta">
+            <div>
+                <span class="eyebrow">{% translate "IT konsalting" %}</span>
+                <h2>{% translate "Loyihangizni boshlashga tayyormisiz?" %}</h2>
+            </div>
+            <a href="{% url 'contact' %}" class="button button-light">
+                {% translate "Bog'lanish" %} <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+
         <div class="footer-grid">
             <div class="footer-about">
-                <a href="/" class="logo footer-logo"><img src="{% static 'media/logo/logo-4.png' %}" alt="Tenzorsoft"
-                                                          style="height: 50px;"></a>
+                <a href="{% url 'home' %}" class="brand footer-brand">
+                    <img src="{% static 'media/logo/logo-4.png' %}" alt="Tenzorsoft">
+                </a>
                 <p>{% translate 'OOO "Tenzor Soft" — Ozbekistonda dasturiy taminot ishlab chiqaruvchi yetakchi kompaniya. 2008 yildan beri IT xizmatlari bozorida.' %}</p>
+                <div class="social-links">
+                    <a target="_blank" rel="noopener" href="https://www.youtube.com/@tenzorsoft-itcompany" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a target="_blank" rel="noopener" href="https://www.instagram.com/tenzor_soft" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a target="_blank" rel="noopener" href="https://t.me/tenzor_soft" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
+                    <a target="_blank" rel="noopener" href="https://www.linkedin.com/in/tenzor-soft-396297329/" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
             </div>
 
             <div class="footer-col">
-                <h4>{% translate "Menyu" %}</h4>
-                <ul>
-                    <li><a href="/"><i class="fas fa-chevron-right"></i> {% translate "Bosh sahifa" %}</a></li>
-                    <li><a href="/about"><i class="fas fa-chevron-right"></i> {% translate "Biz haqimizda" %}</a></li>
-                    <li><a href="/services"><i class="fas fa-chevron-right"></i> {% translate "Xizmatlar" %}</a></li>
-                    <li><a href="/portfolio"><i class="fas fa-chevron-right"></i> {% translate "Portfolio" %}</a></li>
-                    <li><a href="/certificates"><i class="fas fa-chevron-right"></i> {% translate "Sertifikatlar" %}</a>
-                    </li>
-                    <li><a href="/contact"><i class="fas fa-chevron-right"></i> {% translate "Kontaktlar" %}</a></li>
-                </ul>
+                <h3>{% translate "Menyu" %}</h3>
+                <a href="{% url 'about' %}">{% translate "Biz haqimizda" %}</a>
+                <a href="{% url 'services' %}">{% translate "Xizmatlar" %}</a>
+                <a href="{% url 'portfolio' %}">{% translate "Portfolio" %}</a>
+                <a href="{% url 'certificates' %}">{% translate "Sertifikatlar" %}</a>
             </div>
 
             <div class="footer-col">
-                <h4>{% translate "Kontaktlar" %}</h4>
-                <ul class="footer-contacts">
-                    <li>
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>{% translate "Toshkent shahar, Yashnobod tumani, Turtkul ko'chasi 17A" %}</span>
-                    </li>
-                    <li>
-                        <i class="fas fa-phone"></i>
-                        <span>+998 95 460 10 10</span>
-                    </li>
-                    <li>
-                        <i class="fas fa-phone"></i>
-                        <span>+998 00 000 00 00</span>
-                    </li>
-                    <li>
-                        <i class="fas fa-envelope"></i>
-                        <span>info@tenzorsoft.com</span>
-                    </li>
-                    <li>
-                        <i class="fas fa-globe"></i>
-                        <span>tenzorsoft.com</span>
-                    </li>
-                </ul>
+                <h3>{% translate "Xizmatlar" %}</h3>
+                <a href="{% url 'services' %}#software">{% translate "Dasturiy ta'minot" %}</a>
+                <a href="{% url 'services' %}#automation">{% translate "Avtomatlashtirish" %}</a>
+                <a href="{% url 'services' %}#security">{% translate "IT xavfsizlik" %}</a>
+                <a href="{% url 'services' %}#biometrics">{% translate "Biometrik tizimlar" %}</a>
             </div>
 
+            <div class="footer-col footer-contact">
+                <h3>{% translate "Kontaktlar" %}</h3>
+                <a href="tel:+998954601010"><i class="fas fa-phone"></i> +998 95 460 10 10</a>
+                <a href="mailto:info@tenzorsoft.com"><i class="fas fa-envelope"></i> info@tenzorsoft.com</a>
+                <p><i class="fas fa-location-dot"></i> {% translate "Toshkent shahar, Yashnobod tumani, Turtkul ko'chasi 17A" %}</p>
+            </div>
         </div>
 
         <div class="footer-bottom">
-            <p>{% translate "Tenzor Soft LLC © 2024. Barcha huquqlar himoyalangan." %}</p>
-            <div class="footer-bottom-social">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-telegram-plane"></i></a>
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.youtube.com/@tenzorsoft-itcompany"><i class="fab fa-youtube"></i></a>
-            </div>
+            <p>© {% now "Y" %} Tenzor Soft LLC. {% translate "Barcha huquqlar himoyalangan." %}</p>
+            <a href="#site-header">{% translate "Yuqoriga" %} <i class="fas fa-arrow-up"></i></a>
         </div>
-
     </div>
 </footer>
 
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const slides = document.querySelectorAll(".video-slide");
-        const dots = document.querySelectorAll(".dot");
-        let currentSlide = 0;
-        const slideInterval = 7000; // 7 секунд на один баннер
-        let timer;
+document.addEventListener('DOMContentLoaded', () => {
+    const menuButton = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.main-nav');
+    const lang = document.querySelector('.lang-dropdown');
+    const langButton = document.querySelector('.lang-toggle');
+    const themeButton = document.querySelector('.theme-toggle');
 
-        function showSlide(index) {
-            slides.forEach(slide => slide.classList.remove("active"));
-            dots.forEach(dot => dot.classList.remove("active"));
-
-            slides[index].classList.add("active");
-            if (dots[index]) dots[index].classList.add("active");
-
-            currentSlide = index;
-        }
-
-        function nextSlide() {
-            let next = (currentSlide + 1) % slides.length;
-            showSlide(next);
-        }
-
-        function startSlider() {
-            timer = setInterval(nextSlide, slideInterval);
-        }
-
-        function resetSlider() {
-            clearInterval(timer);
-            startSlider();
-        }
-
-        if (slides.length > 0) {
-            startSlider();
-        }
-
-        // Переключение по клику на точки
-        dots.forEach(dot => {
-            dot.addEventListener("click", function () {
-                const index = parseInt(this.getAttribute("data-index"));
-                showSlide(index);
-                resetSlider();
-            });
-        });
-    });
-    // УПРАВЛЕНИЕ ВСЕМИ ВЫПАДАЮЩИМИ ОКНАМИ И ПЕРЕКЛЮЧАТЕЛЯМИ
-    document.addEventListener('DOMContentLoaded', () => {
-
-        // 2. НАСТРОЙКА ЯЗЫКОВОГО ДРОПДАУНА
-        const langDropdown = document.querySelector('.lang-dropdown');
-        const langToggle = document.querySelector('.lang-toggle');
-        const langMenu = document.querySelector('.lang-menu');
-
-        if (langToggle && langMenu) {
-            langToggle.addEventListener('click', (e) => {
-                e.preventDefault();
-                e.stopPropagation(); // Защита: клик изолирован, окно не закроется мгновенно!
-
-                const isOpen = langDropdown.classList.contains('open');
-                closeAllMenus(); // Закрываем обычные меню, если они открыты
-
-                if (!isOpen) {
-                    langDropdown.classList.add('open');
-                    langMenu.style.display = 'block'; // Или 'flex', в зависимости от твоих стилей
-                }
-            });
-        }
-
-        // 3. ФУНКЦИЯ БЕЗОПАСНОГО ЗАКРЫТИЯ ВСЕХ ОКОН
-        function closeAllMenus() {
-            // Закрываем стандартные меню
-            document.querySelectorAll('.dropdown').forEach(dropdown => {
-                dropdown.classList.remove('open');
-                const menu = dropdown.querySelector('.dropdown-menu');
-                if (menu) menu.style.display = 'none';
-            });
-
-            // Закрываем языковое меню
-            if (langDropdown && langMenu) {
-                langDropdown.classList.remove('open');
-                langMenu.style.display = 'none';
-            }
-        }
+    menuButton?.addEventListener('click', () => {
+        const open = nav.classList.toggle('open');
+        menuButton.classList.toggle('open', open);
+        menuButton.setAttribute('aria-expanded', String(open));
+        document.body.classList.toggle('menu-open', open);
     });
 
+    langButton?.addEventListener('click', (event) => {
+        event.stopPropagation();
+        const open = lang.classList.toggle('open');
+        langButton.setAttribute('aria-expanded', String(open));
+    });
 
+    document.addEventListener('click', () => {
+        lang?.classList.remove('open');
+        langButton?.setAttribute('aria-expanded', 'false');
+    });
 
-        // ПРАВИЛЬНЫЙ И НАДЕЖНЫЙ THEME SWITCHER
-        const ThemeSwitcher = {
-            STORAGE_KEY: 'site-theme',
+    themeButton?.addEventListener('click', () => {
+        const next = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+        document.documentElement.dataset.theme = next;
+        localStorage.setItem('site-theme', next);
+    });
 
-            init() {
-                this.attachEventListeners();
-                const savedTheme = localStorage.getItem(this.STORAGE_KEY) || 'auto';
-                this.applyTheme(savedTheme);
-            },
+    document.querySelectorAll('.message button').forEach(button => {
+        button.addEventListener('click', () => button.closest('.message').remove());
+    });
 
-            applyTheme(theme) {
-                if (theme === 'auto') {
-                    const isSystemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-                    document.documentElement.setAttribute('data-theme', isSystemDark ? 'dark' : 'light');
-                } else {
-                    document.documentElement.setAttribute('data-theme', theme);
-                }
-
-                localStorage.setItem(this.STORAGE_KEY, theme);
-                this.updateButtons(theme);
-            },
-
-            updateButtons(activeTheme) {
-                document.querySelectorAll('.theme-btn').forEach(btn => {
-                    if (btn.dataset.theme === activeTheme) {
-                        btn.classList.add('active');
-                    } else {
-                        btn.classList.remove('active');
-                    }
-                });
-            },
-
-            attachEventListeners() {
-                document.querySelectorAll('.theme-btn').forEach(btn => {
-                    btn.addEventListener('click', () => {
-                        this.applyTheme(btn.dataset.theme);
-                    });
-                });
-
-                window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
-                    if (localStorage.getItem(this.STORAGE_KEY) === 'auto') {
-                        this.applyTheme('auto');
-                    }
-                });
-            }
-        };
-
-        document.addEventListener('DOMContentLoaded', () => {
-            ThemeSwitcher.init();
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const portfolioCards = document.querySelectorAll('.portfolio-card');
+    const applyFilter = (filter) => {
+        const valid = [...filterButtons].some(button => button.dataset.filter === filter);
+        const selected = valid ? filter : 'all';
+        filterButtons.forEach(button => button.classList.toggle('active', button.dataset.filter === selected));
+        portfolioCards.forEach(card => {
+            card.hidden = selected !== 'all' && card.dataset.category !== selected;
         });
-        // Portfolio filter
-        document.addEventListener('DOMContentLoaded', () => {
-            const filterButtons = document.querySelectorAll('.filter-btn');
-            const portfolioCards = document.querySelectorAll('.portfolio-card');
+    };
 
-            // 1. Функция фильтрации
-            function applyFilter(filterValue) {
-                if (!filterValue) filterValue = 'all';
-
-                // Обновляем активную кнопку
-                filterButtons.forEach(btn => {
-                    if (btn.dataset.filter === filterValue) {
-                        btn.classList.add('active');
-                    } else {
-                        btn.classList.remove('active');
-                    }
-                });
-
-                // Фильтруем карточки
-                portfolioCards.forEach(card => {
-                    if (filterValue === 'all' || card.dataset.category === filterValue) {
-                        card.style.display = 'block';
-                    } else {
-                        card.style.display = 'none';
-                    }
-                });
-            }
-
-            // 2. Обработчик кликов по кнопкам
-            filterButtons.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    const filter = btn.dataset.filter;
-                    applyFilter(filter);
-
-                    // Опционально: обновляем URL при клике, чтобы пользователь мог скопировать ссылку
-                    window.location.hash = filter === 'all' ? '' : filter;
-                });
-            });
-
-            // 3. Функция проверки URL (поддерживает хэш #mobile или чтение последнего сегмента пути)
-            function checkUrlAndFilter() {
-                // Вариант А: Ищем значение в хэше (например, /portfolio/#mobile)
-                let filterFromUrl = window.location.hash.replace('#', '');
-
-                // Вариант Б: Если хэша нет, проверяем путь (например, /portfolio/mobile или /profile/mobile)
-                if (!filterFromUrl) {
-                    const pathSegments = window.location.pathname.split('/').filter(Boolean);
-                    const lastSegment = pathSegments[pathSegments.length - 1];
-
-                    // Проверяем, существует ли вообще кнопка с таким фильтром, чтобы не отфильтровать лишнего
-                    const validFilters = Array.from(filterButtons).map(b => b.dataset.filter);
-                    if (validFilters.includes(lastSegment)) {
-                        filterFromUrl = lastSegment;
-                    }
-                }
-
-                // Применяем найденный фильтр
-                if (filterFromUrl) {
-                    applyFilter(filterFromUrl);
-                }
-            }
-
-            // Запускаем проверку при загрузке страницы
-            checkUrlAndFilter();
-
-            // Опционально: реагируем на изменение хэша без перезагрузки страницы (кнопки "Назад" / "Вперед" в браузере)
-            window.addEventListener('hashchange', checkUrlAndFilter);
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const filter = button.dataset.filter;
+            applyFilter(filter);
+            history.replaceState(null, '', filter === 'all' ? location.pathname : `#${filter}`);
         });
+    });
+    if (filterButtons.length) {
+        applyFilter(location.hash.slice(1) || 'all');
+        addEventListener('hashchange', () => applyFilter(location.hash.slice(1) || 'all'));
+    }
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(element => observer.observe(element));
+});
 </script>
-
-
 </body>
 </html>

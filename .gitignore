@@ -1,4 +1,11 @@
-.venv
+.venv/
+venv/
 .idea
 .junie
 .env
+__pycache__/
+*.py[cod]
+*.log
+*.sqlite3
+db.sqlite3
+staticfiles/
