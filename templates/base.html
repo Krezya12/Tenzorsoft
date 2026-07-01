@@ -2,7 +2,7 @@
 {% get_current_language as LANGUAGE_CODE %}
 {% get_available_languages as LANGUAGES %}
 <!DOCTYPE html>
-<html lang="{{ LANGUAGE_CODE }}" data-theme="light">
+<html lang="{{ LANGUAGE_CODE }}" data-theme="light" style="scroll-behavior: smooth;">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -39,7 +39,7 @@
 <header class="navbar" id="site-header">
     <div class="container navbar-inner">
         <a href="{% url 'home' %}" class="brand" aria-label="Tenzorsoft">
-            <img src="{% static 'media/logo/logo-4.png' %}" alt="Tenzorsoft">
+            <img src="{% static 'media/logo/logo-3.png' %}" alt="Tenzorsoft">
         </a>
 
         <button class="menu-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="main-nav">
@@ -252,6 +252,88 @@
             });
         }, {threshold: 0.12});
         document.querySelectorAll('.reveal').forEach(element => observer.observe(element));
+
+        // Обработчик кнопки "Yuqoriga" для плавного скролла в начало
+        const scrollToTopLink = document.querySelector('a[href="#site-header"]');
+        if (scrollToTopLink) {
+            scrollToTopLink.addEventListener('click', (e) => {
+                e.preventDefault();
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        }
+
+        // Копирование номера телефона и email в буфер обмена
+        const showNotification = (text, type = 'success') => {
+            const container = document.querySelector('.messages') || document.createElement('div');
+
+            if (!document.querySelector('.messages')) {
+                container.className = 'messages container';
+                container.setAttribute('aria-live', 'polite');
+                document.body.insertBefore(container, document.querySelector('main'));
+            }
+
+            const message = document.createElement('div');
+            message.className = `message message-${type}`;
+            message.innerHTML = `
+                <i class="fas fa-circle-check"></i>
+                <span>${text}</span>
+                <button type="button" aria-label="Yopish"><i class="fas fa-xmark"></i></button>
+            `;
+
+            container.appendChild(message);
+
+            const closeBtn = message.querySelector('button');
+            closeBtn.addEventListener('click', () => message.remove());
+
+            setTimeout(() => {
+                message.remove();
+            }, 3000);
+        };
+
+        const links = document.querySelectorAll('a[href^="tel:"], a[href^="mailto:"]');
+        console.log('Найдено ссылок:', links.length);
+
+        links.forEach(link => {
+            link.style.cursor = 'pointer';
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+
+                let textToCopy = '';
+                let notificationText = '';
+
+                if (link.href.startsWith('tel:')) {
+                    textToCopy = link.href.substring(4); // удаляем "tel:"
+                    notificationText = '☎️ Номер телефона скопирован!';
+                } else if (link.href.startsWith('mailto:')) {
+                    textToCopy = link.href.substring(7); // удаляем "mailto:"
+                    notificationText = '✉️ Email скопирован!';
+                }
+
+                console.log('Копируем:', textToCopy);
+
+                if (navigator.clipboard && navigator.clipboard.writeText) {
+                    navigator.clipboard.writeText(textToCopy).then(() => {
+                        console.log('Успешно скопировано');
+                        showNotification(notificationText);
+                    }).catch((err) => {
+                        console.error('Ошибка при копировании:', err);
+                    });
+                } else {
+                    // Fallback для старых браузеров
+                    const textarea = document.createElement('textarea');
+                    textarea.value = textToCopy;
+                    document.body.appendChild(textarea);
+                    textarea.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(textarea);
+                    console.log('Скопировано через fallback');
+                    showNotification(notificationText);
+                }
+            });
+        });
     });
 </script>
 </body>

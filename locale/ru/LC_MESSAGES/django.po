@@ -99,7 +99,7 @@ msgid "Bog'lanish"
 msgstr "Связаться"
 
 msgid "Loyihangizni boshlashga tayyormisiz?"
-msgstr "Готовы начать ваш проект?"
+msgstr "Готовы начать свой проект?"
 
 msgid "OOO \"Tenzor Soft\" — Ozbekistonda dasturiy taminot ishlab chiqaruvchi yetakchi kompaniya. 2008 yildan beri IT xizmatlari bozorida."
 msgstr "OOO \"Tenzor Soft\" — ведущая компания по разработке программного обеспечения в Узбекистане. На рынке IT-услуг с 2008 года."
