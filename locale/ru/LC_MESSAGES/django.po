@@ -3,484 +3,677 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Tenzorsoft\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-29 00:00+0500\n"
+"POT-Creation-Date: 2026-07-01 17:24+0500\n"
 "PO-Revision-Date: 2026-06-29 00:00+0500\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
-
-msgid "Tenzorsoft — Biz haqimizda"
-msgstr "Tenzorsoft — О нас"
-
-msgid "Biz haqimizda"
-msgstr "О нас"
-
-msgid "Tenzorsoft kompaniyasi haqida batafsil ma'lumot"
-msgstr "Подробная информация о компании Tenzorsoft"
-
-msgid "Kompaniya haqida"
-msgstr "О компании"
-
-msgid "Tenzorsoft — sifat va tajriba"
-msgstr "Tenzorsoft — качество и опыт"
-
-msgid "Tenzorsoft kompaniyasi 2008 yildan beri O'zbekistonda IT xizmatlari bozorida faoliyat yuritib kelmoqda. Biz biznesingizni rivojlantirish uchun zamonaviy yechimlar taklif etamiz."
-msgstr "Компания Tenzorsoft с 2008 года осуществляет деятельность на рынке IT-услуг в Узбекистане. Мы предлагаем современные решения для развития вашего бизнеса."
-
-msgid "Bizning jamoamiz tajribali mutaxassislardan iborat bo'lib, har bir loyihaga individual yondashuv bilan ishlaymiz. Mijozlarimizning muvaffaqiyati bizning asosiy maqsadimizdir."
-msgstr "Наша команда состоит из опытных специалистов, и мы подходим к каждому проекту индивидуально. Успех наших клиентов — наш главный приоритет."
-
-msgid "Dasturiy mahsulotlar muhandisligi"
-msgstr "Инженерия программных продуктов"
-
-msgid "Raqamli xizmatlar"
-msgstr "Цифровые услуги"
-
-msgid "IT konsalting"
-msgstr "IT консалтинг"
-
-msgid "Dasturiy ta'minotni avtomatlashtirish"
-msgstr "Автоматизация программного обеспечения"
-
-msgid "Yillik tajriba"
-msgstr "Годовой опыт"
-
-msgid "Loyihalar"
-msgstr "Проекты"
-
-msgid "Mijozlar"
-msgstr "Клиенты"
-
-msgid "Mutaxassislar"
-msgstr "Специалисты"
-
-msgid "Missiya va Vizion"
-msgstr "Миссия и виденье"
-
-msgid "Missiyamiz"
-msgstr "Наша миссия"
-
-msgid "Biznesingizni rivojlantirish uchun eng zamonaviy IT yechimlarini taqdim etish va mijozlarimizning muvaffaqiyatiga hissa qo'shish."
-msgstr "Предоставлять самые современные IT-решения для развития вашего бизнеса и способствовать успеху наших клиентов."
-
-msgid "Vizionimiz"
-msgstr "Наша визия"
-
-msgid "O'zbekistonda eng ishonchli va innovatsion IT kompaniyasi bo'lish, raqamli transformatsiyani rag'batlantirish."
-msgstr "Стать самым надежным и инновационным IT-компанией в Узбекистане и продвигать цифровую трансформацию."
-
-msgid "Qadriyatlarimiz"
-msgstr "Наши ценности"
-
-msgid "Sifat, ishonch, innovatsiya va mijoz mamnuniyati — bizning asosiy qadriyatlarimiz."
-msgstr "Качество, доверие, инновации и удовлетворенность клиентов — наши основные ценности."
-
-msgid "Biznesingiz uchun keng qamrovli IT yechimlari"
-msgstr "Комплексные IT-решения для вашего бизнеса"
-
-msgid "Dushanba — Juma: 9:00 — 18:00"
-msgstr "Понедельник — пятница: 9:00 — 18:00"
-
-msgid "Bosh sahifa"
-msgstr "Главная"
-
-msgid "Xizmatlar"
-msgstr "Услуги"
-
-msgid "Portfolio"
-msgstr "Портфолио"
-
-msgid "Sertifikatlar"
-msgstr "Сертификаты"
-
-msgid "Bog'lanish"
-msgstr "Связаться"
-
-msgid "Loyihangizni boshlashga tayyormisiz?"
-msgstr "Готовы начать свой проект?"
-
-msgid "OOO \"Tenzor Soft\" — Ozbekistonda dasturiy taminot ishlab chiqaruvchi yetakchi kompaniya. 2008 yildan beri IT xizmatlari bozorida."
-msgstr "OOO \"Tenzor Soft\" — ведущая компания по разработке программного обеспечения в Узбекистане. На рынке IT-услуг с 2008 года."
-
-msgid "Menyu"
-msgstr "Меню"
-
-msgid "Dasturiy ta'minot"
-msgstr "Программное обеспечение"
-
-msgid "Avtomatlashtirish"
-msgstr "Автоматизация"
-
-msgid "IT xavfsizlik"
-msgstr "IT безопасность"
-
-msgid "Biometrik tizimlar"
-msgstr "Биометрические системы"
-
-msgid "Kontaktlar"
-msgstr "Контакты"
-
-msgid "Toshkent shahar, Yashnobod tumani, Turtkul ko'chasi 17A"
-msgstr "г. Ташкент, Яшнобадский район, ул. Турткул, 17A"
-
-msgid "Barcha huquqlar himoyalangan."
-msgstr "Все права защищены."
-
-msgid "Yuqoriga"
-msgstr "Наверх"
-
-msgid "Tenzorsoft — Sertifikatlar"
-msgstr "Tenzorsoft — Сертификаты"
-
-msgid "Bizning yutuqlarimiz va hamkorliklarimiz"
-msgstr "Наши достижения и партнёрства"
-
-msgid "Microsoft kompaniyasining rasmiy hamkori"
-msgstr "Официальный партнер Microsoft"
-
-msgid "1C kompaniyasining sertifikatlangan hamkori"
-msgstr "Сертифицированный партнер компании 1C"
-
-msgid "Kaspersky Lab rasmiy distribyutori"
-msgstr "Официальный дистрибьютор Kaspersky Lab"
-
-msgid "ESET antivirus rasmiy hamkori"
-msgstr "Распространитель программного обеспечения ESET"
-
-msgid "1C Bitrix sertifikatlangan hamkori"
-msgstr "Сертифицированный партнер 1C Bitrix"
-
-msgid "Sifat menejmenti tizimi sertifikati"
-msgstr "Сертификат системы менеджмента качества"
-
-msgid "Tenzorsoft — Kontaktlar"
-msgstr "Tenzorsoft — Контакты"
-
-msgid "Biz bilan bog'laning"
-msgstr "Свяжитесь с нами"
-
-msgid "Bog'lanish ma'lumotlari"
-msgstr "Связаться"
-
-msgid "Bizga istalgan vaqt murojaat qilishingiz mumkin. Mutaxassislarimiz sizga yordam berishga tayyor."
-msgstr "Вы можете обратиться к нам в любое время. Наши специалисты готовы вам помочь."
-
-msgid "Manzil"
-msgstr "Адрес"
-
-msgid "Telefon"
-msgstr "Телефон"
-
-msgid "Email"
-msgstr "Электронная почта"
-
-msgid "Ish vaqti"
-msgstr "Рабочее время"
-
-msgid "Xabar yuborish"
-msgstr "Отправить сообщение"
-
-msgid "Ismingiz"
-msgstr "Ваше имя"
-
-msgid "Ismingizni kiriting"
-msgstr "Введите ваше имя"
-
-msgid "Xabar"
-msgstr "Сообщение"
-
-msgid "Xabaringizni yozing..."
-msgstr "Напишите ваше сообщение..."
-
-msgid "Yuborish"
-msgstr "Отправить"
-
-msgid "Tenzorsoft — Bosh sahifa"
-msgstr "Tenzorsoft — Главная"
-
-msgid "2008 yildan buyon ishonchli IT hamkor"
-msgstr "Надежный IT-партнер с 2008 года"
-
-msgid "Biznesingizni"
-msgstr "Соединяем ваш бизнес"
-
-msgid "raqamli kelajak"
-msgstr "с цифровым будущим"
-
-msgid "bilan bog'laymiz"
-msgstr " "
-
-msgid "Biznesingiz uchun zamonaviy dasturiy ta'minot, avtomatlashtirish va IT xavfsizlik yechimlari"
-msgstr "Современное программное обеспечение, автоматизация и решения IT-безопасности для вашего бизнеса"
-
-msgid "Loyihani boshlash"
-msgstr "Начать проект"
-
-msgid "Ishlarimizni ko'ring"
-msgstr "Посмотреть работы"
-
-msgid "50 dan ortiq kompaniya bizga ishonadi"
-msgstr "Более 50 компаний доверяют нам"
-
-msgid "Xavfsiz"
-msgstr "Безопасно"
-
-msgid "Samaradorlik"
-msgstr "Эффективность"
-
-msgid "Nima qilamiz"
-msgstr "Что мы делаем"
-
-msgid "Texnologiya orqali"
-msgstr "С помощью технологий"
-
-msgid "biznes qiymatini yaratamiz"
-msgstr "создаем ценность для бизнеса"
-
-msgid "G'oyadan boshlab ishga tushirishgacha — kompaniyangiz uchun barqaror va qulay raqamli mahsulotlar yaratamiz."
-msgstr "От идеи до запуска — создаем стабильные и удобные цифровые продукты для вашей компании."
-
-msgid "Veb ilovalar, korporativ tizimlar, ERP va CRM yechimlari."
-msgstr "Веб-приложения, корпоративные системы, ERP и CRM-решения."
-
-msgid "Batafsil"
-msgstr "Подробнее"
-
-msgid "Biznes jarayonlarini tezlashtiruvchi integratsiya va avtomatizatsiya."
-msgstr "Интеграции и автоматизация, ускоряющие бизнес-процессы."
-
-msgid "Ma'lumotlar va infratuzilmani himoyalovchi ishonchli yechimlar."
-msgstr "Надежные решения для защиты данных и инфраструктуры."
-
-msgid "Kirish nazorati, davomat va zamonaviy identifikatsiya tizimlari."
-msgstr "Контроль доступа, учет посещаемости и современные системы идентификации."
-
-msgid "Nega Tenzorsoft"
-msgstr "Почему Tenzorsoft"
-
-msgid "Murakkab vazifalar uchun sodda yechimlar"
-msgstr "Простые решения для сложных задач"
-
-msgid "Biz faqat kod yozmaymiz. Biznesingizni tushunamiz, aniq natija beradigan texnologiyani tanlaymiz va loyihani qo'llab-quvvatlaymiz."
-msgstr "Мы не просто пишем код. Мы понимаем ваш бизнес, подбираем технологию под результат и сопровождаем проект."
-
-msgid "Individual yondashuv"
-msgstr "Индивидуальный подход"
-
-msgid "Har bir loyiha uchun alohida strategiya."
-msgstr "Отдельная стратегия для каждого проекта."
-
-msgid "Shaffof jarayon"
-msgstr "Прозрачный процесс"
-
-msgid "Ish jarayoni va natijalar doim nazoratingizda."
-msgstr "Процесс и результаты всегда под вашим контролем."
-
-msgid "Doimiy yordam"
-msgstr "Постоянная поддержка"
-
-msgid "Ishga tushgandan keyin ham yoningizdamiz."
-msgstr "Мы остаемся рядом и после запуска."
-
-msgid "Ish jarayoni"
-msgstr "Процесс работы"
-
-msgid "G'oyadan tayyor mahsulotgacha"
-msgstr "От идеи до готового продукта"
-
-msgid "Tahlil"
-msgstr "Анализ"
-
-msgid "Maqsad va talablarni o'rganamiz."
-msgstr "Изучаем цели и требования."
-
-msgid "Dizayn"
-msgstr "Дизайн"
-
-msgid "Qulay interfeys va arxitektura yaratamiz."
-msgstr "Создаем удобный интерфейс и архитектуру."
-
-msgid "Ishlab chiqish"
-msgstr "Разработка"
-
-msgid "Sifatli kod va integratsiyalarni quramiz."
-msgstr "Создаем качественный код и интеграции."
-
-msgid "Natija"
-msgstr "Результат"
-
-msgid "Mahsulotni ishga tushirib, kuzatamiz."
-msgstr "Запускаем продукт и сопровождаем его."
-
-msgid "Tenzorsoft — Portfolio"
-msgstr "Tenzorsoft — Портфолио"
-
-msgid "Bizning muvaffaqiyatli loyihalarimiz"
-msgstr "Наши успешные проекты"
-
-msgid "Barchasi"
-msgstr "Все"
-
-msgid "Web"
-msgstr "Веб"
-
-msgid "Mobil"
-msgstr "Мобильные"
-
-msgid "Fintech"
-msgstr "Финтех"
-
-msgid "Korporativ veb-sayt"
-msgstr "Корпоративный сайт"
-
-msgid "Yirik kompaniya uchun zamonaviy korporativ veb-sayt ishlab chiqildi."
-msgstr "Современный корпоративный сайт для крупной компании."
-
-msgid "Mobil ilova"
-msgstr "Мобильные приложения"
-
-msgid "Android va iOS uchun mijozlar uchun xizmat ko'rsatish ilovasi."
-msgstr "Современные приложения для Android и iOS"
-
-msgid "To'lov tizimi"
-msgstr "Платежная система"
-
-msgid "Onlayn to'lovlar uchun xavfsiz va tez platforma."
-msgstr "Безопасная и быстрая платформа для онлайн-платежей."
-
-msgid "ERP tizimi"
-msgstr "ERP система"
-
-msgid "Korxona resurslarini boshqarish tizimi joriy etildi."
-msgstr "Система управления ресурсами компании внедрена."
-
-msgid "Internet do'kon"
-msgstr "Интернет-магазин"
-
-msgid "To'liq funksional onlayn savdo platformasi."
-msgstr "Полностью функциональная онлайн-торговая платформа."
-
-msgid "CRM tizimi"
-msgstr "CRM система"
-
-msgid "Mijozlar bilan munosabatlarni boshqarish tizimi."
-msgstr "Система управления отношениями с клиентами."
-
-msgid "Tenzorsoft — Xizmatlar"
-msgstr "Tenzorsoft — Услуги"
-
-msgid "Xizmatlarimiz"
-msgstr "Наши услуги"
-
-msgid "Dasturiy ta'minot ishlab chiqish"
-msgstr "Автоматизация программного обеспечения"
-
-msgid "Biznesingiz uchun maxsus dasturiy yechimlar yaratamiz. Veb ilovalar, korporativ tizimlar, ERP va CRM tizimlarini ishlab chiqamiz."
-msgstr "Создаем индивидуальные программные решения для вашего бизнеса. Разрабатываем веб-приложения, корпоративные системы, ERP и CRM."
-
-msgid "Veb ilovalar"
-msgstr "Мобильные приложения"
-
-msgid "Korporativ tizimlar"
-msgstr "Биометрические системы"
-
-msgid "ERP va CRM"
-msgstr "ERP и CRM"
-
-msgid "API integratsiyalar"
-msgstr "Интеграции API"
-
-msgid "1C mahsulotlari"
-msgstr "Продукты 1С"
-
-msgid "1C dasturlarini joriy etish, sozlash va qo'llab-quvvatlash xizmatlarini ko'rsatamiz."
-msgstr "Оказываем услуги по внедрению, настройке и поддержке программ 1C."
-
-msgid "1C joriy etish"
-msgstr "Введение"
-
-msgid "1C sozlash"
-msgstr "Настройка 1C"
-
-msgid "1C qo'llab-quvvatlash"
-msgstr "Поддержка 1C"
-
-msgid "1C o'qitish"
-msgstr "Обучение 1C"
-
-msgid "1C Bitrix"
-msgstr "1C Битрикс"
-
-msgid "Korporativ portallar, internet-do'konlar va veb-saytlarni 1C Bitrix platformasida yaratamiz."
-msgstr "Создаем корпоративные порталы, интернет-магазины и сайты на платформе 1C Bitrix."
-
-msgid "Korporativ portal"
-msgstr "Корпоративный портал"
-
-msgid "Veb-sayt"
-msgstr "Веб-сайт"
-
-msgid "Antiviruslar"
-msgstr "Антивирусы"
-
-msgid "Kompyuter va tarmoq xavfsizligini ta'minlash uchun antiviruslar va kiberxavfsizlik yechimlari."
-msgstr "Антивирусы и решения кибербезопасности для защиты компьютеров и сети."
-
-msgid "Kaspersky"
-msgstr "Kaspersky"
-
-msgid "ESET"
-msgstr "ESET"
-
-msgid "DrWeb"
-msgstr "DrWeb"
-
-msgid "Tarmoq xavfsizligi"
-msgstr "IT безопасность"
-
-msgid "Biznes jarayonlarini avtomatlashtirish orqali samaradorlikni oshirish va xarajatlarni kamaytirish."
-msgstr "Повышаем эффективность и снижаем затраты за счет автоматизации бизнес-процессов."
-
-msgid "Jarayonlarni avtomatlashtirish"
-msgstr "Автоматизация бизнес-процессов"
-
-msgid "Hisobotlarni avtomatlashtirish"
-msgstr "Автоматизация бизнес-процессов"
-
-msgid "Integratsiyalar"
-msgstr "Интеграции"
-
-msgid "Bot yaratish"
-msgstr "Создание ботов"
-
-msgid "Zamonaviy biometrik identifikatsiya tizimlari — xodimlarni kuzatish va xavfsizlikni ta'minlash."
-msgstr "Современные системы биометрической идентификации — контроль сотрудников и обеспечение безопасности."
-
-msgid "Yuz tanish tizimlari"
-msgstr "Распознавание лиц"
-
-msgid "Barmoq izi skanerlari"
-msgstr "Сканеры отпечатков пальцев"
-
-msgid "Kirish nazorati"
-msgstr "Контроль доступа"
-
-msgid "Davomat tizimi"
-msgstr "Система посещаемости"
-
-msgid "Ruscha"
-msgstr "Русский"
-
-msgid "Ozbekcha"
-msgstr "Узбекский"
-
-msgid "Inglizcha"
-msgstr "Английский"
-
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
+"(n%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: apps/views.py:39
 msgid "Iltimos, majburiy maydonlarni to‘ldiring."
 msgstr "Пожалуйста, заполните обязательные поля."
 
+#: apps/views.py:41
+msgid "Telefon raqamiga faqat raqam kiriting."
+msgstr ""
+
+#: apps/views.py:56
 msgid "Xabaringiz qabul qilindi. Tez orada siz bilan bog‘lanamiz."
 msgstr "Ваше сообщение принято. Мы скоро свяжемся с вами."
+
+#: templates/about.html:4
+msgid "Tenzorsoft — Biz haqimizda"
+msgstr "Tenzorsoft — О нас"
+
+#: templates/about.html:11 templates/base.html:54 templates/base.html:156
+msgid "Biz haqimizda"
+msgstr "О нас"
+
+#: templates/about.html:12
+msgid "Tenzorsoft kompaniyasi haqida batafsil ma'lumot"
+msgstr "Подробная информация о компании Tenzorsoft"
+
+#: templates/about.html:21 templates/home.html:145
+msgid "Kompaniya haqida"
+msgstr "О компании"
+
+#: templates/about.html:22
+msgid "Tenzorsoft — sifat va tajriba"
+msgstr "Tenzorsoft — качество и опыт"
+
+#: templates/about.html:23
+msgid ""
+"Tenzorsoft kompaniyasi 2008 yildan beri O'zbekistonda IT xizmatlari bozorida "
+"faoliyat yuritib kelmoqda. Biz biznesingizni rivojlantirish uchun zamonaviy "
+"yechimlar taklif etamiz."
+msgstr ""
+"Компания Tenzorsoft с 2008 года осуществляет деятельность на рынке IT-услуг "
+"в Узбекистане. Мы предлагаем современные решения для развития вашего бизнеса."
+
+#: templates/about.html:24
+msgid ""
+"Bizning jamoamiz tajribali mutaxassislardan iborat bo'lib, har bir loyihaga "
+"individual yondashuv bilan ishlaymiz. Mijozlarimizning muvaffaqiyati bizning "
+"asosiy maqsadimizdir."
+msgstr ""
+"Наша команда состоит из опытных специалистов, и мы подходим к каждому "
+"проекту индивидуально. Успех наших клиентов — наш главный приоритет."
+
+#: templates/about.html:26
+msgid "Dasturiy mahsulotlar muhandisligi"
+msgstr "Инженерия программных продуктов"
+
+#: templates/about.html:27
+msgid "Raqamli xizmatlar"
+msgstr "Цифровые услуги"
+
+#: templates/about.html:28 templates/base.html:126
+msgid "IT konsalting"
+msgstr "IT консалтинг"
+
+#: templates/about.html:29
+msgid "Dasturiy ta'minotni avtomatlashtirish"
+msgstr "Автоматизация программного обеспечения"
+
+#: templates/about.html:35 templates/home.html:66
+msgid "Yillik tajriba"
+msgstr "Годовой опыт"
+
+#: templates/about.html:39 templates/home.html:67
+msgid "Loyihalar"
+msgstr "Проекты"
+
+#: templates/about.html:43 templates/home.html:68
+msgid "Mijozlar"
+msgstr "Клиенты"
+
+#: templates/about.html:47 templates/home.html:69
+msgid "Mutaxassislar"
+msgstr "Специалисты"
+
+#: templates/about.html:57
+msgid "Missiya va Vizion"
+msgstr "Миссия и виденье"
+
+#: templates/about.html:63
+msgid "Missiyamiz"
+msgstr "Наша миссия"
+
+#: templates/about.html:64
+msgid ""
+"Biznesingizni rivojlantirish uchun eng zamonaviy IT yechimlarini taqdim "
+"etish va mijozlarimizning muvaffaqiyatiga hissa qo'shish."
+msgstr ""
+"Предоставлять самые современные IT-решения для развития вашего бизнеса и "
+"способствовать успеху наших клиентов."
+
+#: templates/about.html:70
+msgid "Vizionimiz"
+msgstr "Наша визия"
+
+#: templates/about.html:71
+msgid ""
+"O'zbekistonda eng ishonchli va innovatsion IT kompaniyasi bo'lish, raqamli "
+"transformatsiyani rag'batlantirish."
+msgstr ""
+"Стать самым надежным и инновационным IT-компанией в Узбекистане и продвигать "
+"цифровую трансформацию."
+
+#: templates/about.html:77
+msgid "Qadriyatlarimiz"
+msgstr "Наши ценности"
+
+#: templates/about.html:78
+msgid ""
+"Sifat, ishonch, innovatsiya va mijoz mamnuniyati — bizning asosiy "
+"qadriyatlarimiz."
+msgstr ""
+"Качество, доверие, инновации и удовлетворенность клиентов — наши основные "
+"ценности."
+
+#: templates/base.html:9 templates/services.html:12
+msgid "Biznesingiz uchun keng qamrovli IT yechimlari"
+msgstr "Комплексные IT-решения для вашего бизнеса"
+
+#: templates/base.html:34 templates/contact.html:57
+msgid "Dushanba — Juma: 9:00 — 18:00"
+msgstr "Понедельник — пятница: 9:00 — 18:00"
+
+#: templates/base.html:51
+msgid "Bosh sahifa"
+msgstr "Главная"
+
+#: templates/base.html:58 templates/base.html:157 templates/base.html:163
+msgid "Xizmatlar"
+msgstr "Услуги"
+
+#: templates/base.html:62 templates/base.html:158 templates/portfolio.html:10
+msgid "Portfolio"
+msgstr "Портфолио"
+
+#: templates/base.html:66 templates/base.html:159
+#: templates/certificates.html:11
+msgid "Sertifikatlar"
+msgstr "Сертификаты"
+
+#: templates/base.html:70 templates/base.html:130
+msgid "Bog'lanish"
+msgstr "Связаться"
+
+#: templates/base.html:127
+msgid "Loyihangizni boshlashga tayyormisiz?"
+msgstr "Готовы начать свой проект?"
+
+#: templates/base.html:141
+msgid ""
+"OOO \"Tenzor Soft\" — Ozbekistonda dasturiy taminot ishlab chiqaruvchi "
+"yetakchi kompaniya. 2008 yildan beri IT xizmatlari bozorida."
+msgstr ""
+"OOO \"Tenzor Soft\" — ведущая компания по разработке программного "
+"обеспечения в Узбекистане. На рынке IT-услуг с 2008 года."
+
+#: templates/base.html:155
+msgid "Menyu"
+msgstr "Меню"
+
+#: templates/base.html:164 templates/home.html:87
+msgid "Dasturiy ta'minot"
+msgstr "Программное обеспечение"
+
+#: templates/base.html:165 templates/home.html:94 templates/portfolio.html:23
+#: templates/services.html:90
+msgid "Avtomatlashtirish"
+msgstr "Автоматизация"
+
+#: templates/base.html:166 templates/home.html:101
+msgid "IT xavfsizlik"
+msgstr "IT безопасность"
+
+#: templates/base.html:167 templates/home.html:108 templates/services.html:106
+msgid "Biometrik tizimlar"
+msgstr "Биометрические системы"
+
+#: templates/base.html:171 templates/contact.html:10
+msgid "Kontaktlar"
+msgstr "Контакты"
+
+#: templates/base.html:175 templates/contact.html:30
+msgid "Toshkent shahar, Yashnobod tumani, Turtkul ko'chasi 17A"
+msgstr "г. Ташкент, Яшнобадский район, ул. Турткул, 17A"
+
+#: templates/base.html:181
+msgid "Barcha huquqlar himoyalangan."
+msgstr "Все права защищены."
+
+#: templates/base.html:182
+msgid "Yuqoriga"
+msgstr "Наверх"
+
+#: templates/certificates.html:4
+msgid "Tenzorsoft — Sertifikatlar"
+msgstr "Tenzorsoft — Сертификаты"
+
+#: templates/certificates.html:12
+msgid "Bizning yutuqlarimiz va hamkorliklarimiz"
+msgstr "Наши достижения и партнёрства"
+
+#: templates/certificates.html:25
+msgid "O'zbekiston IT Park sertifikati"
+msgstr ""
+
+#: templates/certificates.html:32
+msgid ""
+"Telekommunikatsiya tarmoqlarini loyihalash, qurish va ulardan foydalanish "
+"hamda ulardan foydalanish bo‘yicha xizmatlar ko‘rsatish uchun litsenziya."
+msgstr ""
+
+#: templates/certificates.html:39
+msgid ""
+"Xavfsizlik tizimlari va uskunalarini o'rnatish, ishga tushirish, ta'mirlash "
+"va texnik xizmat ko'rsatish uchun ruxsatnoma"
+msgstr ""
+
+#: templates/certificates.html:46
+msgid "Vakolatli Kasperskiy hamkori"
+msgstr ""
+
+#: templates/contact.html:4
+msgid "Tenzorsoft — Kontaktlar"
+msgstr "Tenzorsoft — Контакты"
+
+#: templates/contact.html:11
+msgid "Biz bilan bog'laning"
+msgstr "Свяжитесь с нами"
+
+#: templates/contact.html:20
+msgid "Bog'lanish ma'lumotlari"
+msgstr "Связаться"
+
+#: templates/contact.html:21
+msgid ""
+"Bizga istalgan vaqt murojaat qilishingiz mumkin. Mutaxassislarimiz sizga "
+"yordam berishga tayyor."
+msgstr ""
+"Вы можете обратиться к нам в любое время. Наши специалисты готовы вам помочь."
+
+#: templates/contact.html:29
+msgid "Manzil"
+msgstr "Адрес"
+
+#: templates/contact.html:38 templates/contact.html:84
+msgid "Telefon"
+msgstr "Телефон"
+
+#: templates/contact.html:47 templates/contact.html:90
+msgid "Email"
+msgstr "Электронная почта"
+
+#: templates/contact.html:56
+msgid "Ish vaqti"
+msgstr "Рабочее время"
+
+#: templates/contact.html:75
+msgid "Xabar yuborish"
+msgstr "Отправить сообщение"
+
+#: templates/contact.html:79
+msgid "Ismingiz"
+msgstr "Ваше имя"
+
+#: templates/contact.html:81
+msgid "Ismingizni kiriting"
+msgstr "Введите ваше имя"
+
+#: templates/contact.html:95
+msgid "Xabar"
+msgstr "Сообщение"
+
+#: templates/contact.html:96
+msgid "Xabaringizni yozing..."
+msgstr "Напишите ваше сообщение..."
+
+#: templates/contact.html:99
+msgid "Yuborish"
+msgstr "Отправить"
+
+#: templates/home.html:4
+msgid "Tenzorsoft — Bosh sahifa"
+msgstr "Tenzorsoft — Главная"
+
+#: templates/home.html:12
+msgid "2008 yildan buyon ishonchli IT hamkor"
+msgstr "Надежный IT-партнер с 2008 года"
+
+#: templates/home.html:14
+msgid "Biznesingizni"
+msgstr "Соединяем ваш бизнес"
+
+#: templates/home.html:14
+msgid "raqamli kelajak"
+msgstr "с цифровым будущим"
+
+#: templates/home.html:14
+msgid "bilan bog'laymiz"
+msgstr " "
+
+#: templates/home.html:15
+msgid ""
+"Biznesingiz uchun zamonaviy dasturiy ta'minot, avtomatlashtirish va IT "
+"xavfsizlik yechimlari"
+msgstr ""
+"Современное программное обеспечение, автоматизация и решения IT-безопасности "
+"для вашего бизнеса"
+
+#: templates/home.html:18
+msgid "Loyihani boshlash"
+msgstr "Начать проект"
+
+#: templates/home.html:21
+msgid "Ishlarimizni ko'ring"
+msgstr "Посмотреть работы"
+
+#: templates/home.html:30
+msgid "50 dan ortiq kompaniya bizga ishonadi"
+msgstr "Более 50 компаний доверяют нам"
+
+#: templates/home.html:56
+msgid "Xavfsiz"
+msgstr "Безопасно"
+
+#: templates/home.html:60
+msgid "Samaradorlik"
+msgstr "Эффективность"
+
+#: templates/home.html:77
+msgid "Nima qilamiz"
+msgstr "Что мы делаем"
+
+#: templates/home.html:78
+msgid "Texnologiya orqali"
+msgstr "С помощью технологий"
+
+#: templates/home.html:78
+msgid "biznes qiymatini yaratamiz"
+msgstr "создаем ценность для бизнеса"
+
+#: templates/home.html:80
+msgid ""
+"G'oyadan boshlab ishga tushirishgacha — kompaniyangiz uchun barqaror va "
+"qulay raqamli mahsulotlar yaratamiz."
+msgstr ""
+"От идеи до запуска — создаем стабильные и удобные цифровые продукты для "
+"вашей компании."
+
+#: templates/home.html:88
+msgid "Veb ilovalar, korporativ tizimlar, ERP va CRM yechimlari."
+msgstr "Веб-приложения, корпоративные системы, ERP и CRM-решения."
+
+#: templates/home.html:89 templates/home.html:96 templates/home.html:103
+#: templates/home.html:110
+msgid "Batafsil"
+msgstr "Подробнее"
+
+#: templates/home.html:95
+msgid "Biznes jarayonlarini tezlashtiruvchi integratsiya va avtomatizatsiya."
+msgstr "Интеграции и автоматизация, ускоряющие бизнес-процессы."
+
+#: templates/home.html:102
+msgid "Ma'lumotlar va infratuzilmani himoyalovchi ishonchli yechimlar."
+msgstr "Надежные решения для защиты данных и инфраструктуры."
+
+#: templates/home.html:109
+msgid "Kirish nazorati, davomat va zamonaviy identifikatsiya tizimlari."
+msgstr ""
+"Контроль доступа, учет посещаемости и современные системы идентификации."
+
+#: templates/home.html:128
+msgid "Nega Tenzorsoft"
+msgstr "Почему Tenzorsoft"
+
+#: templates/home.html:129
+msgid "Murakkab vazifalar uchun sodda yechimlar"
+msgstr "Простые решения для сложных задач"
+
+#: templates/home.html:130
+msgid ""
+"Biz faqat kod yozmaymiz. Biznesingizni tushunamiz, aniq natija beradigan "
+"texnologiyani tanlaymiz va loyihani qo'llab-quvvatlaymiz."
+msgstr ""
+"Мы не просто пишем код. Мы понимаем ваш бизнес, подбираем технологию под "
+"результат и сопровождаем проект."
+
+#: templates/home.html:134
+msgid "Individual yondashuv"
+msgstr "Индивидуальный подход"
+
+#: templates/home.html:134
+msgid "Har bir loyiha uchun alohida strategiya."
+msgstr "Отдельная стратегия для каждого проекта."
+
+#: templates/home.html:138
+msgid "Shaffof jarayon"
+msgstr "Прозрачный процесс"
+
+#: templates/home.html:138
+msgid "Ish jarayoni va natijalar doim nazoratingizda."
+msgstr "Процесс и результаты всегда под вашим контролем."
+
+#: templates/home.html:142
+msgid "Doimiy yordam"
+msgstr "Постоянная поддержка"
+
+#: templates/home.html:142
+msgid "Ishga tushgandan keyin ham yoningizdamiz."
+msgstr "Мы остаемся рядом и после запуска."
+
+#: templates/home.html:153
+msgid "Ish jarayoni"
+msgstr "Процесс работы"
+
+#: templates/home.html:154
+msgid "G'oyadan tayyor mahsulotgacha"
+msgstr "От идеи до готового продукта"
+
+#: templates/home.html:157
+msgid "Tahlil"
+msgstr "Анализ"
+
+#: templates/home.html:157
+msgid "Maqsad va talablarni o'rganamiz."
+msgstr "Изучаем цели и требования."
+
+#: templates/home.html:158
+msgid "Dizayn"
+msgstr "Дизайн"
+
+#: templates/home.html:158
+msgid "Qulay interfeys va arxitektura yaratamiz."
+msgstr "Создаем удобный интерфейс и архитектуру."
+
+#: templates/home.html:159
+msgid "Ishlab chiqish"
+msgstr "Разработка"
+
+#: templates/home.html:159
+msgid "Sifatli kod va integratsiyalarni quramiz."
+msgstr "Создаем качественный код и интеграции."
+
+#: templates/home.html:160
+msgid "Natija"
+msgstr "Результат"
+
+#: templates/home.html:160
+msgid "Mahsulotni ishga tushirib, kuzatamiz."
+msgstr "Запускаем продукт и сопровождаем его."
+
+#: templates/portfolio.html:4
+msgid "Tenzorsoft — Portfolio"
+msgstr "Tenzorsoft — Портфолио"
+
+#: templates/portfolio.html:11
+msgid "Bizning muvaffaqiyatli loyihalarimiz"
+msgstr "Наши успешные проекты"
+
+#: templates/portfolio.html:19
+msgid "Barchasi"
+msgstr "Все"
+
+#: templates/portfolio.html:20
+msgid "Web"
+msgstr "Веб"
+
+#: templates/portfolio.html:21
+msgid "Mobil"
+msgstr "Мобильные"
+
+#: templates/portfolio.html:22
+msgid "Fintech"
+msgstr "Финтех"
+
+#: templates/portfolio.html:24
+msgid "Jarayonda"
+msgstr "В процессе"
+
+#: templates/portfolio.html:41
+msgid "Проектов пока нет"
+msgstr ""
+
+#: templates/services.html:4
+msgid "Tenzorsoft — Xizmatlar"
+msgstr "Tenzorsoft — Услуги"
+
+#: templates/services.html:11
+msgid "Xizmatlarimiz"
+msgstr "Наши услуги"
+
+#: templates/services.html:26
+msgid "Dasturiy ta'minot ishlab chiqish"
+msgstr "Автоматизация программного обеспечения"
+
+#: templates/services.html:27
+msgid ""
+"Biznesingiz uchun maxsus dasturiy yechimlar yaratamiz. Veb ilovalar, "
+"korporativ tizimlar, ERP va CRM tizimlarini ishlab chiqamiz."
+msgstr ""
+"Создаем индивидуальные программные решения для вашего бизнеса. Разрабатываем "
+"веб-приложения, корпоративные системы, ERP и CRM."
+
+#: templates/services.html:29
+msgid "Veb ilovalar"
+msgstr "Мобильные приложения"
+
+#: templates/services.html:30
+msgid "Korporativ tizimlar"
+msgstr "Биометрические системы"
+
+#: templates/services.html:31
+msgid "ERP va CRM"
+msgstr "ERP и CRM"
+
+#: templates/services.html:32
+msgid "API integratsiyalar"
+msgstr "Интеграции API"
+
+#: templates/services.html:42
+msgid "1C mahsulotlari"
+msgstr "Продукты 1С"
+
+#: templates/services.html:43
+msgid ""
+"1C dasturlarini joriy etish, sozlash va qo'llab-quvvatlash xizmatlarini "
+"ko'rsatamiz."
+msgstr "Оказываем услуги по внедрению, настройке и поддержке программ 1C."
+
+#: templates/services.html:45
+msgid "1C joriy etish"
+msgstr "Введение"
+
+#: templates/services.html:46
+msgid "1C sozlash"
+msgstr "Настройка 1C"
+
+#: templates/services.html:47
+msgid "1C qo'llab-quvvatlash"
+msgstr "Поддержка 1C"
+
+#: templates/services.html:48
+msgid "1C o'qitish"
+msgstr "Обучение 1C"
+
+#: templates/services.html:58
+msgid "1C Bitrix"
+msgstr "1C Битрикс"
+
+#: templates/services.html:59
+msgid ""
+"Korporativ portallar, internet-do'konlar va veb-saytlarni 1C Bitrix "
+"platformasida yaratamiz."
+msgstr ""
+"Создаем корпоративные порталы, интернет-магазины и сайты на платформе 1C "
+"Bitrix."
+
+#: templates/services.html:61
+msgid "Korporativ portal"
+msgstr "Корпоративный портал"
+
+#: templates/services.html:62
+msgid "Internet do'kon"
+msgstr "Интернет-магазин"
+
+#: templates/services.html:63
+msgid "Veb-sayt"
+msgstr "Веб-сайт"
+
+#: templates/services.html:64
+msgid "CRM tizimi"
+msgstr "CRM система"
+
+#: templates/services.html:74
+msgid "Antiviruslar"
+msgstr "Антивирусы"
+
+#: templates/services.html:75
+msgid ""
+"Kompyuter va tarmoq xavfsizligini ta'minlash uchun antiviruslar va "
+"kiberxavfsizlik yechimlari."
+msgstr "Антивирусы и решения кибербезопасности для защиты компьютеров и сети."
+
+#: templates/services.html:77
+msgid "Kaspersky"
+msgstr "Kaspersky"
+
+#: templates/services.html:78
+msgid "ESET"
+msgstr "ESET"
+
+#: templates/services.html:79
+msgid "DrWeb"
+msgstr "DrWeb"
+
+#: templates/services.html:80
+msgid "Tarmoq xavfsizligi"
+msgstr "IT безопасность"
+
+#: templates/services.html:91
+msgid ""
+"Biznes jarayonlarini avtomatlashtirish orqali samaradorlikni oshirish va "
+"xarajatlarni kamaytirish."
+msgstr ""
+"Повышаем эффективность и снижаем затраты за счет автоматизации бизнес-"
+"процессов."
+
+#: templates/services.html:93
+msgid "Jarayonlarni avtomatlashtirish"
+msgstr "Автоматизация бизнес-процессов"
+
+#: templates/services.html:94
+msgid "Hisobotlarni avtomatlashtirish"
+msgstr "Автоматизация бизнес-процессов"
+
+#: templates/services.html:95
+msgid "Integratsiyalar"
+msgstr "Интеграции"
+
+#: templates/services.html:96
+msgid "Bot yaratish"
+msgstr "Создание ботов"
+
+#: templates/services.html:107
+msgid ""
+"Zamonaviy biometrik identifikatsiya tizimlari — xodimlarni kuzatish va "
+"xavfsizlikni ta'minlash."
+msgstr ""
+"Современные системы биометрической идентификации — контроль сотрудников и "
+"обеспечение безопасности."
+
+#: templates/services.html:109
+msgid "Yuz tanish tizimlari"
+msgstr "Распознавание лиц"
+
+#: templates/services.html:110
+msgid "Barmoq izi skanerlari"
+msgstr "Сканеры отпечатков пальцев"
+
+#: templates/services.html:111
+msgid "Kirish nazorati"
+msgstr "Контроль доступа"
+
+#: templates/services.html:112
+msgid "Davomat tizimi"
+msgstr "Система посещаемости"
+
+#: tenzorsoft/settings.py:111
+msgid "Ozbekcha"
+msgstr "Узбекский"
+
+#: tenzorsoft/settings.py:112
+msgid "Ruscha"
+msgstr "Русский"
+
+#: tenzorsoft/settings.py:113
+msgid "Inglizcha"
+msgstr "Английский"

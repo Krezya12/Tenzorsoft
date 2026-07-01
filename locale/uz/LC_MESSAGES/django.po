@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-24 07:36+0000\n"
+"POT-Creation-Date: 2026-07-01 17:24+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,12 +18,23 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
+#: apps/views.py:39
+msgid "Iltimos, majburiy maydonlarni to‘ldiring."
+msgstr ""
+
+#: apps/views.py:41
+msgid "Telefon raqamiga faqat raqam kiriting."
+msgstr ""
+
+#: apps/views.py:56
+msgid "Xabaringiz qabul qilindi. Tez orada siz bilan bog‘lanamiz."
+msgstr ""
+
 #: templates/about.html:4
 msgid "Tenzorsoft — Biz haqimizda"
 msgstr ""
 
-#: templates/about.html:11 templates/base.html:78 templates/base.html:137
-#: templates/home.html:109
+#: templates/about.html:11 templates/base.html:54 templates/base.html:156
 msgid "Biz haqimizda"
 msgstr ""
 
@@ -31,15 +42,15 @@ msgstr ""
 msgid "Tenzorsoft kompaniyasi haqida batafsil ma'lumot"
 msgstr ""
 
-#: templates/about.html:21
+#: templates/about.html:21 templates/home.html:145
 msgid "Kompaniya haqida"
 msgstr ""
 
-#: templates/about.html:22 templates/home.html:110
+#: templates/about.html:22
 msgid "Tenzorsoft — sifat va tajriba"
 msgstr ""
 
-#: templates/about.html:23 templates/home.html:111
+#: templates/about.html:23
 msgid ""
 "Tenzorsoft kompaniyasi 2008 yildan beri O'zbekistonda IT xizmatlari bozorida "
 "faoliyat yuritib kelmoqda. Biz biznesingizni rivojlantirish uchun zamonaviy "
@@ -53,35 +64,35 @@ msgid ""
 "asosiy maqsadimizdir."
 msgstr ""
 
-#: templates/about.html:26 templates/home.html:113
+#: templates/about.html:26
 msgid "Dasturiy mahsulotlar muhandisligi"
 msgstr ""
 
-#: templates/about.html:27 templates/home.html:114
+#: templates/about.html:27
 msgid "Raqamli xizmatlar"
 msgstr ""
 
-#: templates/about.html:28 templates/home.html:115
+#: templates/about.html:28 templates/base.html:126
 msgid "IT konsalting"
 msgstr ""
 
-#: templates/about.html:29 templates/home.html:116
+#: templates/about.html:29
 msgid "Dasturiy ta'minotni avtomatlashtirish"
 msgstr ""
 
-#: templates/about.html:35 templates/home.html:123
+#: templates/about.html:35 templates/home.html:66
 msgid "Yillik tajriba"
 msgstr ""
 
-#: templates/about.html:39 templates/home.html:127
+#: templates/about.html:39 templates/home.html:67
 msgid "Loyihalar"
 msgstr ""
 
-#: templates/about.html:43 templates/home.html:131
+#: templates/about.html:43 templates/home.html:68
 msgid "Mijozlar"
 msgstr ""
 
-#: templates/about.html:47 templates/home.html:135
+#: templates/about.html:47 templates/home.html:69
 msgid "Mutaxassislar"
 msgstr ""
 
@@ -119,106 +130,80 @@ msgid ""
 "qadriyatlarimiz."
 msgstr ""
 
-#: templates/base.html:77 templates/base.html:136
+#: templates/base.html:9 templates/services.html:12
+msgid "Biznesingiz uchun keng qamrovli IT yechimlari"
+msgstr ""
+
+#: templates/base.html:34 templates/contact.html:57
+msgid "Dushanba — Juma: 9:00 — 18:00"
+msgstr ""
+
+#: templates/base.html:51
 msgid "Bosh sahifa"
 msgstr ""
 
-#: templates/base.html:80 templates/base.html:138 templates/base.html:147
+#: templates/base.html:58 templates/base.html:157 templates/base.html:163
 msgid "Xizmatlar"
 msgstr ""
 
-#: templates/base.html:83 templates/base.html:149 templates/home.html:72
-msgid "Dasturiy ta'minot"
-msgstr ""
-
-#: templates/base.html:84 templates/base.html:150 templates/services.html:42
-msgid "1C mahsulotlari"
-msgstr ""
-
-#: templates/base.html:85 templates/base.html:151 templates/services.html:58
-msgid "1C Bitrix"
-msgstr ""
-
-#: templates/base.html:86 templates/base.html:152 templates/services.html:74
-msgid "Antiviruslar"
-msgstr ""
-
-#: templates/base.html:87 templates/base.html:99 templates/base.html:153
-#: templates/home.html:96 templates/portfolio.html:23
-#: templates/portfolio.html:66 templates/portfolio.html:88
-#: templates/services.html:90
-msgid "Avtomatlashtirish"
-msgstr ""
-
-#: templates/base.html:88 templates/base.html:154 templates/services.html:106
-msgid "Biometrik tizimlar"
-msgstr ""
-
-#: templates/base.html:89 templates/base.html:155
-msgid "IT xizmatlari"
-msgstr ""
-
-#: templates/base.html:93 templates/base.html:139 templates/portfolio.html:10
+#: templates/base.html:62 templates/base.html:158 templates/portfolio.html:10
 msgid "Portfolio"
 msgstr ""
 
-#: templates/base.html:96 templates/portfolio.html:20
-#: templates/portfolio.html:33 templates/portfolio.html:77
-msgid "Web"
-msgstr ""
-
-#: templates/base.html:97 templates/portfolio.html:21
-#: templates/portfolio.html:44
-msgid "Mobil"
-msgstr ""
-
-#: templates/base.html:98 templates/portfolio.html:22
-#: templates/portfolio.html:55
-msgid "Fintech"
-msgstr ""
-
-#: templates/base.html:100
-msgid "Joriy etish"
-msgstr ""
-
-#: templates/base.html:103 templates/base.html:140
+#: templates/base.html:66 templates/base.html:159
 #: templates/certificates.html:11
 msgid "Sertifikatlar"
 msgstr ""
 
-#: templates/base.html:104 templates/base.html:142 templates/base.html:160
-#: templates/contact.html:10
-msgid "Kontaktlar"
+#: templates/base.html:70 templates/base.html:130
+msgid "Bog'lanish"
 msgstr ""
 
-#: templates/base.html:106
-msgid "Yoriq mavzu"
+#: templates/base.html:127
+msgid "Loyihangizni boshlashga tayyormisiz?"
 msgstr ""
 
-#: templates/base.html:108
-msgid "Avto"
-msgstr ""
-
-#: templates/base.html:110
-msgid "Qorongi mavzu"
-msgstr ""
-
-#: templates/base.html:130
+#: templates/base.html:141
 msgid ""
 "OOO \"Tenzor Soft\" — Ozbekistonda dasturiy taminot ishlab chiqaruvchi "
 "yetakchi kompaniya. 2008 yildan beri IT xizmatlari bozorida."
 msgstr ""
 
-#: templates/base.html:134
+#: templates/base.html:155
 msgid "Menyu"
 msgstr ""
 
-#: templates/base.html:164 templates/contact.html:30
+#: templates/base.html:164 templates/home.html:87
+msgid "Dasturiy ta'minot"
+msgstr ""
+
+#: templates/base.html:165 templates/home.html:94 templates/portfolio.html:23
+#: templates/services.html:90
+msgid "Avtomatlashtirish"
+msgstr ""
+
+#: templates/base.html:166 templates/home.html:101
+msgid "IT xavfsizlik"
+msgstr ""
+
+#: templates/base.html:167 templates/home.html:108 templates/services.html:106
+msgid "Biometrik tizimlar"
+msgstr ""
+
+#: templates/base.html:171 templates/contact.html:10
+msgid "Kontaktlar"
+msgstr ""
+
+#: templates/base.html:175 templates/contact.html:30
 msgid "Toshkent shahar, Yashnobod tumani, Turtkul ko'chasi 17A"
 msgstr ""
 
-#: templates/base.html:188
-msgid "Tenzor Soft LLC © 2024. Barcha huquqlar himoyalangan."
+#: templates/base.html:181
+msgid "Barcha huquqlar himoyalangan."
+msgstr ""
+
+#: templates/base.html:182
+msgid "Yuqoriga"
 msgstr ""
 
 #: templates/certificates.html:4
@@ -229,28 +214,24 @@ msgstr ""
 msgid "Bizning yutuqlarimiz va hamkorliklarimiz"
 msgstr ""
 
-#: templates/certificates.html:26
-msgid "Microsoft kompaniyasining rasmiy hamkori"
+#: templates/certificates.html:25
+msgid "O'zbekiston IT Park sertifikati"
 msgstr ""
 
-#: templates/certificates.html:35
-msgid "1C kompaniyasining sertifikatlangan hamkori"
+#: templates/certificates.html:32
+msgid ""
+"Telekommunikatsiya tarmoqlarini loyihalash, qurish va ulardan foydalanish "
+"hamda ulardan foydalanish bo‘yicha xizmatlar ko‘rsatish uchun litsenziya."
 msgstr ""
 
-#: templates/certificates.html:44
-msgid "Kaspersky Lab rasmiy distribyutori"
+#: templates/certificates.html:39
+msgid ""
+"Xavfsizlik tizimlari va uskunalarini o'rnatish, ishga tushirish, ta'mirlash "
+"va texnik xizmat ko'rsatish uchun ruxsatnoma"
 msgstr ""
 
-#: templates/certificates.html:53
-msgid "ESET antivirus rasmiy hamkori"
-msgstr ""
-
-#: templates/certificates.html:62
-msgid "1C Bitrix sertifikatlangan hamkori"
-msgstr ""
-
-#: templates/certificates.html:71
-msgid "Sifat menejmenti tizimi sertifikati"
+#: templates/certificates.html:46
+msgid "Vakolatli Kasperskiy hamkori"
 msgstr ""
 
 #: templates/contact.html:4
@@ -275,11 +256,11 @@ msgstr ""
 msgid "Manzil"
 msgstr ""
 
-#: templates/contact.html:38 templates/contact.html:80
+#: templates/contact.html:38 templates/contact.html:84
 msgid "Telefon"
 msgstr ""
 
-#: templates/contact.html:47 templates/contact.html:84
+#: templates/contact.html:47 templates/contact.html:90
 msgid "Email"
 msgstr ""
 
@@ -287,101 +268,191 @@ msgstr ""
 msgid "Ish vaqti"
 msgstr ""
 
-#: templates/contact.html:57
-msgid "Dushanba — Juma: 9:00 — 18:00"
-msgstr ""
-
-#: templates/contact.html:72
+#: templates/contact.html:75
 msgid "Xabar yuborish"
 msgstr ""
 
-#: templates/contact.html:76
+#: templates/contact.html:79
 msgid "Ismingiz"
 msgstr ""
 
-#: templates/contact.html:77
+#: templates/contact.html:81
 msgid "Ismingizni kiriting"
 msgstr ""
 
-#: templates/contact.html:88
+#: templates/contact.html:95
 msgid "Xabar"
 msgstr ""
 
-#: templates/contact.html:89
+#: templates/contact.html:96
 msgid "Xabaringizni yozing..."
 msgstr ""
 
-#: templates/contact.html:92
+#: templates/contact.html:99
 msgid "Yuborish"
 msgstr ""
 
-#: templates/home.html:5
+#: templates/home.html:4
 msgid "Tenzorsoft — Bosh sahifa"
 msgstr ""
 
+#: templates/home.html:12
+msgid "2008 yildan buyon ishonchli IT hamkor"
+msgstr ""
+
+#: templates/home.html:14
+msgid "Biznesingizni"
+msgstr ""
+
+#: templates/home.html:14
+msgid "raqamli kelajak"
+msgstr ""
+
+#: templates/home.html:14
+msgid "bilan bog'laymiz"
+msgstr ""
+
+#: templates/home.html:15
+msgid ""
+"Biznesingiz uchun zamonaviy dasturiy ta'minot, avtomatlashtirish va IT "
+"xavfsizlik yechimlari"
+msgstr ""
+
+#: templates/home.html:18
+msgid "Loyihani boshlash"
+msgstr ""
+
 #: templates/home.html:21
-msgid "Innovatsion IT yechimlar"
+msgid "Ishlarimizni ko'ring"
 msgstr ""
 
-#: templates/home.html:22
-msgid "Biznesingiz uchun zamonaviy dasturiy ta'minot va texnologiyalar"
+#: templates/home.html:30
+msgid "50 dan ortiq kompaniya bizga ishonadi"
 msgstr ""
 
-#: templates/home.html:23 templates/home.html:36 templates/home.html:49
-#: templates/home.html:147
-msgid "Bog'lanish"
+#: templates/home.html:56
+msgid "Xavfsiz"
 msgstr ""
 
-#: templates/home.html:34
-msgid "Avtomatlashtirish yechimlari"
+#: templates/home.html:60
+msgid "Samaradorlik"
 msgstr ""
 
-#: templates/home.html:35
-msgid "Biznes jarayonlarini optimallashtirish va samaradorlikni oshirish"
+#: templates/home.html:77
+msgid "Nima qilamiz"
 msgstr ""
 
-#: templates/home.html:47
-msgid "Kiberxavfsizlik va himoya"
+#: templates/home.html:78
+msgid "Texnologiya orqali"
 msgstr ""
 
-#: templates/home.html:48
-msgid "IT-infrastrukturangiz uchun ishonchli antivirus va xavfsizlik tizimlari"
-msgstr ""
-
-#: templates/home.html:65 templates/services.html:11
-msgid "Xizmatlarimiz"
-msgstr ""
-
-#: templates/home.html:73
-msgid "Biznesingiz uchun maxsus dasturlar ishlab chiqamiz"
+#: templates/home.html:78
+msgid "biznes qiymatini yaratamiz"
 msgstr ""
 
 #: templates/home.html:80
-msgid "Mobil ilovalar"
-msgstr ""
-
-#: templates/home.html:81
-msgid "Android va iOS Urban zamonaviy ilovalar"
+msgid ""
+"G'oyadan boshlab ishga tushirishgacha — kompaniyangiz uchun barqaror va "
+"qulay raqamli mahsulotlar yaratamiz."
 msgstr ""
 
 #: templates/home.html:88
-msgid "IT xavfsizlik"
+msgid "Veb ilovalar, korporativ tizimlar, ERP va CRM yechimlari."
 msgstr ""
 
-#: templates/home.html:89
-msgid "Antiviruslar va kiberxavfsizlik yechimlari"
+#: templates/home.html:89 templates/home.html:96 templates/home.html:103
+#: templates/home.html:110
+msgid "Batafsil"
 msgstr ""
 
-#: templates/home.html:97
-msgid "Biznes jarayonlarini avtomatlashtirish"
+#: templates/home.html:95
+msgid "Biznes jarayonlarini tezlashtiruvchi integratsiya va avtomatizatsiya."
 msgstr ""
 
-#: templates/home.html:145
-msgid "Loyihangizni boshlashga tayyormisiz?"
+#: templates/home.html:102
+msgid "Ma'lumotlar va infratuzilmani himoyalovchi ishonchli yechimlar."
 msgstr ""
 
-#: templates/home.html:146
-msgid "Biz bilan bog'laning va bepul konsultatsiya oling!"
+#: templates/home.html:109
+msgid "Kirish nazorati, davomat va zamonaviy identifikatsiya tizimlari."
+msgstr ""
+
+#: templates/home.html:128
+msgid "Nega Tenzorsoft"
+msgstr ""
+
+#: templates/home.html:129
+msgid "Murakkab vazifalar uchun sodda yechimlar"
+msgstr ""
+
+#: templates/home.html:130
+msgid ""
+"Biz faqat kod yozmaymiz. Biznesingizni tushunamiz, aniq natija beradigan "
+"texnologiyani tanlaymiz va loyihani qo'llab-quvvatlaymiz."
+msgstr ""
+
+#: templates/home.html:134
+msgid "Individual yondashuv"
+msgstr ""
+
+#: templates/home.html:134
+msgid "Har bir loyiha uchun alohida strategiya."
+msgstr ""
+
+#: templates/home.html:138
+msgid "Shaffof jarayon"
+msgstr ""
+
+#: templates/home.html:138
+msgid "Ish jarayoni va natijalar doim nazoratingizda."
+msgstr ""
+
+#: templates/home.html:142
+msgid "Doimiy yordam"
+msgstr ""
+
+#: templates/home.html:142
+msgid "Ishga tushgandan keyin ham yoningizdamiz."
+msgstr ""
+
+#: templates/home.html:153
+msgid "Ish jarayoni"
+msgstr ""
+
+#: templates/home.html:154
+msgid "G'oyadan tayyor mahsulotgacha"
+msgstr ""
+
+#: templates/home.html:157
+msgid "Tahlil"
+msgstr ""
+
+#: templates/home.html:157
+msgid "Maqsad va talablarni o'rganamiz."
+msgstr ""
+
+#: templates/home.html:158
+msgid "Dizayn"
+msgstr ""
+
+#: templates/home.html:158
+msgid "Qulay interfeys va arxitektura yaratamiz."
+msgstr ""
+
+#: templates/home.html:159
+msgid "Ishlab chiqish"
+msgstr ""
+
+#: templates/home.html:159
+msgid "Sifatli kod va integratsiyalarni quramiz."
+msgstr ""
+
+#: templates/home.html:160
+msgid "Natija"
+msgstr ""
+
+#: templates/home.html:160
+msgid "Mahsulotni ishga tushirib, kuzatamiz."
 msgstr ""
 
 #: templates/portfolio.html:4
@@ -396,60 +467,32 @@ msgstr ""
 msgid "Barchasi"
 msgstr ""
 
-#: templates/portfolio.html:34
-msgid "Korporativ veb-sayt"
+#: templates/portfolio.html:20
+msgid "Web"
 msgstr ""
 
-#: templates/portfolio.html:35
-msgid "Yirik kompaniya uchun zamonaviy korporativ veb-sayt ishlab chiqildi."
+#: templates/portfolio.html:21
+msgid "Mobil"
 msgstr ""
 
-#: templates/portfolio.html:45
-msgid "Mobil ilova"
+#: templates/portfolio.html:22
+msgid "Fintech"
 msgstr ""
 
-#: templates/portfolio.html:46
-msgid "Android va iOS uchun mijozlar uchun xizmat ko'rsatish ilovasi."
+#: templates/portfolio.html:24
+msgid "Jarayonda"
 msgstr ""
 
-#: templates/portfolio.html:56
-msgid "To'lov tizimi"
-msgstr ""
-
-#: templates/portfolio.html:57
-msgid "Onlayn to'lovlar uchun xavfsiz va tez platforma."
-msgstr ""
-
-#: templates/portfolio.html:67
-msgid "ERP tizimi"
-msgstr ""
-
-#: templates/portfolio.html:68
-msgid "Korxona resurslarini boshqarish tizimi joriy etildi."
-msgstr ""
-
-#: templates/portfolio.html:78 templates/services.html:62
-msgid "Internet do'kon"
-msgstr ""
-
-#: templates/portfolio.html:79
-msgid "To'liq funksional onlayn savdo platformasi."
-msgstr ""
-
-#: templates/portfolio.html:89 templates/services.html:64
-msgid "CRM tizimi"
-msgstr ""
-
-#: templates/portfolio.html:90
-msgid "Mijozlar bilan munosabatlarni boshqarish tizimi."
+#: templates/portfolio.html:41
+msgid "Проектов пока нет"
 msgstr ""
 
 #: templates/services.html:4
 msgid "Tenzorsoft — Xizmatlar"
 msgstr ""
 
-#: templates/services.html:12
-msgid "Biznesingiz uchun keng qamrovli IT yechimlari"
+#: templates/services.html:11
+msgid "Xizmatlarimiz"
 msgstr ""
 
 #: templates/services.html:26
@@ -478,6 +521,10 @@ msgstr ""
 msgid "API integratsiyalar"
 msgstr ""
 
+#: templates/services.html:42
+msgid "1C mahsulotlari"
+msgstr ""
+
 #: templates/services.html:43
 msgid ""
 "1C dasturlarini joriy etish, sozlash va qo'llab-quvvatlash xizmatlarini "
@@ -500,6 +547,10 @@ msgstr ""
 msgid "1C o'qitish"
 msgstr ""
 
+#: templates/services.html:58
+msgid "1C Bitrix"
+msgstr ""
+
 #: templates/services.html:59
 msgid ""
 "Korporativ portallar, internet-do'konlar va veb-saytlarni 1C Bitrix "
@@ -510,8 +561,20 @@ msgstr ""
 msgid "Korporativ portal"
 msgstr ""
 
+#: templates/services.html:62
+msgid "Internet do'kon"
+msgstr ""
+
 #: templates/services.html:63
 msgid "Veb-sayt"
+msgstr ""
+
+#: templates/services.html:64
+msgid "CRM tizimi"
+msgstr ""
+
+#: templates/services.html:74
+msgid "Antiviruslar"
 msgstr ""
 
 #: templates/services.html:75
@@ -580,14 +643,14 @@ msgstr ""
 msgid "Davomat tizimi"
 msgstr ""
 
-#: tenzorsoft/settings.py:104
-msgid "Ruscha"
-msgstr ""
-
-#: tenzorsoft/settings.py:105
+#: tenzorsoft/settings.py:111
 msgid "Ozbekcha"
 msgstr ""
 
-#: tenzorsoft/settings.py:106
+#: tenzorsoft/settings.py:112
+msgid "Ruscha"
+msgstr ""
+
+#: tenzorsoft/settings.py:113
 msgid "Inglizcha"
 msgstr ""

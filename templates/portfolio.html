@@ -20,76 +20,31 @@
                 <button class="filter-btn" data-filter="web">{% translate "Web" %}</button>
                 <button class="filter-btn" data-filter="mobile">{% translate "Mobil" %}</button>
                 <button class="filter-btn" data-filter="fintech">{% translate "Fintech" %}</button>
-                <button class="filter-btn" data-filter="automation">{% translate "Avtomatlashtirish" %}</button>
+                <button class="filter-btn" data-filter="avtomatlashtirish">{% translate "Avtomatlashtirish" %}</button>
+                <button class="filter-btn" data-filter="jarayonda">{% translate "Jarayonda" %}</button>
             </div>
 
             <div class="portfolio-grid">
 
-                <div class="portfolio-card reveal" data-category="web">
-                    <div class="portfolio-card-img">
-                        <i class="fas fa-globe"></i>
+                {% for project in projects %}
+                    <div class="portfolio-card reveal" data-category="{{ project.category.title }}">
+                        <div class="portfolio-card-img">
+                            {% if project.images.all %}
+                                <img src="{{ project.images.all.0.image.url }}" alt="{{ project.title }}">
+                            {% else %}
+                                <i class="fas fa-globe"></i>
+                            {% endif %}
+                        </div>
+                        <div class="portfolio-card-content">
+                            <span class="portfolio-tag">{{ project.category.title }}</span>
+                            <h3>{{ project.title }}</h3>
+                            <p>{{ project.description }}</p>
+                        </div>
                     </div>
-                    <div class="portfolio-card-content">
-                        <span class="portfolio-tag">{% translate "Web" %}</span>
-                        <h3>{% translate "Korporativ veb-sayt" %}</h3>
-                        <p>{% translate "Yirik kompaniya uchun zamonaviy korporativ veb-sayt ishlab chiqildi." %}</p>
-                    </div>
-                </div>
+                {% empty %}
+                    <p>{% translate "Проектов пока нет" %}</p>
+                {% endfor %}
 
-                <div class="portfolio-card reveal" data-category="mobile">
-                    <div class="portfolio-card-img">
-                        <i class="fas fa-mobile-alt"></i>
-                    </div>
-                    <div class="portfolio-card-content">
-                        <span class="portfolio-tag">{% translate "Mobil" %}</span>
-                        <h3>{% translate "Mobil ilova" %}</h3>
-                        <p>{% translate "Android va iOS uchun mijozlar uchun xizmat ko'rsatish ilovasi." %}</p>
-                    </div>
-                </div>
-
-                <div class="portfolio-card reveal" data-category="fintech">
-                    <div class="portfolio-card-img">
-                        <i class="fas fa-credit-card"></i>
-                    </div>
-                    <div class="portfolio-card-content">
-                        <span class="portfolio-tag">{% translate "Fintech" %}</span>
-                        <h3>{% translate "To'lov tizimi" %}</h3>
-                        <p>{% translate "Onlayn to'lovlar uchun xavfsiz va tez platforma." %}</p>
-                    </div>
-                </div>
-
-                <div class="portfolio-card reveal" data-category="automation">
-                    <div class="portfolio-card-img">
-                        <i class="fas fa-cogs"></i>
-                    </div>
-                    <div class="portfolio-card-content">
-                        <span class="portfolio-tag">{% translate "Avtomatlashtirish" %}</span>
-                        <h3>{% translate "ERP tizimi" %}</h3>
-                        <p>{% translate "Korxona resurslarini boshqarish tizimi joriy etildi." %}</p>
-                    </div>
-                </div>
-
-                <div class="portfolio-card reveal" data-category="web">
-                    <div class="portfolio-card-img">
-                        <i class="fas fa-shopping-cart"></i>
-                    </div>
-                    <div class="portfolio-card-content">
-                        <span class="portfolio-tag">{% translate "Web" %}</span>
-                        <h3>{% translate "Internet do'kon" %}</h3>
-                        <p>{% translate "To'liq funksional onlayn savdo platformasi." %}</p>
-                    </div>
-                </div>
-
-                <div class="portfolio-card reveal" data-category="automation">
-                    <div class="portfolio-card-img">
-                        <i class="fas fa-chart-bar"></i>
-                    </div>
-                    <div class="portfolio-card-content">
-                        <span class="portfolio-tag">{% translate "Avtomatlashtirish" %}</span>
-                        <h3>{% translate "CRM tizimi" %}</h3>
-                        <p>{% translate "Mijozlar bilan munosabatlarni boshqarish tizimi." %}</p>
-                    </div>
-                </div>
 
             </div>
         </div>

@@ -29,7 +29,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
     'apps',
+
+    'parler',
 ]
 
 MIDDLEWARE = [
@@ -109,6 +112,18 @@ LANGUAGES = [
     ('ru', _('Ruscha')),
     ('en', _('Inglizcha')),
 ]
+
+PARLER_LANGUAGES = {
+    None: (
+        {'code': 'uz'},
+        {'code': 'ru'},
+        {'code': 'en'},
+    ),
+    'default': {
+        'fallbacks': ['uz'],
+        'hide_untranslated': False,
+    }
+}
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

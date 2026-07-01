@@ -9,7 +9,7 @@ from django.contrib import messages
 from django.shortcuts import redirect, render
 from django.utils.translation import gettext as _
 
-from .models import ContactMessage
+from .models import ContactMessage, Project
 
 PHONE_RE = re.compile(r'^\+?[0-9\s\-\(\)]{7,20}$')
 
@@ -60,7 +60,10 @@ def contact(request):
 
 
 def portfolio(request):
-    return render(request, 'portfolio.html')
+    context = {
+        'projects': Project.objects.prefetch_related('translations', 'category__translations').all()
+    }
+    return render(request, 'portfolio.html', context=context)
 
 
 def certificates(request):
