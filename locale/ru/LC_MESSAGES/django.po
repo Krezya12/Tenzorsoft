@@ -57,7 +57,7 @@ msgid "Mutaxassislar"
 msgstr "Специалисты"
 
 msgid "Missiya va Vizion"
-msgstr "Миссия и видение"
+msgstr "Миссия и виденье"
 
 msgid "Missiyamiz"
 msgstr "Наша миссия"
@@ -204,13 +204,13 @@ msgid "2008 yildan buyon ishonchli IT hamkor"
 msgstr "Надежный IT-партнер с 2008 года"
 
 msgid "Biznesingizni"
-msgstr "Ваш бизнес"
+msgstr "Соединяем ваш бизнес"
 
 msgid "raqamli kelajak"
 msgstr "с цифровым будущим"
 
 msgid "bilan bog'laymiz"
-msgstr "соединяем"
+msgstr " "
 
 msgid "Biznesingiz uchun zamonaviy dasturiy ta'minot, avtomatlashtirish va IT xavfsizlik yechimlari"
 msgstr "Современное программное обеспечение, автоматизация и решения IT-безопасности для вашего бизнеса"

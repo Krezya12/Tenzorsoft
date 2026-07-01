@@ -210,7 +210,7 @@ msgid "raqamli kelajak"
 msgstr "with the digital future"
 
 msgid "bilan bog'laymiz"
-msgstr ""
+msgstr " "
 
 msgid "Biznesingiz uchun zamonaviy dasturiy ta'minot, avtomatlashtirish va IT xavfsizlik yechimlari"
 msgstr "Modern software, automation, and IT security solutions for your business"
@@ -240,7 +240,7 @@ msgid "biznes qiymatini yaratamiz"
 msgstr "we create business value"
 
 msgid "G'oyadan boshlab ishga tushirishgacha — kompaniyangiz uchun barqaror va qulay raqamli mahsulotlar yaratamiz."
-msgstr "G'oyadan boshlab ishga tushirishgacha — kompaniyangiz uchun barqaror va qulay raqamli mahsulotlar yaratamiz."
+msgstr "From idea to launch — we create stable and convenient digital products for your company."
 
 msgid "Veb ilovalar, korporativ tizimlar, ERP va CRM yechimlari."
 msgstr "Web applications, corporate systems, ERP and CRM solutions."

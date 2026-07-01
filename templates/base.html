@@ -112,18 +112,21 @@
 <main>
     {% block content %}{% endblock %}
 </main>
-
 <footer class="footer">
     <div class="container">
-        <div class="footer-cta">
-            <div>
-                <span class="eyebrow">{% translate "IT konsalting" %}</span>
-                <h2>{% translate "Loyihangizni boshlashga tayyormisiz?" %}</h2>
+        {% if not request.path|slice:"3:11" == "/contact" %}
+
+            <div class="footer-cta">
+                <div>
+                    <span class="eyebrow">{% translate "IT konsalting" %}</span>
+                    <h2>{% translate "Loyihangizni boshlashga tayyormisiz?" %}</h2>
+                </div>
+                <a href="{% url 'contact' %}" class="button button-light">
+                    {% translate "Bog'lanish" %} <i class="fas fa-arrow-right"></i>
+                </a>
             </div>
-            <a href="{% url 'contact' %}" class="button button-light">
-                {% translate "Bog'lanish" %} <i class="fas fa-arrow-right"></i>
-            </a>
-        </div>
+
+        {% endif %} 
 
         <div class="footer-grid">
             <div class="footer-about">
