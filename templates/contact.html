@@ -60,10 +60,14 @@
                     </div>
 
                     <div class="contact-social">
-                        <a target="_blank" rel="noopener" href="https://t.me/tenzor_soft" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
-                        <a target="_blank" rel="noopener" href="https://www.linkedin.com/in/tenzor-soft-396297329/" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a target="_blank" rel="noopener" href="https://www.instagram.com/tenzor_soft" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a target="_blank" rel="noopener" href="https://www.youtube.com/@tenzorsoft-itcompany" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a target="_blank" rel="noopener" href="https://t.me/tenzor_soft" aria-label="Telegram"><i
+                                class="fab fa-telegram-plane"></i></a>
+                        <a target="_blank" rel="noopener" href="https://www.linkedin.com/in/tenzor-soft-396297329/"
+                           aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a target="_blank" rel="noopener" href="https://www.instagram.com/tenzor_soft"
+                           aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a target="_blank" rel="noopener" href="https://www.youtube.com/@tenzorsoft-itcompany"
+                           aria-label="YouTube"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
 
@@ -73,7 +77,8 @@
                         {% csrf_token %}
                         <div class="form-group">
                             <label>{% translate "Ismingiz" %}</label>
-                            <input type="text" name="name" value="{{ request.POST.name }}" autocomplete="name" placeholder="{% translate 'Ismingizni kiriting' %}" required>
+                            <input type="text" name="name" value="{{ request.POST.name }}" autocomplete="name"
+                                   placeholder="{% translate 'Ismingizni kiriting' %}" required>
                         </div>
                         <div class="form-group">
                             <label>{% translate "Telefon" %}</label>
@@ -83,7 +88,8 @@
                         </div>
                         <div class="form-group">
                             <label>{% translate "Email" %}</label>
-                            <input type="email" name="email" value="{{ request.POST.email }}" autocomplete="email" placeholder="email@example.com">
+                            <input type="email" name="email" value="{{ request.POST.email }}" autocomplete="email"
+                                   placeholder="email@example.com">
                         </div>
                         <div class="form-group">
                             <label>{% translate "Xabar" %}</label>
@@ -100,9 +106,102 @@
 
     <script>
         document.querySelectorAll('[data-phone-input]').forEach((input) => {
-            input.addEventListener('input', () => {
-                input.value = input.value.replace(/[^0-9+\s\-()]/g, '');
+
+            // Устанавливаем дефолтное значение при фокусе, если инпут пустой
+            input.addEventListener('focus', () => {
+                if (!input.value) {
+                    input.value = '+998 ';
+                }
             });
+
+            // Очищаем, если пользователь ничего не ввел и ушел из инпута
+            input.addEventListener('blur', () => {
+                if (input.value === '+998 ') {
+                    input.value = '';
+                }
+            });
+
+            input.addEventListener('keydown', (e) => {
+                const value = input.value;
+                const start = input.selectionStart;
+
+                // Запрещаем удалять сам префикс +998 (первые 5 символов: "+998 ")
+                if ((e.key === 'Backspace' || e.key === 'Delete') && start <= 5) {
+                    e.preventDefault();
+                    return;
+                }
+
+                // Обработка плавного Backspace через спецсимволы
+                if (e.key === 'Backspace') {
+                    e.preventDefault(); // Перехватываем стандартное удаление
+
+                    let newValue = value.substring(0, start - 1) + value.substring(start);
+                    let lastChar = value[start - 1];
+
+                    // Если перед курсором спецсимвол, удаляем его и цифру перед ним
+                    if (lastChar === ' ' || lastChar === ')' || lastChar === '-') {
+                        // Ищем ближайшую цифру слева
+                        let i = start - 1;
+                        while (i > 5 && (value[i] === ' ' || value[i] === ')' || value[i] === '(' || value[i] === '-')) {
+                            i--;
+                        }
+                        newValue = value.substring(0, i) + value.substring(start);
+                    }
+
+                    // Форматируем полученную строку заново
+                    formatInput(input, newValue);
+                }
+            });
+
+            input.addEventListener('input', (e) => {
+                // Вызываем форматирование при обычном вводе цифр
+                if (e.inputType !== 'deleteContentBackward') {
+                    formatInput(input, input.value);
+                }
+            });
+
+            // Функция форматирования «на лету»
+            function formatInput(inputElement, rawValue) {
+                let digits = rawValue.replace(/\D/g, '');
+
+                // Гарантируем код страны в начале цифровой строки
+                if (!digits.startsWith('998')) {
+                    digits = '998' + digits;
+                }
+
+                let formatted = '+998 ';
+
+                if (digits.length > 3) {
+                    formatted += '(' + digits.substring(3, 5);
+                }
+                if (digits.length >= 5) {
+                    formatted += ') ';
+                }
+                if (digits.length > 5) {
+                    formatted += digits.substring(5, 8);
+                }
+                if (digits.length >= 8) {
+                    formatted += '-' + digits.substring(8, 10);
+                }
+                if (digits.length >= 10) {
+                    formatted += '-' + digits.substring(10, 12);
+                }
+
+                // Сохраняем позицию курсора (чтобы он не прыгал в конец)
+                const oldSelectionStart = inputElement.selectionStart;
+                const oldLength = inputElement.value.length;
+
+                inputElement.value = formatted;
+
+                // Корректируем положение курсора после обновления значения
+                const newLength = formatted.length;
+                let selectionPosition = oldSelectionStart + (newLength - oldLength);
+
+                // Не даем курсору зайти внутрь префикса "+998 "
+                if (selectionPosition < 5) selectionPosition = 5;
+
+                inputElement.setSelectionRange(selectionPosition, selectionPosition);
+            }
         });
     </script>
 
