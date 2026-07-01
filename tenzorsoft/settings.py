@@ -11,6 +11,7 @@ SECRET_KEY = os.environ.get(
 )
 
 DEBUG = os.environ.get('DJANGO_DEBUG', 'True').lower() == 'true'
+# DEBUG = False
 
 ALLOWED_HOSTS = [
     # host.strip()
